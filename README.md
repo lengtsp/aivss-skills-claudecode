@@ -168,11 +168,47 @@ levels ... then draft the rationale for it.
   exact repo layout before publishing.
 - **Live, end-to-end screenshots** of all 14 MCP tools called from
   brand-new, non-interactive Claude Code sessions against a fresh
-  `git clone` (real commands, real model output, not staged) — see
-  [`example AVISS/mcp_test_screenshots/README.md`](example%20AVISS/mcp_test_screenshots/README.md)
-  for the full gallery with captions, organized by category. Surfaced one
-  real limitation along the way: `aivss_classify_banking_system` is
-  English-keyword-only and fails closed to `null` on Thai-language input.
+  `git clone` (real commands, real model output, not staged) — see the
+  [Screenshots](#screenshots) section below, or the full captioned gallery at
+  [`example AVISS/mcp_test_screenshots/README.md`](example%20AVISS/mcp_test_screenshots/README.md).
+  Surfaced one real limitation along the way: `aivss_classify_banking_system`
+  is English-keyword-only and fails closed to `null` on Thai-language input.
+
+## Screenshots
+
+Real terminal captures — actual commands, actual model output, run from a
+**fresh `git clone`** of this repo in **brand-new, non-interactive Claude
+Code sessions** (`claude -p ... --mcp-config .mcp.json`), not the original
+authoring session. Full captions and the complete 9-image gallery (all 14
+MCP tools) are in
+[`example AVISS/mcp_test_screenshots/README.md`](example%20AVISS/mcp_test_screenshots/README.md).
+
+**Fresh clone + setup** — `.mcp.json` auto-registers the server, no manual
+`claude mcp add` needed:
+
+![fresh clone setup](example%20AVISS/mcp_test_screenshots/01_fresh_clone_setup.png)
+
+**Full assessment chain (4 tools)** — `aivss_intake_and_triage` →
+`aivss_generate_questionnaire` → `aivss_score_finding` →
+`aivss_assemble_audit_deliverable`, run in Thai against a Trade Finance
+auto-disbursement agent scenario:
+
+![full assessment chain](example%20AVISS/mcp_test_screenshots/04_category_A_full_assessment_chain.png)
+
+**Proactive design review** — `aivss_design_review` for an AI Treasury
+Dealing Assistant, including the `narrative_prompt` field shown verbatim:
+
+![design review](example%20AVISS/mcp_test_screenshots/07_category_D_design_review.png)
+
+**Finding rationale + knowledge graph (4 tools)** — `aivss_draft_finding_rationale`,
+`aivss_related_risks`, `aivss_find_blind_spot_risks`, `aivss_graph_export`:
+
+![finding rationale and knowledge graph](example%20AVISS/mcp_test_screenshots/09_category_F_rationale_and_knowledge_graph.png)
+
+See the [gallery](example%20AVISS/mcp_test_screenshots/README.md) for all 9
+screenshots (banking-taxonomy classification, spec citation/provenance,
+threat-intel triage, and the two initial smoke-test sessions), each with a
+caption explaining the scenario and result.
 
 ## Scope & honesty notes
 
