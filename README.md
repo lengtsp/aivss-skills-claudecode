@@ -166,14 +166,17 @@ levels ... then draft the rationale for it.
   — the scoring formula is independently verified, not just self-consistent.
 - All of the above re-verified standalone from a clean checkout of this
   exact repo layout before publishing.
-- **Live, end-to-end screenshots** of 8 distinct **agentic AI** cases (each
+- **Live, end-to-end screenshots** of 7 distinct **agentic AI** cases (each
   naming a concrete autonomous action — auto-approve, auto-disburse,
-  auto-freeze, auto-trade, auto-isolate, ...), covering 11 of the 14 MCP
-  tools, called from brand-new, non-interactive Claude Code sessions against
-  a fresh `git clone` (real commands, real model output, not staged). The
-  remaining 3 tools (`aivss_search_spec`, `aivss_cite_spec_reference`,
-  `aivss_spec_provenance_report`) are catalog/grounding utilities rather than
-  agent-scenario tools, so they're verified by the automated test suite
+  auto-freeze, auto-trade, auto-isolate, ...), driven by **plain
+  natural-language prompts** (never naming a tool or using
+  `parameter=value` syntax — Claude picks the tools itself) and covering
+  13 of the 14 MCP tools, called from brand-new, non-interactive Claude
+  Code sessions against a fresh `git clone` (real commands, real model
+  output, not staged — every tool call verified via
+  `--output-format stream-json`, not just claimed). The remaining tool
+  (`aivss_spec_provenance_report`) is a catalog/grounding utility rather
+  than an agent-scenario tool, so it's verified by the automated test suite
   instead of a case screenshot — see the
   [Screenshots](#screenshots) section below, or the full captioned gallery at
   [`example AVISS/mcp_test_screenshots/README.md`](example%20AVISS/mcp_test_screenshots/README.md).
@@ -187,56 +190,80 @@ autonomously, calls tools, holds memory/context, or orchestrates other
 agents — not generic ML models or classifiers. Every screenshot below names
 a concrete autonomous action the AI agent takes on its own (approve,
 disburse, freeze, trade, isolate a host, ...), so the risk taxonomy has
-something real to attach to. **Each image shows the exact `claude -p`
-command sent (full prompt, verbatim), not a paraphrase**, followed by the
-actual model output.
+something real to attach to.
 
-Real terminal captures — actual commands, actual model output, run from a
-**fresh `git clone`** of this repo in **brand-new, non-interactive Claude
-Code sessions** (`claude -p ... --mcp-config .mcp.json`), not the original
-authoring session. All scenarios below are in English; full captions and
-the complete 8-image gallery are in
-[`example AVISS/mcp_test_screenshots/README.md`](example%20AVISS/mcp_test_screenshots/README.md)
-(which also notes an earlier Thai-language pass over the same scenarios).
+**The prompts are plain natural-language requests — the way a real
+internal auditor would actually type — never an API call.** No prompt names
+an `aivss_*` tool or uses `parameter=value` syntax; Claude picks which tools
+to call, in what order, entirely on its own. Each image shows the exact
+prompt sent verbatim, a `[tools invoked]` line proving which real MCP tool
+calls happened (extracted from the raw session stream, not just claimed),
+and the actual response.
+
+Real terminal captures, run from a **fresh `git clone`** of this repo in
+**brand-new, non-interactive Claude Code sessions**, not the original
+authoring session. Full captions and the complete 8-image gallery are in
+[`example AVISS/mcp_test_screenshots/README.md`](example%20AVISS/mcp_test_screenshots/README.md).
 
 **Fresh clone + setup** — `.mcp.json` auto-registers the server, no manual
 `claude mcp add` needed:
 
 ![fresh clone setup](example%20AVISS/mcp_test_screenshots/01_fresh_clone_setup.png)
 
-**Agentic case — Trade Finance L/C Auto-Disbursement Agent (4 tools)** — the
-agent verifies Letter-of-Credit documents against UCP 600 and **disburses
-funds on its own**, no human in the loop: `aivss_intake_and_triage` →
-`aivss_generate_questionnaire` → `aivss_score_finding` →
-`aivss_assemble_audit_deliverable`:
+**Agentic case — Trade Finance L/C Auto-Disbursement Agent** — prompt: *"I'm
+an internal auditor looking at... the Trade Finance L/C agent... automatically
+pays out the exporter... assess this... score a real finding... one audit
+deliverable"* → Claude chained 5 tool calls on its own
+(`aivss_intake_and_triage` → `aivss_generate_questionnaire` →
+`aivss_score_finding` → `aivss_assemble_audit_deliverable`) and scored a
+forged-document finding **AIVSS 9.1 Critical**:
 
 ![agentic case: trade finance auto-disbursement agent](example%20AVISS/mcp_test_screenshots/03_agentic_case_trade_finance_autodisbursement.png)
 
-**Agentic case — AI Treasury Dealing Assistant** — the agent calls
-MCP-connected trading tools and **fires FX/rate trade orders on its own**,
-no second-trader confirmation: `aivss_design_review`, including the
-`narrative_prompt` field shown verbatim:
+**Agentic case — AI Treasury Dealing Assistant** — prompt: *"We're designing
+an AI Treasury Dealing Assistant... it can actually place trade orders...
+without a second trader confirming... can you do a design review?"* → Claude
+ran the design review, then **on its own** checked for blind-spot risks and
+flagged Supply Chain Risk connected to the top risk — nobody asked for a
+blind-spot check:
 
 ![agentic case: AI treasury dealing assistant](example%20AVISS/mcp_test_screenshots/05_agentic_case_ai_treasury_dealing_assistant.png)
 
-**Agentic case — Agent That Inherited an Admin Role (4 tools)** — an agent
-that **could approve its own permission changes**:
-`aivss_draft_finding_rationale`, `aivss_related_risks`,
-`aivss_find_blind_spot_risks`, `aivss_graph_export`:
+**Agentic case — Autonomous SOAR/EDR Incident-Response Agent** — prompt:
+*"I just read about a new attack technique... tricks autonomous SOAR/EDR
+response agents into auto-isolating legitimate hosts... which AI agent
+risks does this map to, and how confident are you?"* → the threat-intel
+tool itself only returned "possible"-confidence matches, and Claude
+independently cross-checked with direct spec search before answering,
+citing exact page numbers rather than trusting the weaker result outright:
+
+![agentic case: SOAR EDR incident response](example%20AVISS/mcp_test_screenshots/06_agentic_case_soar_edr_incident_response.png)
+
+**Agentic case — Agent That Inherited an Admin Role** — prompt: *"We found
+that one of our AI agents ended up with an inherited admin service-account
+role... draft a defensible rationale... check whether there's a blind
+spot... show me the risk graph"* → 7 tool calls chained automatically,
+scored **AIVSS 8.9 High**, and explained *why* existing controls (access
+review, SSO+MFA) don't close the finding, grounded in the tool's own
+`evidence_gap` output:
 
 ![agentic case: access control finding and knowledge graph](example%20AVISS/mcp_test_screenshots/07_agentic_case_access_control_finding_and_kg.png)
 
-**Agentic case — Credit Scoring & Loan Underwriting Agent** — the agent
-**auto-approves/rejects loans up to THB 500,000 on its own**, no officer
-review: `aivss_intake_and_triage` → `aivss_score_finding`:
+**Agentic case — Credit Scoring & Loan Underwriting Agent** — prompt: *"I'm
+assessing an AI credit-scoring and loan-underwriting agent... automatically
+approves or rejects loans up to 500,000 baht... score a real finding"* →
+scored **AIVSS 9.1 Critical**:
 
 ![agentic case: credit scoring agent](example%20AVISS/mcp_test_screenshots/08_agentic_case_credit_scoring_agent.png)
 
 See the [gallery](example%20AVISS/mcp_test_screenshots/README.md) for all 8
 screenshots — 7 distinct agentic AI cases plus setup — covering KYC
-onboarding, AML/fraud auto-freeze, and an autonomous SOAR/EDR
-incident-response agent, each with a caption explaining the scenario and
-result.
+onboarding and AML/fraud auto-freeze too, each with the full prompt, the
+verified tool-call sequence, and a caption explaining the result. **13 of
+14 MCP tools** are now demonstrated this way, up from 11 with the earlier
+explicit tool-call-syntax prompts — natural prompts turned out to make
+Claude reach for `aivss_search_spec` and `aivss_cite_spec_reference`
+directly, mid-conversation, not just internally through other tools.
 
 ## Scope & honesty notes
 

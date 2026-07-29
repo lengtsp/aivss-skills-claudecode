@@ -1,27 +1,51 @@
-# OWASP's official AIVSS calculators — vendored, unmodified
+# OWASP's official general AIVSS framework — vendored, unmodified
 
 **This is a different scoring formula from the rest of this repo.** Read
 this before running anything in this folder.
 
 ## What this is
 
-Unmodified copies of the reference Python calculators from OWASP's official
-project repository:
+Unmodified copies of the code and documentation from OWASP's official
+project repository, everything confirmed to be AI/AIVSS content (site
+navigation, leadership, and contribution-process pages were left out as not
+relevant):
 
 - **Source:** [`OWASP/www-project-artificial-intelligence-vulnerability-scoring-system`](https://github.com/OWASP/www-project-artificial-intelligence-vulnerability-scoring-system)
 - **Commit pinned:** `62fb0be849b028ace19089de771fd0bb42646543` (2026-04-10 —
   the same push that released the v0.8 PDF this repo is built on; there is
   no separate version number for this general framework, since its own
   README calls it "a living document")
-- **Files:** `aivss_calculatorV1.py`, `aivss_calculatorV2.py`,
-  `aivss_calculatorV3.py`, `aivss_calculatorV4.py`,
+- **Calculator code (this folder):** `aivss_calculatorV1.py`,
+  `aivss_calculatorV2.py`, `aivss_calculatorV3.py`, `aivss_calculatorV4.py`,
   `test_aivss_calculatorV4.py` — copied byte-for-byte, no edits.
+- **Reference documentation (`docs/`):** see "Reference documentation" below.
 - **License:** the source repo's `LICENSE.md` is an unfilled template
   (`# TODO: Please update this file with the license of your project`) — no
   explicit code license. Treat as OWASP Foundation's content, attributed
   here; ask before redistributing outside this context, same as the rest of
   this repo's OWASP-sourced material (see root `README.md`
   "Source & Attribution").
+
+## Reference documentation (`docs/`)
+
+Unmodified copies, same commit as above:
+
+| File | What it is |
+|---|---|
+| `general_framework_README.md` | The full general-AIVSS methodology write-up (renamed from the source's `README.md` to avoid clashing with this folder's own README) — Sections 1-15, the source of the formula described above |
+| `Financial-AIVSS.md` | Industry-specific application of the general framework to financial services (fraud detection, trading, credit scoring) |
+| `Healthcare-AIVSS.md` | Industry-specific application to healthcare (diagnostics, PHI, patient safety) |
+| `checklist.md` | AIVSS Assessment Checklist (general framework) |
+| `Implementation_Details.md` | Implementation notes for the general framework |
+| `AI Threat Taxonomies.md` | Cross-reference of AI threat taxonomies (CSA, MIT, OWASP Top 10 for LLMs, etc.) the general framework draws on |
+| `ssvc.html` | The **AIVSS-SSVC Calculator** — a separate, complementary decision-tree tool. This one is directly referenced by the v0.8 PDF this repo is built on (page 51: *"a parallel but complementary effort... designed to be used together rather than as alternatives"*) — different inputs (P(Threat)/P(Vulnerability)/Impact), different output (a remediation-timeline category, not a 0-10 score), not a competing implementation of either AIVSS formula |
+| `aiuc-aivss-crosswalk.md` | Mapping between AIVSS and the AIUC (AI Underwriting/Certification) control framework |
+| `AIVSS-Chinese.md` | Chinese-language translation of the general framework README |
+
+**Not vendored:** the interactive `aiuc-crosswalk/` web app (`app.js`,
+`index.html`, `site_data.js`, `styles.css`) — it's a companion micro-site for
+`aiuc-aivss-crosswalk.md`, not itself AIVSS content, and isn't runnable
+outside a browser context. The markdown doc it's based on is included above.
 
 ## Why this is kept separate, not merged into the main skill set
 
