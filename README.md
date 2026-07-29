@@ -280,6 +280,9 @@ aivss-assessment-skills/
     ├── SKILLS_ROADMAP.md        # design analysis this skill set was built from
     ├── deliverables/            # rendered worked-example audit deliverables
     ├── design_playbook/         # 10 rendered design-review use cases (one per core risk)
+    ├── mcp_test_screenshots/    # live agentic-AI-case test screenshots, captioned gallery
+    ├── owasp_general_aivss_framework/  # OWASP's official V1-V4 calculators (vendored,
+    │                                   # different formula from this repo's own — see its README)
     └── AIVSS Scoring System For OWASP Agentic AI Core Security Risks v0.8 (1)_pages/
         └── text/                # 98-page OCR'd spec text (the search corpus every tool reads —
                                   # the source PDF and jpg/ page scans are not shipped, see above)
@@ -314,6 +317,17 @@ Exact version/date pins live in code, not just this README, so they can be
 re-verified programmatically: `SPEC_VERSION`, `SPEC_PUBLISHED_DATE`,
 `SPEC_SOURCE_FILENAME`, `SPEC_SOURCE_URL` in `example AVISS/aivss_spec_provenance.py`,
 surfaced live via the `aivss_spec_provenance_report` MCP tool.
+
+Separately, `example AVISS/owasp_general_aivss_framework/` vendors OWASP's
+own reference calculators from
+[`OWASP/www-project-artificial-intelligence-vulnerability-scoring-system`](https://github.com/OWASP/www-project-artificial-intelligence-vulnerability-scoring-system)
+(commit `62fb0be`, 2026-04-10 — the same push that released the v0.8 PDF).
+**These implement a different, more general AIVSS methodology than the
+Agentic Core Risks formula this repo uses** — see that folder's own README
+for the full explanation, a side-by-side formula comparison, and results
+from actually running all 4 official calculator versions (a genuine finding:
+every version compresses scores toward the low end of the scale, even on
+deliberately worst-case/Critical inputs).
 
 ## License
 
