@@ -58,8 +58,8 @@ it's referenced by several module docstrings).
 ## Quick start
 
 ```bash
-git clone https://github.com/lengtsp/aivss-assessment-skills.git
-cd aivss-assessment-skills
+git clone https://github.com/lengtsp/aivss-skills-claudecode.git
+cd aivss-skills-claudecode
 pip install -r requirements.txt
 ```
 
