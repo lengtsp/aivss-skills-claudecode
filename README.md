@@ -166,6 +166,13 @@ levels ... then draft the rationale for it.
   — the scoring formula is independently verified, not just self-consistent.
 - All of the above re-verified standalone from a clean checkout of this
   exact repo layout before publishing.
+- **Live, end-to-end screenshots** of all 14 MCP tools called from
+  brand-new, non-interactive Claude Code sessions against a fresh
+  `git clone` (real commands, real model output, not staged) — see
+  [`example AVISS/mcp_test_screenshots/README.md`](example%20AVISS/mcp_test_screenshots/README.md)
+  for the full gallery with captions, organized by category. Surfaced one
+  real limitation along the way: `aivss_classify_banking_system` is
+  English-keyword-only and fails closed to `null` on Thai-language input.
 
 ## Scope & honesty notes
 
