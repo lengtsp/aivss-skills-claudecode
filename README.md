@@ -177,7 +177,10 @@ levels ... then draft the rationale for it.
   it's a genuinely different, non-comparable tool (categorical decision
   outcome, not a 0–10 score). `calculator/README.md`'s "Quick start" section
   has real terminal captures for launching each service plus a matching
-  example-calculation screenshot for both — 11 screenshots total.
+  example-calculation screenshot for both, all 10 official scenarios
+  verified live against the reference site (not just a spot check), and a
+  low-severity SSVC check confirming its decision matrix responds correctly
+  across its own range — 15 screenshots total.
 - All of the above re-verified standalone from a clean checkout of this
   exact repo layout before publishing.
 - **Live, end-to-end screenshots** of 7 distinct **agentic AI** cases (each

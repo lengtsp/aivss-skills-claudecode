@@ -137,25 +137,39 @@ exactly the kind of thing that *can* silently drift. `streamlit_app.py`
 removes that risk going forward since it has no independent formula to
 drift from.
 
-**2. Live, real-time spot check against
-[aivss.parthsohaney.online](https://aivss.parthsohaney.online/)** — the
-community AIVSS calculator linked from the official OWASP homepage, which
+**2. Live, real-time — ALL 10 official scenarios, automated (Playwright)
+against [aivss.parthsohaney.online](https://aivss.parthsohaney.online/)**
+(not just a spot check — every one of the 10, in one live browser session,
+this session):
+
+The community AIVSS calculator linked from the official OWASP homepage
 states it "Reproduces the v0.8 report exactly." Its own "Formula
 Visualization" panel reads, verbatim: *"AIVSS = (CVSS Base + AARS Uplift) ×
 Mitigation Factor"* / *"AARS Uplift = (10 − CVSS Base) × (Factor Sum / 10)
-× Threat Multiplier"* — character-for-character the same formula. Loaded its
-"Load OWASP Scenario" dropdown live (Playwright, this session) for two
-scenarios:
+× Threat Multiplier"* — character-for-character the same formula. Drove its
+"Load OWASP Scenario" dropdown live through all 10 entries:
 
-| Scenario | This page | aivss.parthsohaney.online (live) | Match |
-|---|---|---|---|
-| 1. Agentic AI Tool Misuse | 9.9 | 9.9 | ✅ |
-| 10. Agent Goal and Instruction Manipulation | 7.1 | 7.1 | ✅ |
+| # | Scenario | This page | aivss.parthsohaney.online (live) | Match |
+|---|---|---|---|---|
+| 1 | Agentic AI Tool Misuse | 9.9 | 9.9 | ✅ |
+| 2 | Agent Access Control Violation | 9.7 | 9.7 | ✅ |
+| 3 | Agent Cascading Failures | 9.4 | 9.4 | ✅ |
+| 4 | Agent Orchestration and Multi-Agent Exploitation | 10.0 | 10.0 | ✅ |
+| 5 | Agent Identity Impersonation | 9.3 | 9.3 | ✅ |
+| 6 | Agent Memory and Context Manipulation | 8.9 | 8.9 | ✅ |
+| 7 | Insecure Agent Critical Systems Interaction | 9.2 | 9.2 | ✅ |
+| 8 | Agent Supply Chain and Dependency Risk | 9.7 | 9.7 | ✅ |
+| 9 | Agent Untraceability | 8.3 | 8.3 | ✅ |
+| 10 | Agent Goal and Instruction Manipulation | 7.1 | 7.1 | ✅ |
 
-Screenshots: [`test_screenshots/02_calculator_scenario1_result.png`](test_screenshots/02_calculator_scenario1_result.png)
+**10/10 match exactly, live, against the actual reference website** — not
+just against pinned/hardcoded expected values. Screenshots:
+[`test_screenshots/02_calculator_scenario1_result.png`](test_screenshots/02_calculator_scenario1_result.png)
 vs. [`test_screenshots/04_reference_site_scenario1.png`](test_screenshots/04_reference_site_scenario1.png);
 [`test_screenshots/03_calculator_scenario10_result.png`](test_screenshots/03_calculator_scenario10_result.png)
-vs. [`test_screenshots/05_reference_site_scenario10.png`](test_screenshots/05_reference_site_scenario10.png).
+vs. [`test_screenshots/05_reference_site_scenario10.png`](test_screenshots/05_reference_site_scenario10.png)
+vs. [`test_screenshots/14_reference_site_scenario10_final.png`](test_screenshots/14_reference_site_scenario10_final.png)
+(end state after cycling through all 10 live).
 
 **3. Reviewed [aivss.owasp.org/ssvc.html](https://aivss.owasp.org/ssvc.html)
 live** — the **AIVSS-SSVC Calculator**. Confirmed it is genuinely a
@@ -178,7 +192,22 @@ alternatives"*):
   Defer / Scheduled / Out-of-Cycle / **Immediate** — with a timeline (e.g.
   "0–7 days"), not a 0–10 severity number.
 
-Screenshot: [`test_screenshots/06_ssvc_reference_page.png`](test_screenshots/06_ssvc_reference_page.png).
+**Also tested the low-severity end of its own range**, not just the
+pre-loaded default example, to confirm the tool responds sensibly across
+its scale rather than only checking one point: set P(Threat)=None (0.2),
+P(Vulnerability)=Hardened (0.3), Impact=Contained (2), and all 10 capability
+factors to their lowest score (1). Result: **Agent Level reclassified from
+"Prime Mover" (8× exposure) to "Copilot" (2×)**, Risk Score dropped from
+`20` to `0.24`, and the Remediation Outcome correctly changed from
+**Immediate** to **Defer** ("no deadline; monitor for changes"). The tool's
+own classification rationale text updated accordingly ("All category
+averages are < 2.5, indicating constrained capability..."). This confirms
+SSVC's decision matrix responds correctly to input severity, not just that
+it renders — screenshot:
+[`test_screenshots/15_ssvc_low_severity_defer.png`](test_screenshots/15_ssvc_low_severity_defer.png)
+vs. the default-example screenshot
+[`test_screenshots/06_ssvc_reference_page.png`](test_screenshots/06_ssvc_reference_page.png).
+
 **No numeric comparison was attempted against SSVC** — doing so would be
 comparing two things that were never meant to produce the same kind of
 output, exactly as this repo's existing cross-validation writeup already
@@ -225,5 +254,7 @@ calculator/
     ├── 10_howto_start_html_service.png          # real terminal: launching index.html's server
     ├── 11_howto_start_streamlit_service.png     # real terminal: launching streamlit_app.py
     ├── 12_custom_ui_manual_entry_high.png       # manual click-through, non-official scenario
-    └── 13_custom_ui_edge_case_none.png          # manual click-through, 0.0/None boundary
+    ├── 13_custom_ui_edge_case_none.png          # manual click-through, 0.0/None boundary
+    ├── 14_reference_site_scenario10_final.png   # aivss.parthsohaney.online, all 10 cycled live
+    └── 15_ssvc_low_severity_defer.png           # aivss.owasp.org/ssvc.html, low-severity input
 ```
