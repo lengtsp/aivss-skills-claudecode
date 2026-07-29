@@ -1,7 +1,7 @@
 # AIVSS Skills Roadmap — Multi-Provider Plugin Design (draft, 2026-07-27)
 
 Design analysis for future work sessions to pick from, scoped to
-`example AVISS/` per the folder rule in `README.md`'s "Status & Handoff"
+`example AIVSS/` per the folder rule in `README.md`'s "Status & Handoff"
 section. **Update 2026-07-27:** idea #3 (banking-system taxonomy) below is
 now implemented in basic form — see `aivss_banking_taxonomy.py` — along with
 `render_questionnaire_markdown()` in `aivss_assessment_skills.py`, which

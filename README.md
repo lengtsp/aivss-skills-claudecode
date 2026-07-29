@@ -10,7 +10,7 @@ can call directly.
 
 Built around one design principle: **the skills never call an LLM
 themselves.** Every tool parses/computes/retrieves deterministically from the
-OWASP AIVSS v0.8 spec (OCR'd once into `example AVISS/.../text/page-NN.txt`,
+OWASP AIVSS v0.8 spec (OCR'd once into `example AIVSS/.../text/page-NN.txt`,
 shipped in this repo) and returns JSON-safe data plus a ready-to-use
 `narrative_prompt` field. The calling agent supplies the reasoning and
 narration on top of grounded, cited facts — the tools supply the facts.
@@ -21,7 +21,7 @@ A generic LLM answering "what should I design against AI agent risk in this
 system?" is fluent but has zero traceability — no page citation, no
 guaranteed-consistent scoring, and it will happily blend invented mitigations
 into an otherwise real spec. This project's live testing (see
-[`example AVISS/README.md`](example%20AVISS/README.md) — "Live quality test")
+[`example AIVSS/README.md`](example%20AIVSS/README.md) — "Live quality test")
 found the reverse problem too: raw deterministic output alone reads like a
 checklist, not a consultant's answer. The `narrative_prompt` field on every
 tool closes that gap — it hands the calling LLM the verified facts *and*
@@ -45,7 +45,7 @@ ones.
 | `aivss_kg.py`, `aivss_internal_audit.py` (repo root) | Core AIVSS scoring formula + IT-audit/COBIT lens — required dependencies of everything above |
 
 Full authoring history, design rationale, and every live-quality-test finding
-is in [`example AVISS/README.md`](example%20AVISS/README.md) (kept in place —
+is in [`example AIVSS/README.md`](example%20AIVSS/README.md) (kept in place —
 it's referenced by several module docstrings).
 
 ## Requirements
@@ -75,7 +75,7 @@ approve it on first use):
     "aivss-assessment-skills": {
       "type": "stdio",
       "command": "python3",
-      "args": ["example AVISS/aivss_mcp_server.py"],
+      "args": ["example AIVSS/aivss_mcp_server.py"],
       "env": {}
     }
   }
@@ -85,7 +85,7 @@ approve it on first use):
 Or register it yourself (user-scoped, not committed to git):
 
 ```bash
-claude mcp add aivss-assessment-skills -s local -- python3 "example AVISS/aivss_mcp_server.py"
+claude mcp add aivss-assessment-skills -s local -- python3 "example AIVSS/aivss_mcp_server.py"
 claude mcp list                                    # health-check
 claude mcp get aivss-assessment-skills              # inspect
 claude mcp remove aivss-assessment-skills -s local  # undo
@@ -101,7 +101,7 @@ start a **new** Claude Code session (or a fresh sub-agent process) to see the
 MCP-compatible client (Claude Desktop, other agent frameworks) at:
 
 ```bash
-python3 "example AVISS/aivss_mcp_server.py"
+python3 "example AIVSS/aivss_mcp_server.py"
 ```
 
 ## The 14 MCP tools
@@ -146,17 +146,17 @@ levels ... then draft the rationale for it.
 - **88/88 unit tests** across 11 self-contained test runners (no pytest,
   each prints a JSON pass/fail summary):
   ```bash
-  python3 "example AVISS/test_aivss_assessment_skills.py"
-  python3 "example AVISS/test_aivss_spec_search.py"
-  python3 "example AVISS/test_aivss_design_review.py"
-  python3 "example AVISS/test_aivss_threat_intel.py"
-  python3 "example AVISS/test_aivss_finding_rationale.py"
-  python3 "example AVISS/test_aivss_spec_provenance.py"
-  python3 "example AVISS/test_aivss_synthesis_prompt.py"
-  python3 "example AVISS/test_aivss_knowledge_graph.py"
-  python3 "example AVISS/test_aivss_mcp_server.py"
-  python3 "example AVISS/test_aivss_owasp_calculator_cross_validation.py"
-  python3 "example AVISS/test_aivss_ten_risk_design_playbook.py"
+  python3 "example AIVSS/test_aivss_assessment_skills.py"
+  python3 "example AIVSS/test_aivss_spec_search.py"
+  python3 "example AIVSS/test_aivss_design_review.py"
+  python3 "example AIVSS/test_aivss_threat_intel.py"
+  python3 "example AIVSS/test_aivss_finding_rationale.py"
+  python3 "example AIVSS/test_aivss_spec_provenance.py"
+  python3 "example AIVSS/test_aivss_synthesis_prompt.py"
+  python3 "example AIVSS/test_aivss_knowledge_graph.py"
+  python3 "example AIVSS/test_aivss_mcp_server.py"
+  python3 "example AIVSS/test_aivss_owasp_calculator_cross_validation.py"
+  python3 "example AIVSS/test_aivss_ten_risk_design_playbook.py"
   ```
 - **17/17 checks** driving the real MCP JSON-RPC protocol over a subprocess
   (`test_aivss_mcp_protocol_smoke.py`) — catches wire-format/schema bugs the
@@ -179,7 +179,7 @@ levels ... then draft the rationale for it.
   than an agent-scenario tool, so it's verified by the automated test suite
   instead of a case screenshot — see the
   [Screenshots](#screenshots) section below, or the full captioned gallery at
-  [`example AVISS/mcp_test_screenshots/README.md`](example%20AVISS/mcp_test_screenshots/README.md).
+  [`example AIVSS/mcp_test_screenshots/README.md`](example%20AIVSS/mcp_test_screenshots/README.md).
   Surfaced one real limitation along the way: `aivss_classify_banking_system`
   is English-keyword-only and fails closed to `null` on Thai-language input.
 
@@ -203,12 +203,12 @@ and the actual response.
 Real terminal captures, run from a **fresh `git clone`** of this repo in
 **brand-new, non-interactive Claude Code sessions**, not the original
 authoring session. Full captions and the complete 8-image gallery are in
-[`example AVISS/mcp_test_screenshots/README.md`](example%20AVISS/mcp_test_screenshots/README.md).
+[`example AIVSS/mcp_test_screenshots/README.md`](example%20AIVSS/mcp_test_screenshots/README.md).
 
 **Fresh clone + setup** — `.mcp.json` auto-registers the server, no manual
 `claude mcp add` needed:
 
-![fresh clone setup](example%20AVISS/mcp_test_screenshots/01_fresh_clone_setup.png)
+![fresh clone setup](example%20AIVSS/mcp_test_screenshots/01_fresh_clone_setup.png)
 
 **Agentic case — Trade Finance L/C Auto-Disbursement Agent** — prompt: *"I'm
 an internal auditor looking at... the Trade Finance L/C agent... automatically
@@ -218,7 +218,7 @@ deliverable"* → Claude chained 5 tool calls on its own
 `aivss_score_finding` → `aivss_assemble_audit_deliverable`) and scored a
 forged-document finding **AIVSS 9.1 Critical**:
 
-![agentic case: trade finance auto-disbursement agent](example%20AVISS/mcp_test_screenshots/03_agentic_case_trade_finance_autodisbursement.png)
+![agentic case: trade finance auto-disbursement agent](example%20AIVSS/mcp_test_screenshots/03_agentic_case_trade_finance_autodisbursement.png)
 
 **Agentic case — AI Treasury Dealing Assistant** — prompt: *"We're designing
 an AI Treasury Dealing Assistant... it can actually place trade orders...
@@ -227,7 +227,7 @@ ran the design review, then **on its own** checked for blind-spot risks and
 flagged Supply Chain Risk connected to the top risk — nobody asked for a
 blind-spot check:
 
-![agentic case: AI treasury dealing assistant](example%20AVISS/mcp_test_screenshots/05_agentic_case_ai_treasury_dealing_assistant.png)
+![agentic case: AI treasury dealing assistant](example%20AIVSS/mcp_test_screenshots/05_agentic_case_ai_treasury_dealing_assistant.png)
 
 **Agentic case — Autonomous SOAR/EDR Incident-Response Agent** — prompt:
 *"I just read about a new attack technique... tricks autonomous SOAR/EDR
@@ -237,7 +237,7 @@ tool itself only returned "possible"-confidence matches, and Claude
 independently cross-checked with direct spec search before answering,
 citing exact page numbers rather than trusting the weaker result outright:
 
-![agentic case: SOAR EDR incident response](example%20AVISS/mcp_test_screenshots/06_agentic_case_soar_edr_incident_response.png)
+![agentic case: SOAR EDR incident response](example%20AIVSS/mcp_test_screenshots/06_agentic_case_soar_edr_incident_response.png)
 
 **Agentic case — Agent That Inherited an Admin Role** — prompt: *"We found
 that one of our AI agents ended up with an inherited admin service-account
@@ -247,16 +247,16 @@ scored **AIVSS 8.9 High**, and explained *why* existing controls (access
 review, SSO+MFA) don't close the finding, grounded in the tool's own
 `evidence_gap` output:
 
-![agentic case: access control finding and knowledge graph](example%20AVISS/mcp_test_screenshots/07_agentic_case_access_control_finding_and_kg.png)
+![agentic case: access control finding and knowledge graph](example%20AIVSS/mcp_test_screenshots/07_agentic_case_access_control_finding_and_kg.png)
 
 **Agentic case — Credit Scoring & Loan Underwriting Agent** — prompt: *"I'm
 assessing an AI credit-scoring and loan-underwriting agent... automatically
 approves or rejects loans up to 500,000 baht... score a real finding"* →
 scored **AIVSS 9.1 Critical**:
 
-![agentic case: credit scoring agent](example%20AVISS/mcp_test_screenshots/08_agentic_case_credit_scoring_agent.png)
+![agentic case: credit scoring agent](example%20AIVSS/mcp_test_screenshots/08_agentic_case_credit_scoring_agent.png)
 
-See the [gallery](example%20AVISS/mcp_test_screenshots/README.md) for all 8
+See the [gallery](example%20AIVSS/mcp_test_screenshots/README.md) for all 8
 screenshots — 7 distinct agentic AI cases plus setup — covering KYC
 onboarding and AML/fraud auto-freeze too, each with the full prompt, the
 verified tool-call sequence, and a caption explaining the result. **13 of
@@ -300,7 +300,7 @@ aivss-assessment-skills/
 ├── aivss_internal_audit.py     # IT-audit/COBIT lens (audit topics, output options)
 ├── requirements.txt
 ├── .mcp.json                   # Claude Code project-scoped MCP registration
-└── example AVISS/              # skill modules, tests, docs (folder name is load-bearing —
+└── example AIVSS/              # skill modules, tests, docs (folder name is load-bearing —
     ├── aivss_*.py               # see aivss_kg.py's DEFAULT_SOURCE_DIR — do not rename)
     ├── test_aivss_*.py
     ├── README.md                # full authoring history / design rationale / live test log
@@ -315,13 +315,13 @@ aivss-assessment-skills/
                                   # the source PDF and jpg/ page scans are not shipped, see above)
 ```
 
-`example AVISS/` keeps its original name and nesting deliberately — several
+`example AIVSS/` keeps its original name and nesting deliberately — several
 modules resolve paths relative to it (`Path(__file__).resolve().parents[1]`),
 and renaming it would require coordinated edits across every module and test.
 
 ## Source & Attribution
 
-This project builds on, and its `example AVISS/.../text/` corpus is an OCR'd
+This project builds on, and its `example AIVSS/.../text/` corpus is an OCR'd
 reproduction of, the official OWASP publication:
 
 - **Document:** *AIVSS Scoring System For OWASP Agentic AI Core Security
@@ -342,10 +342,10 @@ Foundation, Inc.; this project is not affiliated with or endorsed by OWASP.
 
 Exact version/date pins live in code, not just this README, so they can be
 re-verified programmatically: `SPEC_VERSION`, `SPEC_PUBLISHED_DATE`,
-`SPEC_SOURCE_FILENAME`, `SPEC_SOURCE_URL` in `example AVISS/aivss_spec_provenance.py`,
+`SPEC_SOURCE_FILENAME`, `SPEC_SOURCE_URL` in `example AIVSS/aivss_spec_provenance.py`,
 surfaced live via the `aivss_spec_provenance_report` MCP tool.
 
-Separately, `example AVISS/owasp_general_aivss_framework/` vendors and
+Separately, `example AIVSS/owasp_general_aivss_framework/` vendors and
 adapts material from two official OWASP sources:
 
 - [`github.com/OWASP/www-project-artificial-intelligence-vulnerability-scoring-system`](https://github.com/OWASP/www-project-artificial-intelligence-vulnerability-scoring-system)
@@ -384,7 +384,7 @@ single blanket license isn't quite right — the recommendation is to
    explicit patent grant / contributor-license clause is wanted (e.g. for
    wider open-source distribution) — either is defensible; MIT is the lower-
    friction default.
-2. **The OCR'd spec text** (`example AVISS/AIVSS Scoring System For OWASP
+2. **The OCR'd spec text** (`example AIVSS/AIVSS Scoring System For OWASP
    Agentic AI Core Security Risks v0.8 (1)_pages/text/*.txt`) — this is a
    substantial reproduction of OWASP's own copyrighted publication, which
    OWASP distributes under **CC BY-SA 4.0** (see "Source & Attribution"
@@ -395,7 +395,7 @@ single blanket license isn't quite right — the recommendation is to
 
 Net recommendation: add an `MIT` (or `Apache-2.0`) `LICENSE` file at the repo
 root scoped to the code, plus a short note in
-`example AVISS/AIVSS Scoring System For OWASP Agentic AI Core Security Risks
+`example AIVSS/AIVSS Scoring System For OWASP Agentic AI Core Security Risks
 v0.8 (1)_pages/text/` (e.g. a `NOTICE` or `SOURCE.md`) stating that folder's
 content is OWASP's own, reproduced under CC BY-SA 4.0 with attribution, not
 covered by the code license. Until a LICENSE file is actually added, treat

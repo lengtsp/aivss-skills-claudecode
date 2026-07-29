@@ -2,7 +2,7 @@
 """Page-anchored AIVSS v0.8 knowledge graph and deterministic scorer.
 
 The source is the 98-page AIVSS PDF and its one-text-file-per-page manual OCR
-export under ``example AVISS``.  Codex owns the semantic compilation into
+export under ``example AIVSS``.  Codex owns the semantic compilation into
 nodes and relations; every generated semantic item retains a physical PDF page
 and exact source evidence.  The source files remain read-only.
 """
@@ -22,7 +22,7 @@ from typing import Any, Iterable
 
 
 REPO_ROOT = Path(__file__).resolve().parent
-DEFAULT_SOURCE_DIR = REPO_ROOT / "example AVISS"
+DEFAULT_SOURCE_DIR = REPO_ROOT / "example AIVSS"
 DEFAULT_ARTIFACT_DIR = (
     REPO_ROOT / "config" / "knowledge_graphs" / "aivss_agentic_v08"
 )

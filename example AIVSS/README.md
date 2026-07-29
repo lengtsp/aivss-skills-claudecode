@@ -1,11 +1,11 @@
-# example AVISS — Manual PDF OCR via Claude Vision (Sonnet)
+# example AIVSS — Manual PDF OCR via Claude Vision (Sonnet)
 
 This folder contains a manual PDF→text conversion done directly in a Claude Code session — **not** part of the app's `/process_batch` OCR Worker pipeline (which calls llama-server vision). No tesseract, llama-server, or ollama was used; Claude (Sonnet 5) read each page image directly.
 
 ## Status & Handoff (read this first)
 
 **Hard scope rule:** all work under this thread of work is confined to this
-folder, `example AVISS/`. Do not create, edit, or delete files outside this
+folder, `example AIVSS/`. Do not create, edit, or delete files outside this
 folder (e.g. `routes_chat.py`, `app.py`, or anything else at the project
 root) even when the natural next step would touch them (like wiring a new
 parser into `/chat`). This is an explicit user instruction given on
@@ -96,7 +96,7 @@ app, stop and ask first — never assume it's in scope.
   server (`mcp==1.26.0`, already present in the `base` conda env) exposing
   14 tools wrapping the full skill set above (all 7 modules listed above).
   **Registered with Claude Code (2026-07-28)** via
-  `claude mcp add aivss-assessment-skills -s local -- python3 "example AVISS/aivss_mcp_server.py"`
+  `claude mcp add aivss-assessment-skills -s local -- python3 "example AIVSS/aivss_mcp_server.py"`
   (local scope — private to this user/project, not committed to git; run
   `claude mcp list` / `claude mcp get aivss-assessment-skills` to inspect,
   `claude mcp remove aivss-assessment-skills -s local` to undo). Verified
@@ -159,18 +159,18 @@ now implemented in basic form — see `aivss_banking_taxonomy.py` above.
 
 **Verify before/after any change** (from the project root):
 ```bash
-python -c "import py_compile; py_compile.compile('example AVISS/aivss_assessment_skills.py', doraise=True); print('OK')"
-python3 "example AVISS/test_aivss_assessment_skills.py"
-python3 "example AVISS/test_aivss_spec_search.py"
-python3 "example AVISS/test_aivss_design_review.py"
-python3 "example AVISS/test_aivss_threat_intel.py"
-python3 "example AVISS/test_aivss_finding_rationale.py"
-python3 "example AVISS/test_aivss_spec_provenance.py"
-python3 "example AVISS/test_aivss_synthesis_prompt.py"
-python3 "example AVISS/test_aivss_knowledge_graph.py"
-python3 "example AVISS/test_aivss_mcp_server.py"
-python3 "example AVISS/test_aivss_owasp_calculator_cross_validation.py"
-python3 "example AVISS/test_aivss_ten_risk_design_playbook.py"
+python -c "import py_compile; py_compile.compile('example AIVSS/aivss_assessment_skills.py', doraise=True); print('OK')"
+python3 "example AIVSS/test_aivss_assessment_skills.py"
+python3 "example AIVSS/test_aivss_spec_search.py"
+python3 "example AIVSS/test_aivss_design_review.py"
+python3 "example AIVSS/test_aivss_threat_intel.py"
+python3 "example AIVSS/test_aivss_finding_rationale.py"
+python3 "example AIVSS/test_aivss_spec_provenance.py"
+python3 "example AIVSS/test_aivss_synthesis_prompt.py"
+python3 "example AIVSS/test_aivss_knowledge_graph.py"
+python3 "example AIVSS/test_aivss_mcp_server.py"
+python3 "example AIVSS/test_aivss_owasp_calculator_cross_validation.py"
+python3 "example AIVSS/test_aivss_ten_risk_design_playbook.py"
 ```
 All eleven must succeed — each test runner prints a JSON summary with
 `"passed": true` and its current pass count (as of 2026-07-28:
@@ -191,7 +191,7 @@ Optional, slower, only needed when `aivss_mcp_server.py` itself changes
 (spawns a real subprocess over the actual MCP protocol — see "Tested via the
 real MCP protocol" below):
 ```bash
-python3 "example AVISS/test_aivss_mcp_protocol_smoke.py"
+python3 "example AIVSS/test_aivss_mcp_protocol_smoke.py"
 ```
 17/17 checks as of 2026-07-28 (14 tools × representative call(s), including
 the 3 knowledge-graph tools added alongside `aivss_knowledge_graph.py`).
@@ -244,7 +244,7 @@ in `test_aivss_assessment_skills.py` via `parents[1]`).
 
 Run the self-test from this folder:
 ```bash
-python3 "example AVISS/test_aivss_assessment_skills.py"
+python3 "example AIVSS/test_aivss_assessment_skills.py"
 ```
 
 `aivss_worked_examples.py` (2026-07-27) applies the same chain to three fully
@@ -260,7 +260,7 @@ scored AIVSS value is locked in as a regression test in
 `test_aivss_assessment_skills.py` (see "Status & Handoff" above for the
 current pass count). Run it directly to regenerate the deliverables:
 ```bash
-python3 "example AVISS/aivss_worked_examples.py"
+python3 "example AIVSS/aivss_worked_examples.py"
 ```
 
 ## Wired into `/chat` (2026-07-27)
@@ -316,7 +316,7 @@ the deterministic ranking rule in `triage_applicable_risks`. Fails closed
 `test_aivss_assessment_skills.py` (11/11 tests passing).
 
 **Not wired into `/chat`.** By explicit instruction, work in this repo is
-scoped to the `example AVISS/` folder only — `routes_chat.py` (main app,
+scoped to the `example AIVSS/` folder only — `routes_chat.py` (main app,
 outside this folder) is not to be modified here. An `_apply_aivss_scope_triage_context()`
 chat injector mirroring `_apply_aivss_finding_score_context`'s shape was
 drafted and verified, then reverted; wiring this parser into production chat
@@ -409,7 +409,7 @@ open menu plus one new direction, per explicit user selection (all four):
    hand-edited JSON file — `claude mcp add` is the documented, correct way
    to register a server and manages the underlying config file for you):
    ```bash
-   claude mcp add aivss-assessment-skills -s local -- python3 "example AVISS/aivss_mcp_server.py"
+   claude mcp add aivss-assessment-skills -s local -- python3 "example AIVSS/aivss_mcp_server.py"
    ```
    `-s local` = private to this user in this project, stored in the user's
    global `~/.claude.json` under this project's entry — **not** committed to

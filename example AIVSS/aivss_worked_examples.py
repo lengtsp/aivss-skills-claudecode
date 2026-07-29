@@ -15,7 +15,7 @@ are what you'd take into fieldwork to fill in the gaps.
 Run directly to render and save all three deliverables as markdown under
 ./deliverables/:
 
-    python3 "example AVISS/aivss_worked_examples.py"
+    python3 "example AIVSS/aivss_worked_examples.py"
 """
 
 from __future__ import annotations

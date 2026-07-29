@@ -24,7 +24,7 @@ README.md's hard scope rule. `export_kg_shape()` below produces data in a
 `source_entity`/`target_entity`/`relation_type`) so a future explicit
 integration step could import this taxonomy into that real system — but
 this module never touches the database, Neo4j, or any file outside
-`example AVISS/`.
+`example AIVSS/`.
 
 Graph size is small by construction (10 risks + 10 factors + 10 audit
 topics + ~22 COBIT codes + 5 banking archetypes ≈ 57 nodes, ~41+ edges) —
