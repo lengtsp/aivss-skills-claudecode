@@ -1,10 +1,16 @@
-# AIVSS Calculator (web page) — this repo's formula, tested against the originals
+# AIVSS Calculator (web) — two implementations, both tested against the originals
 
-A single self-contained static HTML page (`index.html`, no build step, no
-dependencies — open it in any browser or serve it with any static file
-server) implementing the **exact same formula** this repo's
-`aivss_kg.calculate_aivss()` uses, so it can be checked visually and tested
-directly against the two official reference tools, per request.
+Two ways to run this repo's `aivss_kg.calculate_aivss()` formula as a web
+page:
+
+1. **`index.html`** — a self-contained static page, zero dependencies. The
+   formula is **reimplemented in JavaScript** (has to be, since a static
+   page can't import Python) — kept in sync by hand.
+2. **`streamlit_app.py`** — a Streamlit app that **imports and calls the
+   real `aivss_kg.calculate_aivss()` function directly**. No formula is
+   reimplemented; if `aivss_kg.py` ever changes, this app's output changes
+   with it automatically. Added specifically to remove the
+   duplication/drift risk `index.html` has by construction.
 
 **Educational/study artifact** — not an official OWASP tool, not affiliated
 with or endorsed by OWASP or the reference sites below.
@@ -39,6 +45,8 @@ be reproduced with one click instead of typed by hand.
 
 ## Running it
 
+**Static HTML version:**
+
 ```bash
 cd calculator
 python3 -m http.server 8000
@@ -48,6 +56,14 @@ python3 -m http.server 8000
 (Opening `index.html` directly via `file://` also works in most browsers;
 some sandboxed environments, including the one used to test this, block
 `file://` navigation, hence the http.server instruction.)
+
+**Streamlit version** (calls the real Python formula):
+
+```bash
+cd calculator
+pip install streamlit   # not otherwise required by this repo
+streamlit run streamlit_app.py
+```
 
 ## Tested — automated, and against both reference tools live
 
@@ -70,6 +86,39 @@ repo's own `calculate_aivss()` output:**
 **10/10 match exactly.** These are the same expected values already pinned
 in `example AIVSS/test_aivss_owasp_calculator_cross_validation.py`
 (re-confirmed passing, 3/3, before writing this page).
+
+**1b. `streamlit_app.py` (real `calculate_aivss()`) — same 10 scenarios,
+same automated Playwright approach:**
+
+| # | Scenario | Expected | `index.html` (JS) | `streamlit_app.py` (real Python) | Difference |
+|---|---|---|---|---|---|
+| 1 | Agentic AI Tool Misuse | 9.9 | 9.9 | 9.9 | none |
+| 2 | Agent Access Control Violation | 9.7 | 9.7 | 9.7 | none |
+| 3 | Agent Cascading Failures | 9.4 | 9.4 | 9.4 | none |
+| 4 | Agent Orchestration and Multi-Agent Exploitation | 10.0 | 10.0 | 10.0 | none |
+| 5 | Agent Identity Impersonation | 9.3 | 9.3 | 9.3 | none |
+| 6 | Agent Memory and Context Manipulation | 8.9 | 8.9 | 8.9 | none |
+| 7 | Insecure Agent Critical Systems Interaction | 9.2 | 9.2 | 9.2 | none |
+| 8 | Agent Supply Chain and Dependency Risk | 9.7 | 9.7 | 9.7 | none |
+| 9 | Agent Untraceability | 8.3 | 8.3 | 8.3 | none |
+| 10 | Agent Goal and Instruction Manipulation | 7.1 | 7.1 | 7.1 | none |
+
+**Answering directly: no difference found anywhere, 10/10 scenarios
+identical across both implementations and the expected values.** Also
+compared the full intermediate breakdown, not just the final score — for
+scenario 1, `streamlit_app.py`'s raw `calculate_aivss()` output
+(`risk_gap=0.6`, `aars=0.5238`, `aivss_raw=9.9238`, `aivss=9.9`,
+`severity="Critical"`) matches `index.html`'s displayed breakdown
+digit-for-digit (see
+[`test_screenshots/09_streamlit_scenario1_result.png`](test_screenshots/09_streamlit_scenario1_result.png)
+vs.
+[`test_screenshots/02_calculator_scenario1_result.png`](test_screenshots/02_calculator_scenario1_result.png)).
+This is expected — `index.html`'s JavaScript was written as a deliberate
+line-for-line port of the same formula — but it was verified rather than
+assumed, precisely because a hand-written second copy of a formula is
+exactly the kind of thing that *can* silently drift. `streamlit_app.py`
+removes that risk going forward since it has no independent formula to
+drift from.
 
 **2. Live, real-time spot check against
 [aivss.parthsohaney.online](https://aivss.parthsohaney.online/)** — the
@@ -123,12 +172,16 @@ concluded (see the root README's "Verified correctness" and
 
 ```
 calculator/
-├── index.html              # the calculator itself, self-contained
+├── index.html              # static HTML/JS calculator, formula reimplemented
+├── streamlit_app.py        # Streamlit calculator, calls aivss_kg.calculate_aivss() directly
 └── test_screenshots/
     ├── 01_calculator_blank.png
-    ├── 02_calculator_scenario1_result.png
-    ├── 03_calculator_scenario10_result.png
-    ├── 04_reference_site_scenario1.png       # aivss.parthsohaney.online, live
-    ├── 05_reference_site_scenario10.png      # aivss.parthsohaney.online, live
-    └── 06_ssvc_reference_page.png            # aivss.owasp.org/ssvc.html, live
+    ├── 02_calculator_scenario1_result.png       # index.html
+    ├── 03_calculator_scenario10_result.png      # index.html
+    ├── 04_reference_site_scenario1.png          # aivss.parthsohaney.online, live
+    ├── 05_reference_site_scenario10.png         # aivss.parthsohaney.online, live
+    ├── 06_ssvc_reference_page.png               # aivss.owasp.org/ssvc.html, live
+    ├── 07_streamlit_blank.png
+    ├── 08_streamlit_scenario1_inputs.png
+    └── 09_streamlit_scenario1_result.png        # raw calculate_aivss() JSON output
 ```
