@@ -367,37 +367,9 @@ deliberately worst-case/Critical inputs).
 
 ## License
 
-**No LICENSE file is committed yet** — this section documents what would fit
-this repo's two distinct kinds of content, for the repository owner to
-confirm and add formally.
-
-This repo mixes original tooling with reproduced third-party spec text, so a
-single blanket license isn't quite right — the recommendation is to
-**dual-license by content type**:
-
-1. **Code** (`*.py`, `aivss_mcp_server.py`, tests, `.mcp.json`,
-   `requirements.txt`, and this documentation) — all originally authored for
-   this project, no external code copied in. A permissive license fits:
-   **MIT** is the simplest, most common choice for a small tool/skill server
-   like this and imposes no obligations on downstream users beyond keeping
-   the copyright notice. **Apache-2.0** is a reasonable alternative if an
-   explicit patent grant / contributor-license clause is wanted (e.g. for
-   wider open-source distribution) — either is defensible; MIT is the lower-
-   friction default.
-2. **The OCR'd spec text** (`example AIVSS/AIVSS Scoring System For OWASP
-   Agentic AI Core Security Risks v0.8 (1)_pages/text/*.txt`) — this is a
-   substantial reproduction of OWASP's own copyrighted publication, which
-   OWASP distributes under **CC BY-SA 4.0** (see "Source & Attribution"
-   above). This portion **cannot** simply be relicensed as MIT/Apache by this
-   repo — CC BY-SA's ShareAlike term means any sharing of that reproduced
-   text must stay under CC BY-SA 4.0 with attribution to OWASP, regardless of
-   what license the surrounding code uses.
-
-Net recommendation: add an `MIT` (or `Apache-2.0`) `LICENSE` file at the repo
-root scoped to the code, plus a short note in
-`example AIVSS/AIVSS Scoring System For OWASP Agentic AI Core Security Risks
-v0.8 (1)_pages/text/` (e.g. a `NOTICE` or `SOURCE.md`) stating that folder's
-content is OWASP's own, reproduced under CC BY-SA 4.0 with attribution, not
-covered by the code license. Until a LICENSE file is actually added, treat
-the code as "all rights reserved" by default and ask the repository owner
-before reusing it outside this context.
+**Educational / study use only.** This repository was built to learn how to
+implement, test, and integrate the OWASP AIVSS methodology (v0.8) as an MCP
+server for Claude Code — it is not published for production use, commercial
+use, or redistribution. No license is granted. Content adapted from OWASP
+(see "Source & Attribution" above) remains OWASP's own work, used here for
+study and attributed accordingly.
