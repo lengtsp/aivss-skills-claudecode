@@ -183,8 +183,16 @@ levels ... then draft the rationale for it.
   fixed keyword tier plus a weaker, separately-labeled semantic fallback tier
   (`confidence: "possible"`), never blended into the keyword tier's scores.
 - No PII, credentials, or proprietary source-code from the parent project
-  are in this repo — only the AIVSS skill modules, the public OWASP AIVSS
-  v0.8 PDF + its OCR'd text, and this documentation.
+  are in this repo — only the AIVSS skill modules, the OCR'd spec text
+  derived from the public OWASP AIVSS v0.8 PDF, and this documentation.
+- **The source PDF and page scans (`.jpg`) are intentionally not included.**
+  No tool in this repo opens the PDF or any `.jpg` at runtime — every skill
+  reads the OCR'd `text/page-NN.txt` corpus only (see `aivss_spec_search.py`).
+  The PDF is only referenced elsewhere as a filename/URL string for
+  provenance display (`aivss_spec_provenance.py`'s `SPEC_SOURCE_URL`, which
+  points at the official OWASP-hosted copy) — never read as a file. Get the
+  original from `https://aivss.owasp.org/` if you need it; both are
+  `.gitignore`d here to keep the repo lean.
 
 ## Repository layout
 
@@ -202,7 +210,8 @@ aivss-assessment-skills/
     ├── deliverables/            # rendered worked-example audit deliverables
     ├── design_playbook/         # 10 rendered design-review use cases (one per core risk)
     └── AIVSS Scoring System For OWASP Agentic AI Core Security Risks v0.8 (1)_pages/
-        └── text/                # 98-page OCR'd spec text (the search corpus every tool reads)
+        └── text/                # 98-page OCR'd spec text (the search corpus every tool reads —
+                                  # the source PDF and jpg/ page scans are not shipped, see above)
 ```
 
 `example AVISS/` keeps its original name and nesting deliberately — several
