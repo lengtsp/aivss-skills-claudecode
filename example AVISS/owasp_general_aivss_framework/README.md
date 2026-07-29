@@ -25,6 +25,17 @@ relevant):
   here; ask before redistributing outside this context, same as the rest of
   this repo's OWASP-sourced material (see root `README.md`
   "Source & Attribution").
+- **Adapted from:**
+  [`github.com/OWASP/www-project-artificial-intelligence-vulnerability-scoring-system`](https://github.com/OWASP/www-project-artificial-intelligence-vulnerability-scoring-system)
+  and [`aivss.owasp.org/assets/publications/AIVSS Scoring System For OWASP Agentic AI Core Security Risks v0.8.pdf`](https://aivss.owasp.org/assets/publications/AIVSS%20Scoring%20System%20For%20OWASP%20Agentic%20AI%20Core%20Security%20Risks%20v0.8.pdf) —
+  **this corresponds to v0.8 only.** If OWASP publishes a later version
+  (v0.9, v1.0, ...), everything in this folder needs re-pulling and
+  re-diffing against the new source; nothing here auto-updates.
+- **Modified/adapted using Claude Code (Sonnet 5)** — the vendoring,
+  organization into `docs/`, the formula-difference analysis, the
+  non-interactive test harness (`run_calculators_demo.py`), and this
+  documentation were all done via Claude Code; the calculator `.py`/`.md`/
+  `.html` files themselves are byte-for-byte copies, not modified.
 
 ## Reference documentation (`docs/`)
 
@@ -162,3 +173,45 @@ partway through its own summary-table step (one hardcoded scenario's score
 list has an extra entry) — all 10 scenarios' narrative output prints
 successfully before that; only the bonus summary table crashes. See "Known
 issue in the as-shipped test file" above.
+
+## Test run screenshots
+
+Real terminal captures of every run referenced above — actual commands,
+actual output, nothing staged. All in `test_screenshots/`.
+
+### V1 — deprecated
+
+![V1 calculator run](test_screenshots/01_run_calculators_demo_V1.png)
+
+### V2 — deprecated
+
+![V2 calculator run](test_screenshots/02_run_calculators_demo_V2.png)
+
+### V3 — full 9-metric formula
+
+![V3 calculator run](test_screenshots/03_run_calculators_demo_V3.png)
+
+### V4 — OWASP's own official demo suite (`test_aivss_calculatorV4.py`)
+
+**Scenarios 1–3** (cross-industry comparison, sub-category hidden-risk
+demo, severity-progression stress test):
+
+![V4 official scenarios 1 to 3](test_screenshots/04_official_V4_test_scenarios_1to3.png)
+
+**Scenarios 4–6** (Financial biased credit scoring, Healthcare PHI breach,
+Critical Infrastructure grid attack):
+
+![V4 official scenarios 4 to 6](test_screenshots/05_official_V4_test_scenarios_4to6.png)
+
+**Scenarios 7–9** (Automotive AV evasion, Legal/Justice predictive-policing
+bias, Government benefits-fraud failure):
+
+![V4 official scenarios 7 to 9](test_screenshots/06_official_V4_test_scenarios_7to9.png)
+
+**Scenario 10 (V4 vs. V3 comparison) + the upstream summary-table bug**,
+reproduced as-shipped — file paths in the traceback are shown relative
+(`test_aivss_calculatorV4.py`), not the actual local machine path used to
+run it, since the absolute path is specific to whoever runs it and isn't
+meaningful content:
+
+![V4 official scenario 10 and bug](test_screenshots/07_official_V4_test_scenario10_and_bug.png)

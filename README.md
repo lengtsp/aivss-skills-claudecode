@@ -345,13 +345,22 @@ re-verified programmatically: `SPEC_VERSION`, `SPEC_PUBLISHED_DATE`,
 `SPEC_SOURCE_FILENAME`, `SPEC_SOURCE_URL` in `example AVISS/aivss_spec_provenance.py`,
 surfaced live via the `aivss_spec_provenance_report` MCP tool.
 
-Separately, `example AVISS/owasp_general_aivss_framework/` vendors OWASP's
-own reference calculators from
-[`OWASP/www-project-artificial-intelligence-vulnerability-scoring-system`](https://github.com/OWASP/www-project-artificial-intelligence-vulnerability-scoring-system)
-(commit `62fb0be`, 2026-04-10 — the same push that released the v0.8 PDF).
-**These implement a different, more general AIVSS methodology than the
+Separately, `example AVISS/owasp_general_aivss_framework/` vendors and
+adapts material from two official OWASP sources:
+
+- [`github.com/OWASP/www-project-artificial-intelligence-vulnerability-scoring-system`](https://github.com/OWASP/www-project-artificial-intelligence-vulnerability-scoring-system)
+  (commit `62fb0be`, 2026-04-10)
+- [`aivss.owasp.org/assets/publications/AIVSS Scoring System For OWASP Agentic AI Core Security Risks v0.8.pdf`](https://aivss.owasp.org/assets/publications/AIVSS%20Scoring%20System%20For%20OWASP%20Agentic%20AI%20Core%20Security%20Risks%20v0.8.pdf)
+
+**This corresponds to v0.8 only** — re-verify against the source before
+assuming anything here still applies once OWASP publishes a later version.
+Vendoring, organization, the formula-difference analysis, the
+non-interactive test harness, and the accompanying documentation and test
+screenshots were done using **Claude Code (Sonnet 5)**; the calculator
+`.py`/`.md`/`.html` files themselves are unmodified copies. **These
+calculators implement a different, more general AIVSS methodology than the
 Agentic Core Risks formula this repo uses** — see that folder's own README
-for the full explanation, a side-by-side formula comparison, and results
+for the full explanation, a side-by-side formula comparison, and screenshots
 from actually running all 4 official calculator versions (a genuine finding:
 every version compresses scores toward the low end of the scale, even on
 deliberately worst-case/Critical inputs).
