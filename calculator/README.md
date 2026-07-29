@@ -43,9 +43,9 @@ official worked examples (Sections 3.6.1–3.6.10) — the same 10 scenarios
 `test_aivss_owasp_calculator_cross_validation.py` uses — so every input can
 be reproduced with one click instead of typed by hand.
 
-## Running it
+## Quick start — launch the service, then run an example calculation
 
-**Static HTML version:**
+### Option A: static HTML version
 
 ```bash
 cd calculator
@@ -57,13 +57,30 @@ python3 -m http.server 8000
 some sandboxed environments, including the one used to test this, block
 `file://` navigation, hence the http.server instruction.)
 
-**Streamlit version** (calls the real Python formula):
+![starting the static HTML service](test_screenshots/10_howto_start_html_service.png)
+
+Once it's open, pick a scenario from **"Load a scenario"** (or enter values
+by hand) and the score appears immediately — no submit button needed beyond
+the initial "Calculate" click. Example: scenario 1 (Agentic AI Tool Misuse)
+scores **9.9 — Critical**:
+
+![example calculation result, static HTML](test_screenshots/02_calculator_scenario1_result.png)
+
+### Option B: Streamlit version (calls the real Python formula)
 
 ```bash
 cd calculator
 pip install streamlit   # not otherwise required by this repo
 streamlit run streamlit_app.py
 ```
+
+![starting the Streamlit service](test_screenshots/11_howto_start_streamlit_service.png)
+
+Streamlit re-runs on every input change automatically. Same scenario 1,
+same result — this time computed by the actual `aivss_kg.calculate_aivss()`
+call, with its raw return value shown in the expandable JSON block:
+
+![example calculation result, Streamlit](test_screenshots/09_streamlit_scenario1_result.png)
 
 ## Tested — automated, and against both reference tools live
 
@@ -183,5 +200,7 @@ calculator/
     ├── 06_ssvc_reference_page.png               # aivss.owasp.org/ssvc.html, live
     ├── 07_streamlit_blank.png
     ├── 08_streamlit_scenario1_inputs.png
-    └── 09_streamlit_scenario1_result.png        # raw calculate_aivss() JSON output
+    ├── 09_streamlit_scenario1_result.png        # raw calculate_aivss() JSON output
+    ├── 10_howto_start_html_service.png          # real terminal: launching index.html's server
+    └── 11_howto_start_streamlit_service.png     # real terminal: launching streamlit_app.py
 ```
