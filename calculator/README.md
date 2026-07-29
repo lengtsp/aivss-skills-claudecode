@@ -3,9 +3,11 @@
 Two ways to run this repo's `aivss_kg.calculate_aivss()` formula as a web
 page:
 
-1. **`index.html`** — a self-contained static page, zero dependencies. The
-   formula is **reimplemented in JavaScript** (has to be, since a static
-   page can't import Python) — kept in sync by hand.
+1. **`index.html`** — a self-contained static page, styled with
+   **[Bootstrap 5](https://getbootstrap.com/)** (loaded from `cdn.jsdelivr.net`,
+   no npm/build step — still just open the file/serve it). The formula is
+   **reimplemented in JavaScript** (has to be, since a static page can't
+   import Python) — kept in sync by hand.
 2. **`streamlit_app.py`** — a Streamlit app that **imports and calls the
    real `aivss_kg.calculate_aivss()` function directly**. No formula is
    reimplemented; if `aivss_kg.py` ever changes, this app's output changes
@@ -83,6 +85,14 @@ call, with its raw return value shown in the expandable JSON block:
 ![example calculation result, Streamlit](test_screenshots/09_streamlit_scenario1_result.png)
 
 ## Tested — automated, and against both reference tools live
+
+**Note on `index.html`'s CSS refactor (Bootstrap 5):** switching from
+hand-written CSS to Bootstrap changed markup/classes but not the
+`calculate()` JavaScript logic. Re-ran the full 10-scenario automated check
+and both manual-UI custom-input tests below after the refactor — all still
+pass, and all screenshots involving `index.html` were recaptured to show
+the current styling (screenshots 04–06, 07–09, 10, 11, 14, 15 are unrelated
+to `index.html`'s CSS and unchanged).
 
 **1. All 10 official scenarios, automated (Playwright), against this
 repo's own `calculate_aivss()` output:**
