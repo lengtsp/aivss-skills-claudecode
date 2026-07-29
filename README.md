@@ -175,7 +175,9 @@ levels ... then draft the rationale for it.
   match), plus a review of
   [aivss.owasp.org/ssvc.html](https://aivss.owasp.org/ssvc.html) confirming
   it's a genuinely different, non-comparable tool (categorical decision
-  outcome, not a 0–10 score) — see `calculator/README.md`.
+  outcome, not a 0–10 score). `calculator/README.md`'s "Quick start" section
+  has real terminal captures for launching each service plus a matching
+  example-calculation screenshot for both — 11 screenshots total.
 - All of the above re-verified standalone from a clean checkout of this
   exact repo layout before publishing.
 - **Live, end-to-end screenshots** of 7 distinct **agentic AI** cases (each
