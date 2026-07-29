@@ -4,10 +4,15 @@ Two ways to run this repo's `aivss_kg.calculate_aivss()` formula as a web
 page:
 
 1. **`index.html`** — a self-contained static page, styled with
-   **[Bootstrap 5](https://getbootstrap.com/)** (loaded from `cdn.jsdelivr.net`,
-   no npm/build step — still just open the file/serve it). The formula is
-   **reimplemented in JavaScript** (has to be, since a static page can't
-   import Python) — kept in sync by hand.
+   **[Bootstrap 5](https://getbootstrap.com/)** + **Bootstrap Icons**
+   (loaded from `cdn.jsdelivr.net`, no npm/build step — still just open the
+   file/serve it). Two-column dashboard layout (inputs left, a sticky
+   results panel on the right with a colored score ring, like the
+   community reference calculator), custom gradient branding on top of
+   Bootstrap's dark theme, and **live recalculation on every input change**
+   — no button, no submit, matching the reference site's "updates in
+   real-time" behavior. The formula is **reimplemented in JavaScript** (has
+   to be, since a static page can't import Python) — kept in sync by hand.
 2. **`streamlit_app.py`** — a Streamlit app that **imports and calls the
    real `aivss_kg.calculate_aivss()` function directly**. No formula is
    reimplemented; if `aivss_kg.py` ever changes, this app's output changes
@@ -62,8 +67,8 @@ some sandboxed environments, including the one used to test this, block
 ![starting the static HTML service](test_screenshots/10_howto_start_html_service.png)
 
 Once it's open, pick a scenario from **"Load a scenario"** (or enter values
-by hand) and the score appears immediately — no submit button needed beyond
-the initial "Calculate" click. Example: scenario 1 (Agentic AI Tool Misuse)
+by hand) and the score recalculates immediately in the sticky right-hand
+panel — no button, no page reload. Example: scenario 1 (Agentic AI Tool Misuse)
 scores **9.9 — Critical**:
 
 ![example calculation result, static HTML](test_screenshots/02_calculator_scenario1_result.png)
@@ -86,13 +91,18 @@ call, with its raw return value shown in the expandable JSON block:
 
 ## Tested — automated, and against both reference tools live
 
-**Note on `index.html`'s CSS refactor (Bootstrap 5):** switching from
-hand-written CSS to Bootstrap changed markup/classes but not the
-`calculate()` JavaScript logic. Re-ran the full 10-scenario automated check
-and both manual-UI custom-input tests below after the refactor — all still
-pass, and all screenshots involving `index.html` were recaptured to show
-the current styling (screenshots 04–06, 07–09, 10, 11, 14, 15 are unrelated
-to `index.html`'s CSS and unchanged).
+**Note on `index.html`'s visual redesign (Bootstrap 5 + Bootstrap Icons):**
+went through two passes — first swapping hand-written CSS for stock
+Bootstrap classes, then a further redesign (two-column dashboard layout
+with a sticky results panel and colored score ring, gradient branding,
+icons, live recalculation on every input change instead of a
+"Calculate" button) after feedback that a plain Bootstrap swap alone didn't
+look meaningfully more polished. Neither pass touched the `calculate()`
+JavaScript logic. Re-ran the full 10-scenario automated check and both
+manual-UI custom-input tests below after each pass — all still pass, and
+all screenshots involving `index.html` were recaptured to show the current
+design (screenshots 04–06, 07–09, 10, 11, 14, 15 are unrelated to
+`index.html`'s styling and unchanged).
 
 **1. All 10 official scenarios, automated (Playwright), against this
 repo's own `calculate_aivss()` output:**
@@ -227,10 +237,10 @@ concluded (see the root README's "Verified correctness" and
 **4. Manual UI interaction on `index.html`'s "custom input" path** — every
 test above used the "Load a scenario" shortcut, which sets all fields via
 one dropdown change. This one instead drove the actual form controls one at
-a time (click the CVSS input, type a value, select each of the 10 factor
-dropdowns, select ThM and Mitigation, click "Calculate AIVSS Score") to
-exercise the manual-entry path the shortcut never touches, using two new
-scenarios not in the official 10:
+a time (fill the CVSS input, select each of the 10 factor dropdowns, select
+ThM and Mitigation — the result updates live after each change, no button
+to click) to exercise the manual-entry path the shortcut never touches,
+using two new scenarios not in the official 10:
 
 | Case | Inputs | This page | Real `calculate_aivss()` | Match |
 |---|---|---|---|---|
