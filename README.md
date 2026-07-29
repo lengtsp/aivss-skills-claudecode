@@ -197,6 +197,36 @@ levels ... then draft the rationale for it.
   Surfaced one real limitation along the way: `aivss_classify_banking_system`
   is English-keyword-only and fails closed to `null` on Thai-language input.
 
+## Calculator — a web UI wrapping the real Python formula
+
+`calculator/streamlit_app.py` puts a web UI directly on top of this repo's
+own `aivss_kg.calculate_aivss()` — it **imports and calls the real Python
+function**, not a JavaScript reimplementation, so the UI can never drift
+from the actual scoring code.
+
+Starting it:
+
+![starting the Streamlit service](calculator/test_screenshots/11_howto_start_streamlit_service.png)
+
+The form (10 factor sliders, CVSS base, Threat Multiplier, Mitigation
+Factor, plus a "Load a scenario" shortcut for all 10 official v0.8 worked
+examples):
+
+![Streamlit calculator UI](calculator/test_screenshots/08_streamlit_scenario1_inputs.png)
+
+Tested — result for scenario 1 (Agentic AI Tool Misuse), with the raw
+`calculate_aivss()` return value shown directly in the expandable JSON
+block (`aivss: 9.9`, `severity: "Critical"`, matching the official worked
+example exactly):
+
+![Streamlit calculator result](calculator/test_screenshots/09_streamlit_scenario1_result.png)
+
+Also tested against custom, non-official inputs and a boundary edge case
+(CVSS 0.0, all factors 0 → 0.0 "None") via real UI clicks rather than the
+scenario shortcut — see `calculator/README.md` for the full test log,
+comparison against the JS-only `index.html` version, and the live
+comparison against [aivss.parthsohaney.online](https://aivss.parthsohaney.online/).
+
 ## Screenshots
 
 **AIVSS scores agentic AI systems specifically** — AI that acts
