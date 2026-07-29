@@ -1,16 +1,24 @@
-# Live test evidence — MCP tools exercised from fresh Claude Code sessions
+# Live test evidence — AIVSS assessed against real *agentic AI* cases
 
-Every screenshot below is a real terminal capture, rendered from the actual
-command run and the actual model output — nothing here is staged or
-hand-written. Each test was run against a **brand-new `git clone`** of this
-repository (not the original authoring project) using **non-interactive,
-newly-started Claude Code sessions** (`claude -p ... --mcp-config .mcp.json`),
-to prove the packaging works for someone who has never touched this project
-before: clone → `pip install -r requirements.txt` → open Claude Code → the
-14 `aivss_*` tools are just there.
+**AIVSS scores agentic AI systems specifically** — AI systems that act
+autonomously, call tools, hold memory/context, or orchestrate other agents —
+not general-purpose ML models or classifiers. Every scenario below was
+deliberately chosen because it names a concrete **autonomous action** the AI
+agent takes on its own (approve, disburse, freeze, trade, isolate a host,
+inherit a role, ...), so the AIVSS risk taxonomy (Tool Misuse, Access
+Control Violation, Goal & Instruction Manipulation, Cascading Failures, ...)
+has something real to attach to. This gallery previously included two
+tool-mechanics screenshots (a bare spec-search/scoring drill with no named
+agent, and a catalog-provenance/drift check) that weren't scenario-driven —
+those were removed so every image here maps to an actual autonomous-agent
+case, not a generic "any AI" test.
 
-Together these 11 screenshots exercise **all 14 MCP tools**, organized by the
-same module categories as the main [README.md](../../README.md).
+Every screenshot is a real terminal capture — the actual command run and the
+actual model output, nothing staged or hand-written. Each test ran against a
+**brand-new `git clone`** of this repository (not the original authoring
+project) using **non-interactive, newly-started Claude Code sessions**
+(`claude -p ... --mcp-config .mcp.json`), to prove the packaging works for
+someone who has never touched this project before.
 
 ## Setup
 
@@ -23,173 +31,147 @@ requirements.txt`. No manual MCP registration step needed — the project-scoped
 `.mcp.json` is picked up automatically when Claude Code opens in this
 directory.
 
-## Smoke tests (first two fresh sessions)
+## Agentic AI case 1 — KYC Onboarding Chatbot (autonomous approval)
 
 ### 02 — `aivss_intake_and_triage`
 
-![intake and triage](02_session_intake_triage.png)
+![agentic case 1 KYC onboarding chatbot](02_agentic_case_kyc_onboarding_chatbot.png)
 
-First brand-new session after cloning. The agent lists all 14 discovered
-`aivss_*` tools unprompted, then scopes and triages a **KYC Onboarding
-Chatbot** — correctly surfaces Access Control Violation, Cascading Failures,
-and Critical Systems Interaction as top risks (all flagged `needs_scoping`,
-since the input intentionally left factor levels unset).
+Autonomous action: the chatbot **approves** low-risk onboarding **on its
+own, with no human review**. First brand-new session after cloning — the
+agent lists all 14 discovered `aivss_*` tools unprompted, then triages the
+system and correctly surfaces Access Control Violation, Cascading Failures,
+and Critical Systems Interaction as top risks.
 
-### 03 — `aivss_search_spec` + `aivss_score_finding`
+## Agentic AI case 2 (Thai) — Trade Finance L/C Auto-Disbursement Agent
 
-![search spec and score finding](03_session_search_score.png)
+### 03 — `aivss_intake_and_triage` → `aivss_generate_questionnaire` → `aivss_score_finding` → `aivss_assemble_audit_deliverable`
 
-Second fresh session. Full-text search over the OCR'd spec finds the right
-page for "prompt injection" (page 9), then scores a finding end-to-end
-(CVSS 7.5 → **AIVSS 8.7**), matching the documented formula exactly. The
-agent's own first attempt used wrong factor-key names — the tool rejected it
-and the agent self-corrected, which is the fail-closed validation working as
-intended, not a bug.
+![agentic case 2 trade finance auto-disbursement](03_agentic_case_trade_finance_autodisbursement_thai.png)
 
-## Category A — Full assessment chain (4 tools)
-
-### 04 — `aivss_intake_and_triage` → `aivss_generate_questionnaire` → `aivss_score_finding` → `aivss_assemble_audit_deliverable`
-
-![category A full assessment chain](04_category_A_full_assessment_chain.png)
-
-Scenario sent in **Thai**: an Internal Auditor reviewing a Trade Finance
-Letter-of-Credit verification + auto-disbursement agent. Runs the entire
-audit chain in one session: scope → triage (10 risks) → questionnaire for
-the top 2 → score a real finding (forged L/C document via prompt injection,
-**AIVSS 9.4 Critical**) → assemble into one deliverable.
+Autonomous action: the agent verifies Letter-of-Credit documents against
+UCP 600 and **disburses funds on its own**, no human in the loop. Scenario
+sent entirely in **Thai**. Runs the full audit chain in one session: scope
+→ triage (10 risks) → questionnaire for the top 2 → score a real finding
+(forged L/C document via prompt injection, **AIVSS 9.4 Critical**) →
+assemble into one deliverable.
 
 **Finding from this test:** the agent first tried a free-text `output_id`
 (`'trade_finance_audit'`); the tool rejected it because `output_id` is a
-fixed enum (`risk_assessment` / `control_crosswalk` / `audit_program` /
-`assurance_assessment` / `gap_action_plan`), and the agent correctly
-substituted `audit_program`. Fail-closed validation caught bad input instead
-of silently accepting it.
+fixed enum, and the agent correctly substituted `audit_program`. Fail-closed
+validation caught bad input instead of silently accepting it.
 
-## Category B — Banking-system archetype classification (1 tool)
+## Agentic AI case 3 — AML / Fraud Auto-Freeze Monitoring Agent
 
-### 05 — `aivss_classify_banking_system`
+### 04 — `aivss_classify_banking_system`
 
-![category B banking taxonomy](05_category_B_banking_taxonomy.png)
+![agentic case 3 AML fraud auto-freeze](04_agentic_case_aml_fraud_autofreeze.png)
 
-Scenario sent in **Thai**: a natural-language description of an AML/fraud
-transaction-monitoring system with automatic account freezing.
+Autonomous action: the agent scores transactions and **freezes accounts /
+blocks transactions on its own**, no analyst review. Scenario sent in
+**Thai**.
 
 **Finding from this test (a real limitation, not staged):** the Thai-language
 input returned `null` — no archetype matched. `classify_banking_system` is a
 plain English-keyword classifier; it only matched once the agent rephrased
-the same scenario in English keywords (`"AML transaction monitoring system
-with automated account freezing..."`), landing correctly on
-`fraud_transaction_monitoring`. If Thai-speaking users will call this tool
-directly (rather than through an LLM that rephrases first), this is worth
-fixing — see `aivss_banking_taxonomy.py`'s keyword lists.
+the same scenario in English keywords, landing correctly on
+`fraud_transaction_monitoring`. Worth fixing if Thai-speaking users will call
+this tool directly rather than through an LLM that rephrases first.
 
-## Category C — Spec grounding: citation + provenance (2 tools)
+## Agentic AI case 4 — AI Treasury Dealing Assistant
 
-### 06 — `aivss_cite_spec_reference` → `aivss_spec_provenance_report`
+### 05 — `aivss_design_review`
 
-![category C spec grounding and provenance](06_category_C_spec_grounding_provenance.png)
+![agentic case 4 AI treasury dealing assistant](05_agentic_case_ai_treasury_dealing_assistant.png)
 
-Cites real spec pages for `tool_misuse` (page 5 severity ordering, page 8
-Figure 1 diagram), then runs the full provenance/drift report — confirms
-`SPEC_VERSION = v0.8`, `page_count_drift: false`, and all 10 risks / 10
-factors verified against the OCR'd text. This also confirms the earlier PDF
-removal was safe: provenance checking only reads `text/page-NN.txt`, never
-the PDF file itself.
+Autonomous action: the agent calls MCP-connected trading tools and **fires
+FX/rate trade orders on its own**, straight from a trader's natural-language
+instruction, with no second-trader confirmation. Returns ranked design
+mitigations (grounded in the spec, not invented) plus the `narrative_prompt`
+field shown verbatim.
 
-## Category D — Proactive design review (1 tool)
+## Agentic AI case 5 — Autonomous SOAR/EDR Incident-Response Agent
 
-### 07 — `aivss_design_review`
+### 06 — `aivss_triage_threat_alert`
 
-![category D design review](07_category_D_design_review.png)
+![agentic case 5 SOAR EDR incident response](06_agentic_case_soar_edr_incident_response.png)
 
-Scenario: an **AI Treasury Dealing Assistant** — an autonomous FX/rate
-trading agent that calls MCP-connected trading tools and fires orders from
-natural-language instructions with no second-trader confirmation. Returns
-ranked design mitigations (grounded in the spec, not invented) plus the
-`narrative_prompt` field shown verbatim — the scaffold that tells a
-downstream LLM how to narrate over the grounded facts without inventing new
-ones.
+Autonomous action: a security agent that **isolates hosts / revokes
+credentials on its own** directly from alert text, no analyst approval.
+Deliberately **non-banking**, to check the taxonomy generalizes beyond the
+banking-oriented corpus. No confident keyword match, but the semantic
+fallback tier correctly surfaced `goal_instruction` / `cascading_failures` /
+`memory_context` at `possible` confidence. (A second call in the same
+session, sending an unrelated message with no agentic content at all,
+confirmed the tool still fails closed to `null` rather than forcing a
+match — omitted from this screenshot since it isn't itself an agentic-AI
+case, but the behavior held.)
 
-## Category E — Threat-intel alert triage (1 tool, 2 calls)
+## Agentic AI case 6 — Agent That Inherited an Admin Role
 
-### 08 — `aivss_triage_threat_alert`
+### 07 — `aivss_draft_finding_rationale`, `aivss_related_risks`, `aivss_find_blind_spot_risks`, `aivss_graph_export`
 
-![category E threat intel triage](08_category_E_threat_intel_triage.png)
+![agentic case 6 access control finding and knowledge graph](07_agentic_case_access_control_finding_and_kg.png)
 
-Two calls in one session: (1) a **non-banking** SOAR/EDR log-injection alert
-— deliberately outside the banking-oriented corpus, to check generalization.
-No confident keyword match, but the semantic fallback tier correctly
-surfaced `goal_instruction` / `cascading_failures` / `memory_context` at
-`possible` confidence. (2) an unrelated control message ("my cat likes to
-sleep on the couch") — correctly returned `null`, confirming fail-closed
-behavior holds even under the weaker semantic tier.
+Autonomous action: an agent **inherited an admin service-account role and
+could approve its own permission changes** — a real access-control failure
+mode of autonomous agents, not a generic IAM bug report. `draft_finding_rationale`
+correctly flags `evidence_gap: true` even with `org_controls` supplied — a
+bare list of control names isn't verified evidence. `related_risks` and
+`find_blind_spot_risks` both surface `supply_chain` as structurally
+entangled with `access_control` + `tool_misuse`, and `graph_export` returns
+a 12-node/17-relation one-hop subgraph.
 
-## Category F — Finding rationale + knowledge graph (4 tools)
+## Agentic AI case 7 — Same Credit Scoring & Loan Underwriting Agent, Thai vs. English
 
-### 09 — `aivss_draft_finding_rationale`, `aivss_related_risks`, `aivss_find_blind_spot_risks`, `aivss_graph_export`
+Autonomous action: the agent **auto-approves/rejects loans up to THB
+500,000 on its own**, no loan-officer review — run through
+`aivss_intake_and_triage` → `aivss_score_finding` in two independent fresh
+sessions, one entirely in Thai and one entirely in English, to check the
+skill set behaves consistently regardless of the caller's language.
 
-![category F rationale and knowledge graph](09_category_F_rationale_and_knowledge_graph.png)
+### 08 — Thai
 
-Scenario: an `access_control` finding (an agent inherited an admin
-service-account role). `draft_finding_rationale` correctly flags
-`evidence_gap: true` even though `org_controls` were supplied — a bare list
-of control *names* isn't verified evidence, so the tool doesn't assume
-they're effective. `related_risks` and `find_blind_spot_risks` both surface
-`supply_chain` as structurally entangled with `access_control` +
-`tool_misuse` (weight 7), and `graph_export` returns a 12-node/17-relation
-one-hop subgraph — all computed from the same taxonomy data, not invented
-per call.
+![agentic case 7 thai credit scoring agent](08_agentic_case_credit_scoring_agent_thai.png)
 
-## Category G — Same banking scenario, Thai vs. English (2 tools, 2 fresh sessions)
+### 09 — English (same scenario)
 
-Two independent fresh sessions given **the identical scenario** — an *AI
-Credit Scoring & Loan Underwriting Agent* that reads income documents +
-credit-bureau reports and auto-approves/rejects loans up to THB 500,000 with
-no loan-officer review — one phrased entirely in **Thai**, the other in
-**English**, to check the skill set behaves consistently regardless of the
-caller's language.
-
-### 10 — Thai: `aivss_intake_and_triage` → `aivss_score_finding`
-
-![category G banking scenario in Thai](10_category_G_banking_thai.png)
-
-### 11 — English: `aivss_intake_and_triage` → `aivss_score_finding` (same scenario)
-
-![category G banking scenario in English](11_category_G_banking_english.png)
+![agentic case 7 english credit scoring agent](09_agentic_case_credit_scoring_agent_english.png)
 
 **Both sessions agree on the substance:** `tool_misuse` triages as
-`applicability: high` immediately in both languages (same seeded
-`autonomy=1`/`tools=1`/`language=1`), and the same finding — a forged salary
-slip bypassing verification because the model doesn't check file metadata —
-scores **8.3 High (Thai session)** vs. **8.4 High (English session)**. The
-small numeric difference comes from the calling agent choosing slightly
-different-but-reasonable `factor_levels` each time (Factor Sum 4.0 vs. 4.5),
-not from any language-dependent behavior in the deterministic scoring tool
-itself — `aivss_score_finding` computes the same formula either way once
-given factor levels. This is a genuinely different result from Category B's
-`aivss_classify_banking_system`, which is a free-text keyword classifier and
-*does* fail on Thai input — the distinction is that the structured tools
-(intake/triage/scoring) are language-agnostic by design, while the one
-free-text classifier tool is not.
+`applicability: high` immediately in both languages, and the same finding —
+a forged salary slip bypassing verification because the model doesn't check
+file metadata — scores **8.3 High (Thai)** vs. **8.4 High (English)**. The
+small numeric difference comes from the calling agent choosing
+slightly-different-but-reasonable `factor_levels` each time, not from any
+language-dependent behavior in the deterministic scoring tool itself. This
+is a genuinely different result from case 3's `aivss_classify_banking_system`,
+which is a free-text keyword classifier and *does* fail on Thai input — the
+structured tools (intake/triage/scoring) are language-agnostic by design,
+while that one free-text classifier tool is not.
 
 ## Summary
 
 | Tool | Screenshot | Result |
 |---|---|---|
-| `aivss_intake_and_triage` | 02, 04, 10, 11 | ✅ (consistent across Thai and English callers) |
-| `aivss_generate_questionnaire` | 04 | ✅ |
-| `aivss_score_finding` | 03, 04, 10, 11 | ✅ (Thai session 8.3 High vs. English session 8.4 High — same scenario, same substance) |
-| `aivss_assemble_audit_deliverable` | 04 | ✅ (caught invalid `output_id`, self-corrected) |
-| `aivss_classify_banking_system` | 05 | ⚠️ works, but Thai input fails closed to `null` — English-keyword only |
-| `aivss_search_spec` | 03 | ✅ |
-| `aivss_cite_spec_reference` | 06 | ✅ |
-| `aivss_design_review` | 07 | ✅ |
-| `aivss_triage_threat_alert` | 08 | ✅ (generalizes to non-banking via semantic fallback) |
-| `aivss_draft_finding_rationale` | 09 | ✅ |
-| `aivss_spec_provenance_report` | 06 | ✅ |
-| `aivss_related_risks` | 09 | ✅ |
-| `aivss_find_blind_spot_risks` | 09 | ✅ |
-| `aivss_graph_export` | 09 | ✅ |
+| `aivss_intake_and_triage` | 02, 03, 08, 09 | ✅ (consistent across Thai and English callers) |
+| `aivss_generate_questionnaire` | 03 | ✅ |
+| `aivss_score_finding` | 03, 08, 09 | ✅ (Thai session 8.3 High vs. English session 8.4 High — same scenario, same substance) |
+| `aivss_assemble_audit_deliverable` | 03 | ✅ (caught invalid `output_id`, self-corrected) |
+| `aivss_classify_banking_system` | 04 | ⚠️ works, but Thai input fails closed to `null` — English-keyword only |
+| `aivss_design_review` | 05 | ✅ |
+| `aivss_triage_threat_alert` | 06 | ✅ (generalizes to non-banking via semantic fallback) |
+| `aivss_draft_finding_rationale` | 07 | ✅ |
+| `aivss_related_risks` | 07 | ✅ |
+| `aivss_find_blind_spot_risks` | 07 | ✅ |
+| `aivss_graph_export` | 07 | ✅ |
+| `aivss_search_spec` | — | ✅ covered by the automated test suite (`test_aivss_spec_search.py`, 7/7) and used internally by `aivss_design_review`; not shown as its own agentic-case screenshot since it's a grounding utility, not an agent scenario |
+| `aivss_cite_spec_reference` | — | ✅ same as above (used internally by `aivss_design_review`'s citations, `test_aivss_spec_search.py`) |
+| `aivss_spec_provenance_report` | — | ✅ covered by `test_aivss_spec_provenance.py` (6/6); this tool checks the catalog's own integrity against the spec, not an agentic AI system, so it doesn't fit this case-driven gallery |
 
-**14/14 tools exercised, 13/14 clean, 1 documented limitation** (Thai-language
-input to `aivss_classify_banking_system`).
+**11/14 tools have a dedicated agentic-AI-case screenshot; the remaining 3
+are catalog/grounding utilities (not themselves agent scenarios) verified by
+the automated test suite instead** — see the root
+[README.md](../../README.md#verified-correctness) for full test counts
+(88/88 unit tests, 17/17 real-protocol checks, 10/10 official OWASP
+calculator scenarios).

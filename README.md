@@ -166,9 +166,15 @@ levels ... then draft the rationale for it.
   — the scoring formula is independently verified, not just self-consistent.
 - All of the above re-verified standalone from a clean checkout of this
   exact repo layout before publishing.
-- **Live, end-to-end screenshots** of all 14 MCP tools called from
-  brand-new, non-interactive Claude Code sessions against a fresh
-  `git clone` (real commands, real model output, not staged) — see the
+- **Live, end-to-end screenshots** of 8 distinct **agentic AI** cases (each
+  naming a concrete autonomous action — auto-approve, auto-disburse,
+  auto-freeze, auto-trade, auto-isolate, ...), covering 11 of the 14 MCP
+  tools, called from brand-new, non-interactive Claude Code sessions against
+  a fresh `git clone` (real commands, real model output, not staged). The
+  remaining 3 tools (`aivss_search_spec`, `aivss_cite_spec_reference`,
+  `aivss_spec_provenance_report`) are catalog/grounding utilities rather than
+  agent-scenario tools, so they're verified by the automated test suite
+  instead of a case screenshot — see the
   [Screenshots](#screenshots) section below, or the full captioned gallery at
   [`example AVISS/mcp_test_screenshots/README.md`](example%20AVISS/mcp_test_screenshots/README.md).
   Surfaced one real limitation along the way: `aivss_classify_banking_system`
@@ -176,11 +182,17 @@ levels ... then draft the rationale for it.
 
 ## Screenshots
 
+**AIVSS scores agentic AI systems specifically** — AI that acts
+autonomously, calls tools, holds memory/context, or orchestrates other
+agents — not generic ML models or classifiers. Every screenshot below names
+a concrete autonomous action the AI agent takes on its own (approve,
+disburse, freeze, trade, isolate a host, ...), so the risk taxonomy has
+something real to attach to.
+
 Real terminal captures — actual commands, actual model output, run from a
 **fresh `git clone`** of this repo in **brand-new, non-interactive Claude
 Code sessions** (`claude -p ... --mcp-config .mcp.json`), not the original
-authoring session. Full captions and the complete 11-image gallery (all 14
-MCP tools) are in
+authoring session. Full captions and the complete 9-image gallery are in
 [`example AVISS/mcp_test_screenshots/README.md`](example%20AVISS/mcp_test_screenshots/README.md).
 
 **Fresh clone + setup** — `.mcp.json` auto-registers the server, no manual
@@ -188,39 +200,46 @@ MCP tools) are in
 
 ![fresh clone setup](example%20AVISS/mcp_test_screenshots/01_fresh_clone_setup.png)
 
-**Full assessment chain (4 tools)** — `aivss_intake_and_triage` →
-`aivss_generate_questionnaire` → `aivss_score_finding` →
-`aivss_assemble_audit_deliverable`, run in Thai against a Trade Finance
-auto-disbursement agent scenario:
+**Agentic case — Trade Finance L/C Auto-Disbursement Agent (4 tools, Thai)**
+— the agent verifies Letter-of-Credit documents against UCP 600 and
+**disburses funds on its own**, no human in the loop:
+`aivss_intake_and_triage` → `aivss_generate_questionnaire` →
+`aivss_score_finding` → `aivss_assemble_audit_deliverable`:
 
-![full assessment chain](example%20AVISS/mcp_test_screenshots/04_category_A_full_assessment_chain.png)
+![agentic case: trade finance auto-disbursement agent](example%20AVISS/mcp_test_screenshots/03_agentic_case_trade_finance_autodisbursement_thai.png)
 
-**Proactive design review** — `aivss_design_review` for an AI Treasury
-Dealing Assistant, including the `narrative_prompt` field shown verbatim:
+**Agentic case — AI Treasury Dealing Assistant** — the agent calls
+MCP-connected trading tools and **fires FX/rate trade orders on its own**,
+no second-trader confirmation: `aivss_design_review`, including the
+`narrative_prompt` field shown verbatim:
 
-![design review](example%20AVISS/mcp_test_screenshots/07_category_D_design_review.png)
+![agentic case: AI treasury dealing assistant](example%20AVISS/mcp_test_screenshots/05_agentic_case_ai_treasury_dealing_assistant.png)
 
-**Finding rationale + knowledge graph (4 tools)** — `aivss_draft_finding_rationale`,
-`aivss_related_risks`, `aivss_find_blind_spot_risks`, `aivss_graph_export`:
+**Agentic case — Agent That Inherited an Admin Role (4 tools)** — an agent
+that **could approve its own permission changes**:
+`aivss_draft_finding_rationale`, `aivss_related_risks`,
+`aivss_find_blind_spot_risks`, `aivss_graph_export`:
 
-![finding rationale and knowledge graph](example%20AVISS/mcp_test_screenshots/09_category_F_rationale_and_knowledge_graph.png)
+![agentic case: access control finding and knowledge graph](example%20AVISS/mcp_test_screenshots/07_agentic_case_access_control_finding_and_kg.png)
 
-**Same banking scenario in Thai vs. English** — an AI Credit Scoring & Loan
-Underwriting Agent (auto-approves loans up to THB 500,000, no officer
-review), run through `aivss_intake_and_triage` → `aivss_score_finding` in
-two independent fresh sessions, one entirely in Thai and one entirely in
-English. Both agree on substance: `tool_misuse` triages `high` in both, and
-the same forged-document finding scores **8.3 High (Thai)** vs. **8.4 High
-(English)** — the small gap is the calling agent's own factor-level choice,
-not language-dependent behavior in the deterministic scoring tool:
+**Same agentic case, Thai vs. English** — a Credit Scoring & Loan
+Underwriting Agent that **auto-approves/rejects loans up to THB 500,000 on
+its own**, no officer review — run through `aivss_intake_and_triage` →
+`aivss_score_finding` in two independent fresh sessions, one entirely in
+Thai and one entirely in English. Both agree on substance: `tool_misuse`
+triages `high` in both, and the same forged-document finding scores **8.3
+High (Thai)** vs. **8.4 High (English)** — the small gap is the calling
+agent's own factor-level choice, not language-dependent behavior in the
+deterministic scoring tool:
 
-![banking scenario in Thai](example%20AVISS/mcp_test_screenshots/10_category_G_banking_thai.png)
-![banking scenario in English](example%20AVISS/mcp_test_screenshots/11_category_G_banking_english.png)
+![agentic case in Thai](example%20AVISS/mcp_test_screenshots/08_agentic_case_credit_scoring_agent_thai.png)
+![agentic case in English](example%20AVISS/mcp_test_screenshots/09_agentic_case_credit_scoring_agent_english.png)
 
-See the [gallery](example%20AVISS/mcp_test_screenshots/README.md) for all 11
-screenshots (banking-taxonomy classification, spec citation/provenance,
-threat-intel triage, and the two initial smoke-test sessions), each with a
-caption explaining the scenario and result.
+See the [gallery](example%20AVISS/mcp_test_screenshots/README.md) for all 9
+screenshots — 8 distinct agentic AI cases plus setup — covering KYC
+onboarding, AML/fraud auto-freeze, an autonomous SOAR/EDR incident-response
+agent, and the two initial smoke-test sessions, each with a caption
+explaining the scenario and result.
 
 ## Scope & honesty notes
 
