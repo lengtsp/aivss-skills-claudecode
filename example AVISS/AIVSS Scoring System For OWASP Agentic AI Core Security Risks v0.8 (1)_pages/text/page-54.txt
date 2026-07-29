@@ -1,0 +1,37 @@
+<page_number>54</page_number>
+
+assessor can demonstrate effective, validated mitigations that materially reduce exploitability and/or impact.
+
+Rationale for Mitigation Factor floor of 0.67: The floor represents the judgment that no mitigation, however strong, can fully eliminate the residual risk contributed by agentic amplification factors. A floor of 0.67 (reflecting a maximum 33% score reduction for strong mitigations) reflects the operational reality that agentic systems introduce emergent and non-deterministic behaviors that validated mitigations cannot fully anticipate or suppress.
+
+This value is a provisional anchor established through framework design consensus and will be subject to empirical calibration as organisations apply AIVSS across real-world deployments and report mitigation effectiveness data to the project.
+
+Assessors should not interpret the floor as a permanent design constant, it is an initial reference value open to community review.
+
+
+3.5 Reporting the AIVSS Score
+
+AIVSS is reported as a single numeric score from 0.0 to 10.0 (rounded to the nearest tenth). Assessors may optionally record CVSS_Base, Factor_Sum, ThM, Mitigation_Factor, and AARS as supporting evidence, but these are inputs/intermediates, not the primary reported output.
+
+3.5.1 Rounding
+
+The final AIVSS score is produced by:
+1. Applying mitigation: AIVSS_raw = (CVSS_Base + AARS) * Mitigation_Factor
+2. Rounding: AIVSS = RoundHalfUp(AIVSS_raw, 1)
+
+Standard Rounding: Round half up.
+Example: 8.64 becomes 8.6.
+Example: 8.65 becomes 8.7.
+
+3.5.2 Severity Band Definitions and Uplift Interpretation
+
+AIVSS severity bands are defined as follows:
+- Critical: 9.0 – 10.0
+- High: 7.0 – 8.9
+- Medium: 4.0 – 6.9
+- Low: 0.1 – 3.9
+
+These thresholds are adopted from CVSS severity band conventions for cross-framework consistency. Practitioners integrating AIVSS outputs into CVSS-based vulnerability management workflows should note that AIVSS scores reflect amplified agentic risk and are not directly comparable to CVSS base scores. Interpreting large uplift values (high AARS relative to low CVSS_Base):
+When the AARS uplift significantly exceeds the CVSS_Base score (for example, a CVSS 2.1 producing an AIVSS 7.1) this pattern signals that the agentic deployment context is the primary risk driver, not the underlying technical vulnerability. The technical flaw, in isolation, is low severity whereas
+
+                                                                                                                              53

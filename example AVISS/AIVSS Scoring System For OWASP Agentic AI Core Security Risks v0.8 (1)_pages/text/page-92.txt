@@ -1,0 +1,44 @@
+<page_number>92</page_number>
+
+```json
+                "description": "Behavioral Non-Determinism: Variance in output/action."
+              },
+              "opacity": {
+                "$ref": "#/definitions/factorScore",
+                "description": "Opacity & Reflexivity: Lack of internal visibility/auditability."
+              },
+              "persistence": {
+                "$ref": "#/definitions/factorScore",
+                "description": "Persistent State Retention: Ability to retain memory across sessions."
+              },
+              "identity": {
+                "$ref": "#/definitions/factorScore",
+                "description": "Dynamic Identity: Ability to assume different roles/permissions at runtime."
+              },
+              "multi_agent": {
+                "$ref": "#/definitions/factorScore",
+                "description": "Multi-Agent Interactions: Coordination with other agents."
+              },
+              "self_mod": {
+                "$ref": "#/definitions/factorScore",
+                "description": "Self-Modification: Ability to alter code, prompts, or config."
+              }
+            }
+          },
+          "threat_multiplier": {
+            "type": "number",
+            "enum": [
+              0.50,
+              0.97,
+              1.00
+            ],
+            "default": 0.97,
+            "description": "ThM Value based on exploit maturity (Section 3.3.2). Default is 0.97 (PoC)."
+          },
+          "scores": {
+            "type": "object",
+            "required": [
+              "factor_sum",
+```
+
+                                                                                                                              91

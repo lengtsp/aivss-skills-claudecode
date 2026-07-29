@@ -1,0 +1,17 @@
+<page_number>1</page_number>
+
+REPORT                                                          AIVSS.OWASP.ORG
+
+AIVSS Scoring System For OWASP
+
+Agentic AI Core Security Risks v0.8
+
+[Graph / Diagram Details: Isometric blue grid/plane graphic, decorative]
+
+AIVSS
+AIUC-1
+OWASP AI EXCHANGE
+OWASP citizen development top 10
+
+JOINTLY PUBLISHED BY:
+OWASP AIVSS, AIUC-1, OWASP AI Exchange, & OWASP Citizen Development Top 10

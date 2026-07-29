@@ -1,0 +1,24 @@
+<page_number>14</page_number>
+
+- LLM Scope Violation and Exfiltration The "EchoLeak" vulnerability targeting Microsoft 365 Copilot provides an example of an "LLM Scope Violation," where an agent is manipulated into breaching its own access control boundaries. In this attack scenario, the agent processes an untrusted external input, such as a malicious email, which contains concealed instructions that hijack the model's decision-making logic. Acting as a "confused deputy," the agent is coerced into misusing its legitimate, high-level privileges to access confidential internal data (such as private chat history or sensitive documents) that the external attacker cannot reach directly. The agent then violates its data handling protocols to exfiltrate this trusted organizational information, effectively bypassing the intended isolation between low-trust external inputs and high-trust internal resources.
+
+References
+
+- Dark Reading (2025). "Memory Poisoning in Web3 AI Agents Leads to Data Leak." https://www.darkreading.com/attacks-breaches/web3-ai-agents-memory-poisoning
+- Invariant Labs. (2025, May 26). Critical vulnerability in GitHub MCP: Prompt injection enables cross-repository data exfiltration. https://invariantlabs.ai/blog/mcp-github-vulnerability
+- Noma Security. (2025, June). How an AI agent vulnerability in LangSmith could lead to stolen API keys and hijacked LLM responses. https://noma.security/blog/how-an-ai-agent-vulnerability-in-langsmith-could-lead-to-stolen-api-keys-and-hijacked-llm-responses/
+- Pillar Security. (2025). "New Vulnerability in GitHub Copilot: Memory-Based Data Leakage." https://pillar.security/blog/github-copilot-leak
+- Pillar Security. (2025, March 24). The security risks of Model Context Protocol (MCP). https://www.pillar.security/blog/the-security-risks-of-model-context-protocol-mcp
+- Wallarm Labs (2025). "How AI Agents and APIs Can Leak Sensitive Data." https://lab.wallarm.com/data-leaks-ai-agents
+- Operating Systems Reviews, Vol 22, #4,1988. The Confused Deputy (or why capabilities might have been invented) http://www.cap-lore.com/CapTheory/ConfusedDeputy.html
+- MCP Horror Stories: The GitHub Prompt Injection Data Heist https://www.docker.com/blog/mcp-horror-stories-github-prompt-injection/
+- Breaking down 'EchoLeak', the First Zero-Click AI Vulnerability Enabling Data Exfiltration from Microsoft 365 Copilot https://www.aim.security/aim-labs/aim-labs-echoleak-blogpost
+
+
+3. Agent Cascading Failures
+
+DESCRIPTION
+
+Agent Cascading Failures risks occur when a security compromise in one AI agent creates cascading effects across multiple systems and connected SaaS applications, expanding the impact beyond the point of compromise. This vulnerability is particularly concerning in interconnected agentic systems
+
+                                                                                                                              13

@@ -1,0 +1,44 @@
+<page_number>91</page_number>
+
+```json
+                "description": "The Technical Base Score (CVSS_Base) defined in Section 3.1."
+              }
+            }
+          },
+          "amplification_factors": {
+            "type": "object",
+            "description": "The 10 Risk Amplification Factors assessed per Section 2.3. Each must be 0.0, 0.5, or 1.0.",
+            "required": [
+              "autonomy",
+              "tools",
+              "language",
+              "context",
+              "non_determinism",
+              "opacity",
+              "persistence",
+              "identity",
+              "multi_agent",
+              "self_mod"
+            ],
+            "properties": {
+              "autonomy": {
+                "$ref": "#/definitions/factorScore",
+                "description": "Execution Autonomy: Ability to commit actions without human co-sign."
+              },
+              "tools": {
+                "$ref": "#/definitions/factorScore",
+                "description": "External Tool Control Surface: Breadth and privilege of external tools/APIs."
+              },
+              "language": {
+                "$ref": "#/definitions/factorScore",
+                "description": "Natural Language Interface: Reliance on NL for control logic."
+              },
+              "context": {
+                "$ref": "#/definitions/factorScore",
+                "description": "Contextual Awareness: Utilization of sensors/env state."
+              },
+              "non_determinism": {
+                "$ref": "#/definitions/factorScore",
+```
+
+                                                                                                                              90

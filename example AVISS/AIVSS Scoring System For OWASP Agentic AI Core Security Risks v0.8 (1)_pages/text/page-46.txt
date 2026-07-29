@@ -1,0 +1,31 @@
+<page_number>46</page_number>
+
+2.2 The 10 Risk Amplification Factors
+
+The following factors are listed in the exact order required for the calculation vector in Section 3.
+
+1. Execution Autonomy (Autonomy): The ability to execute actions without human verification.
+2. External Tool Control Surface (Tools): The breadth and privilege of external APIs/tools the agent can access.
+3. Natural Language Interface (Language): The reliance on unstructured natural language for goal formulation and instruction.
+4. Contextual Awareness (Context): The utilization of environmental sensors or broad data context to drive decisions.
+5. Behavioral Non-Determinism (Non-Determinism): The variance in output or action for identical inputs.
+6. Opacity & Reflexivity (Opacity): The lack of internal visibility or the ability to audit decision logic.
+7. Persistent State Retention (Persistence): The ability to retain memory or state across sessions.
+8. Dynamic Identity (Identity): The ability to assume different user roles or permissions at runtime.
+9. Multi-Agent Interactions (Multi-Agent): Coordination or dependencies on other autonomous agents.
+10. Self-Modification (Self-Mod): The ability to alter its own code, prompts, or tool configurations.
+
+2.3 Scoring Rubric
+
+Table 2 provides the specific definitions and rubric criteria required to assign a score of 0.0, 0.5, or 1.0 to each of the ten factors analyzed in the model.
+
+We can use the rubric defined in Table 2 to assign the values required for step 2 of the calculation in Section 3.3.1.
+
+Table 2 (partial — continues on next page):
+
+| Factor | Operational Definition | Scoring: 0.0 (None) | Scoring: 0.5 (Partial) | Scoring: 1.0 (Full) |
+|---|---|---|---|---|
+| 1. Autonomy | Can the agent commit actions without human co-sign? | No autonomous commits; human always in loop. | Autonomous in non-critical / sandbox paths only. | Autonomous commits in production or critical systems. |
+| 2. Tools | Breadth and privilege level of external tools/API. | Read-only tools or no external access. | Mixed read/write, but heavily scoped/allowlisted. | Broad, high-authority tools (Cloud, CI/CD, SQL, OT). |
+
+                                                                                                                              45

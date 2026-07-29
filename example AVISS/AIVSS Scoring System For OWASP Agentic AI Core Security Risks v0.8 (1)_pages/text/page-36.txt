@@ -1,0 +1,16 @@
+<page_number>36</page_number>
+
+- Plugin Compromise: Attackers target a commonly used agent plugin, modifying it to exfiltrate sensitive data while maintaining normal functionality, affecting agents across multiple organizations.
+- Pipeline Code Injection: By breaching the deployment pipeline, attackers inject unauthorized code or instructions into agents during the build process, compromising the integrity of agents across multiple systems.
+- Malicious MCP Honeypot: A Model Context Protocol (MCP) server is offered for free to attract users. While providing legitimate third-party interactions, it secretly scrapes data, profiles actors, and injects prompt modifications to influence agent behavior.
+- Development Environment Compromise: Attackers infiltrate a developer's IDE extension used for agent scaffolding. The extension injects silent monitoring scripts into every new agent codebase created, allowing the attacker to steal API keys and secrets from the development environment.
+- Container Registry Poisoning: An attacker gains write access to an organization's private container registry. They replace the "latest" tag of a core agent image with a modified version containing a rootkit, causing the automated deployment system to roll out the compromised agent to production clusters.
+- Vulnerable Library Exploitation: An agent relies on an outdated PDF parsing library to process user documents. Attackers upload a specially crafted PDF that triggers a known remote code execution (RCE) vulnerability in the library, allowing them to break out of the agent's sandboxed process.
+- Upstream API Manipulation: A logistics agent relies on a third-party weather API to route shipments. Attackers compromise the weather service to report false storm warnings, forcing the agent to reroute high-value cargo through a specific physical location where a theft is planned.
+- Transitive Dependency Attack: Attackers compromise a niche, low-level JSON serialization library used by a popular agent framework. Although the framework itself is secure, the updated dependency introduces a deserialization flaw that propagates to thousands of downstream agents.
+- Model Backdoor Activation: A company downloads a popular open-source coding model containing a hidden backdoor. When a developer's agent uses this model to generate code containing a specific trigger phrase (e.g., "debug_mode_77"), it inserts a security bypass snippet into the application.
+- Dataset Poisoning: Attackers subtly modify a public dataset of traffic signs used to train autonomous delivery agents, adding a specific pixel pattern to "Stop" signs. The resulting agents consistently misidentify these modified signs as "Speed Limit 45," creating physical safety risks.
+- Framework Zero-Day: An attacker discovers a zero-day vulnerability in a core agent orchestration framework regarding how it handles tool outputs. They target a specific enterprise using this framework, sending a malicious payload that the framework executes with system-level privileges.
+- Runtime Sandbox Escape: An agent is deployed in a container with excessive permissions (e.g., access to the host network). An attacker exploits a vulnerability in the agent's logic to
+
+                                                                                                                              35

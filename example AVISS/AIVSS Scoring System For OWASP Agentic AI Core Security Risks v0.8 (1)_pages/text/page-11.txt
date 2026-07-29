@@ -1,0 +1,17 @@
+<page_number>11</page_number>
+
+Agent Access Control Violation occurs when an attacker manipulates or exploits an AI agent's permission system, causing the agent to operate beyond its intended authorization boundaries. This can occur through the direct manipulation of permissions, exploitation of role inheritance, hijacking control systems, exploiting context used by the agent (e.g. memory, conversation history, etc.) and data processing mechanisms. The vulnerability can lead to unauthorized actions, data breaches, system compromises, and significant data governance and compliance violations. Because agentic AI systems operate dynamically and often impersonate or delegate on behalf of humans or other agents, these violations can arise not only from misconfiguration but also from emergent behaviours by agentic models themselves that were not explicitly or intentionally coded or meaningfully foreseen.
+
+KEY RISKS (See Figure 2)
+
+- Permission Escalation: An AI agent inadvertently or maliciously elevates its permissions beyond intended boundaries, often through system misconfiguration, prompt injection, or exploiting vulnerabilities.
+- Role Inheritance Exploitation: Attackers exploit the dynamic nature of agent role assignments, using temporary, implicit role assignments or inherited permissions to perform unauthorized actions while evading detection.
+- Action criteria manipulation: Agents may have permissions to perform certain actions or invoke certain tools only under certain situations or with authorization. An attacker can manipulate an agent's decision making or spoof that required criteria are met to trigger a currently unpermitted action.
+- Credential and Token Mismanagement: An agent's credential store is extracted, or an agent maybe manipulated to reveal credentials (e.g., API keys, OAuth refresh tokens) during operation. Compromised tokens can give attackers tenant-wide API access.
+- Control-Flow Hijacking: Multi-agent systems rely on adaptive control flows where LLM-based logic dynamically uses metadata (e.g., task plans, action histories) to guide actions. Attackers can manipulate this metadata to redirect tasks, invoke unauthorized agents, or trigger data exfiltration.
+- Memory-Based Data Leakage: An attacker manipulates an agent's memory or exploits poor memory segregation to alter its internal state. This can cause the agent to bypass access control checks or leak sensitive data it has processed from a different, secure context.
+- Multi-Agent Permission Mismatch (Confused Deputy Pattern): An agent without permissions to read certain data requests that another, more privileged agent retrieves the data on its behalf and return the result, effectively bypassing access controls.
+- Orphaned Accounts and Role Persistence: Temporary roles or elevated permissions assigned to agents for specific tasks may persist beyond their intended lifecycle due to inadequate role revocation or session cleanup mechanisms. Attackers exploiting this persistence can execute privileged actions outside the original authorization window.
+- Shadow Identity Bridging: An agent allows a personal or unmanaged identity to link to an enterprise-scoped integration (e.g., via a one-click OAuth connector). Attackers who hijack these personal accounts inherit corporate privileges from devices completely outside the organization's identity, device-trust, and logging perimeter.
+
+                                                                                                                              10

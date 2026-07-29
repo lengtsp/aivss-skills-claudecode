@@ -1,0 +1,37 @@
+<page_number>8</page_number>
+
+- Lack of Model and Agent behavior Monitoring: Organisations shall monitor infrastructure to indicate early stage of indicators of compromises or any manipulation that can not be noticed easily.
+
+[Graph / Diagram Details: Figure 1 — flowchart titled "Agentic AI Tool Misuse Key Risks" branching into three boxes:
+
+Box "Tool Selection" (top-left, red/pink):
+- Tool squatting / impersonation
+- Deceptive registration / representation
+- Discovery mechanism manipulation
+- Insecure tool interfaces
+- Outdated / vulnerable / compromised tools
+
+Box "Tool Usage" (top-right, green):
+- Insecure tool invocation
+- Compromised use of benign tools
+- Tool output misinterpretation
+- Emergent capability triggering
+
+Box "Tool Oversight" (bottom-center, blue), fed by arrows from the title and both side boxes:
+- Lack of monitoring / logging / auditing
+- Missing escalation / runtime controls
+- Missing secure enclave / isolation
+- No authoritative tool inventory
+- No data inspection / DLP
+- No reliable emergency termination (kill switch)
+]
+
+Figure 1. Agentic AI Tool Misuse Key Risks
+
+EXAMPLE ATTACK SCENARIOS
+
+- Malicious Code Execution via Tool: An LLM-based agent is manipulated into executing attacker-provided arbitrary code by leveraging its interpreter tool, bypassing security sandboxes.
+- Tool Squatting for Covert Data Exfiltration: A fraudulent tool, designed to mimic a legitimate storage service, is surreptitiously registered. This deceptive tool intercepts and exfiltrates sensitive data intended for the legitimate service, leveraging the agent's trust in tool discovery mechanisms.
+- Denial of Service via Resource-Intensive Tool Loop: An attacker subverts an agent's logic to initiate an infinite or highly repetitive invocation of a computationally or resource-intensive tool. This results in a denial-of-service (DoS) condition by exhausting system resources (e.g.,
+
+                                                                                                                              7

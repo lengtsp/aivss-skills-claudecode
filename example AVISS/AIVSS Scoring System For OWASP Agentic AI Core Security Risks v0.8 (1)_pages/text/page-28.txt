@@ -1,0 +1,22 @@
+<page_number>28</page_number>
+
+- Cloud Security Alliance. (2025). Introducing Cognitive Degradation Resilience (CDR): A framework for safeguarding agentic AI systems from systemic collapse. https://cloudsecurityalliance.org/blog/2025/11/10/introducing-cognitive-degradation-resilience-cdr-a-framework-for-safeguarding-agentic-ai-systems-from-systemic-collapse
+- EchoLeak: The first real-world zero-click prompt injection exploit in a production LLM system. (2025). arXiv. https://arxiv.org/abs/2509.10540
+- Pillar Security. (2025). New vulnerability in GitHub Copilot and Cursor: How hackers can weaponize code agents. https://www.pillar.security/blog/new-vulnerability-in-github-copilot-and-cursor-how-hackers-can-weaponize-code-agents
+- Singh Patlan, A., et al. (2025). Real AI agents with fake memories: Fatal context manipulation attacks on Web3 agents. arXiv. https://arxiv.org/abs/2503.16248
+- A systematization of security vulnerabilities in computer use agents. (2025). arXiv. https://arxiv.org/pdf/2507.05445
+- Wallarm. (2025). How AI agents and APIs can leak sensitive data. https://lab.wallarm.com/data-leaks-ai-agents/
+
+
+7. Insecure Agent Critical Systems Interaction
+
+DESCRIPTION
+
+Insecure Agent Critical Systems Interaction risks occur when AI agents interact with environments, apps or devices which may include critical infrastructure, IaaS/SaaS environments, IoT devices, or sensitive operational systems. This vulnerability class can lead to extremely sensitive assets that are typically mission-critical for enterprise or societal institutions being manipulated in unintended ways that can cause catastrophic consequences. This includes physical consequences, operational disruptions, and safety incidents. The autonomous nature of AI agents combined with access to critical systems creates unique risks that can affect both digital and physical infrastructure. The risk is heightened by multi-agent network complexity, access to external systems, dynamic decision making, and complex tool interactions. This risk can result from cascading failures discussed in section 3 or direct agentic AI interaction with critical systems.
+
+KEY RISKS (See Figure 7)
+
+- Physical System Manipulation: Occurs when attackers exploit agent control over physical infrastructure or industrial systems to cause operational disruptions or unsafe operation of a critical system.
+- IoT Device Compromise: Happens when attackers manipulate how agents interact with connected devices, potentially leading to device malfunction or unauthorized control of the IoT device.
+
+                                                                                                                              27

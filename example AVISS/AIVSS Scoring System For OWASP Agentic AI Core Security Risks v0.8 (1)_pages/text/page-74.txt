@@ -1,0 +1,13 @@
+<page_number>74</page_number>
+
+Table 6 (continued): AI Threat Taxonomies and Key References
+
+| Taxonomy/Reference | Description | Link |
+|---|---|---|
+| NIST Trustworthy and Responsible AI — NIST AI 100-2e2023 | The taxonomy is built on surveying the AML literature and is arranged in a conceptual hierarchy that includes key types of ML methods and lifecycle stages of attack, attacker goals and objectives, and attacker capabilities and knowledge of the learning process. The report also provides corresponding methods for mitigating and managing the consequences of attacks and points out relevant open challenges to take into account in the lifecycle of AI systems. | https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2023.pdf |
+| OWASP Core for Large Language Model (LLM) Applications | Highlights critical security risks for LLM applications. Since many Agentic AI systems utilize LLMs as core components for understanding, reasoning, or generation, these risks are often highly relevant. | https://owasp.org/www-project-top-10-for-large-language-model-applications/ |
+| Cloud Security Alliance (CSA) Top Threats to LLM Applications | Focuses on threats specific to Large Language Models, particularly in cloud environments, which are common deployment models for Agentic AI systems. | https://cloudsecurityalliance.org/artifacts/csa-large-language-model-llm-threats-taxonomy |
+| ISO/IEC 23894:2023 Information technology — Artificial intelligence — Risk management | An international standard providing guidelines for establishing, implementing, maintaining, and continually improving an AI risk management framework. | https://www.iso.org/standard/77304.html |
+| Arcanum-Sec: Prompt Injection Taxonomy | This repository provides a structured taxonomy of prompt injection attacks, categorizing
+
+                                                                                                                              73

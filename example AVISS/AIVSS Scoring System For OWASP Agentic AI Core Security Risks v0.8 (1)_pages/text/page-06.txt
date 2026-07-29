@@ -1,0 +1,30 @@
+<page_number>6</page_number>
+
+- Compromised integrity of toolchain integrations
+- Deficiencies in the agent's inferential or logical capabilities or alignment
+- Malicious injection or manipulation of tool specifications or schemata
+- Erroneous parsing or semantic interpretation of tool-generated data
+- Lack of due diligence by an agent in tool selection
+- Semantic or linguistic ambiguity in tool descriptions or naming
+- Absence of cryptographic provenance or attestation of tool origin
+- Incompatibility and inability to resolve multiple versions of tools
+- Usage of legacy authentication mechanisms like Basic auth or OAuth1 while accessing external tools
+- Experimental Malware Using Frontier AI API calls for Self-Modification to Evade Detection (Promptflux)
+
+The operational efficacy of autonomous agents is predicated upon their robust utilization of tools for interfacing with external environments, executing computational tasks, and managing data flows. Consequently, inherent vulnerabilities within the agent's tool utilization paradigm present significant vectors for systemic compromise and downstream destructive or costly consequences.
+
+KEY RISKS (See Figure 1)
+
+Tool selection:
+
+- Tool Squatting / Impersonation:
+  - Deceptive Registration / Representation: Attackers register or represent malicious tools under names or descriptions designed to mimic legitimate tools, tricking agents into invoking them.
+  - Exploiting Discovery Mechanisms: Attackers exploit vulnerabilities in automated tool discovery, registration, or selection mechanisms to inject malicious tool options into the agent's operational environment, increasing the likelihood of their invocation.
+- Insecure Tool Interfaces: Tools expose Application Programming Interfaces (APIs) or other interaction points that lack robust authentication, authorization, or input validation mechanisms. This allows an attacker to directly manipulate tool behavior or extract sensitive information.
+- Use of Outdated, Compromised, Vulnerable Tools: Agents unwittingly invoke, or are configured to invoke, tools that contain known, unpatched security vulnerabilities or intentional misconfigurations that allow adversarial actions and observations of the tool interactions. This increases the attack surface, enabling attackers to exploit these vulnerabilities within the agent's operational context.
+
+Tool usage:
+
+- Insecure Tool Invocation: The agent invokes external tools or commands with insufficient validation of inputs and dynamic discovery mechanisms, particularly when those inputs are derived from untrusted sources or attacker-controlled data. This can lead to command injection, arbitrary code execution, insecure redirects, legacy auth mechanisms, or other unintended system-level actions.
+
+                                                                                                                              5

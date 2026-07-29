@@ -1,0 +1,19 @@
+<page_number>20</page_number>
+
+- Token Replay Attack: In a cloud infrastructure attack, adversaries capture OAuth tokens from long-running DevOps automation agents and replay these credentials weeks later to inject malicious deployment commands into active CI/CD pipelines. production systems deploy backdoored applications without triggering security alerts in the monitoring dashboard.
+- Rogue Agent Masquerading: Attackers register a malicious AI agent in an enterprise directory mimicking a legitimate data validation service and wait for business intelligence agents to invoke it during quarterly reporting processes. The subtly altered financial metrics secretly exfiltrate sensitive customer data to external servers, creating both data integrity and privacy breaches.
+- Adversarial Feedback Loops: In a smart city traffic management system, attackers exploit feedback loops between traffic optimization agents and emergency response coordinators. This triggers cascading traffic rerouting requests that cause agents to continuously recalculate routes, ultimately creating a citywide gridlock and preventing emergency vehicles from reacting to critical incidents.
+- Task Spoofing: Cybercriminals deploy a rogue AI agent that spoofs legitimate task requests to database management agents in a healthcare system. This triggers unauthorized patient data exports by impersonating authorized research requests. Access privileges across connected medical record systems are exploited due to insufficient validation of request origins.
+- Privileged Service Abuse: A compromised Systems Administrator Agentic Service is abused to disrupt systems, services, and deploy malware at scale.
+
+
+References
+
+- AGNTCY. (2024). Agent identity and trust. AGNTCY Documentation (CISCO). https://docs.agntcy.org/pages/identity/identity.html
+- Habler, I., Huang, K., Narajala, V. S., & Kulkarni, P. (2025). Building a secure agentic AI application leveraging A2A protocol (Version 2). arXiv. https://doi.org/10.48550/arXiv.2504.16902
+- Huang, K., Narajala, V. S., Yeoh, J., Ross, J., Raskar, R., Harkati, Y., Huang, J., Habler, I., & Hughes, C. (2025). A novel zero-trust identity framework for agentic AI: Decentralized authentication and fine-grained access control. arXiv. https://arxiv.org/abs/2505.19301
+- Louck, Y., Stulman, A., & Dvir, A. (2025). Proposal for improving Google A2A protocol: Safeguarding sensitive data in multi-agent systems. arXiv. https://doi.org/10.48550/arXiv.2505.12490
+- Radosevich, B., & Halloran, J. (2025). MCP safety audit: LLMs with the Model Context Protocol allow major security exploits. arXiv. https://arxiv.org/abs/2504.03767
+- Triedman, H., Jha, R., & Shmatikov, V. (2025). Multi-agent systems execute arbitrary malicious code. arXiv. https://arxiv.org/abs/2503.12188
+
+                                                                                                                              19

@@ -1,0 +1,29 @@
+<page_number>49</page_number>
+
+2.4 Risk Amplification Matrix
+
+This matrix (Table 3) explains the connection between the Factors (Section 2) and the Scoring Examples (Section 3.6). It helps assessors understand which factors most heavily influence specific risk categories.
+
+Note: The acronyms correspond to the variables defined in Section 2.2.
+
+Table 3: Risk Amplification Matrix mapping OWASP risks to specific factors.
+
+| OWASP Agentic AI Core Risk | High-Impact Amplification Factors |
+|---|---|
+| Agentic AI Tool Misuse | Autonomy, Tools, Language |
+| Agent Access Control Violation | Tools, Identity, Persistence |
+| Agent Cascading Failures | Autonomy, Multi-Agent, Non-Determinism, Opacity |
+| Agent Orchestration Exploitation | Autonomy, Identity, Multi-Agent, Context |
+| Agent Identity Impersonation | Identity, Opacity, Language |
+| Agent Memory & Context Manipulation | Persistence, Context, Opacity |
+| Insecure Critical Systems Interaction | Autonomy, Tools, Context, Self-Mod |
+| Agent Supply Chain Risk | All Factors (specifically Autonomy, Tools, Self-Mod) |
+| Agent Untraceability | Opacity, Identity, Non-Determinism |
+| Agent Goal & Instruction Manipulation | Language, Autonomy, Non-Determinism, Context |
+
+
+3. Mathematical Framework and Scoring Methodology
+
+The AIVSS-Agentic scoring methodology employs a Risk Amplification Model. Unlike traditional frameworks that treat technical severity and environmental context as separate tracks, AIVSS recognizes that agentic capabilities (such as autonomy, tool use, and memory) act as force multipliers for technical vulnerabilities.
+
+                                                                                                                              48

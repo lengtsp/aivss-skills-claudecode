@@ -1,0 +1,28 @@
+<page_number>67</page_number>
+
+| Vulnerability Category | CVSS Base | AARS (Uplift) | AIVSS | Severity |
+|---|---|---|---|---|
+| 3.6.9 Agent Untraceability | 5.3 | 3.0 | 8.3 | High |
+| 3.6.10 Goal Manipulation | 2.1 | 5.0 | 7.1 | High |
+
+Table 5: Summary of AIVSS Scores
+
+
+4. AIVSS-Agentic Implementation Guide
+
+To effectively apply the AIVSS-Agentic framework and derive meaningful scores for each of the OWASP Agentic AI Core vulnerability categories within a specific system, organizations should follow a structured process involving relevant expertise and detailed system knowledge.
+
+Prerequisites:
+
+- Comprehensive System Understanding: Detailed knowledge of the Agentic AI system's architecture: agent origin and design, goals, learning mechanisms, decision-making logic, inter-agent communication, planning/orchestration, tool integration, memory management, data flows, and dependencies.
+- Expertise in Agentic AI Concepts: Strong theoretical and practical grasp of core Agentic AI principles: autonomy levels, emergent behavior, multi-agent systems, dynamic identity, delegation, persistent learning.
+- Essential Resource: The OWASP Agentic AI Core Security Risks document (which forms the basis of Part 1 of this AIVSS-Agentic document). This is foundational for understanding each vulnerability category.
+- AI/ML Security Knowledge: Familiarity with AI/ML security principles, adversarial attacks (evasion, poisoning, model inversion) and defenses relevant to agent components.
+- Standard Security and Risk Management Familiarity: Knowledge of general cybersecurity, vulnerability assessment, and risk management frameworks (especially, NIST AI RMF).
+
+Roles and Responsibilities:
+
+- AI Security Lead/Assessor: Orchestrates the AIVSS-Agentic assessment. Ensures methodological consistency as outlined in this document (Part 2, particularly Section 3 for scoring guidance), validates scoring inputs, interprets the resulting individual vulnerability scores, and communicates findings. Requires deep expertise in both AI and security.
+- Agent Developers/Engineers & Data Scientists: Provides critical technical details about the Agentic AI system's design, implementation, data sources, and operational parameters. Assist in identifying how each of the Core vulnerability categories manifests (or is mitigated) within the system. Crucial for implementing technical mitigations based on the assessment.
+
+                                                                                                                              66

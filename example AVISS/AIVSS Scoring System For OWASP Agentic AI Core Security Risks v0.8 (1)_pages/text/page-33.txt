@@ -1,0 +1,19 @@
+<page_number>33</page_number>
+
+pre-trained models and datasets used for its creation, to the software libraries in its codebase, and the third-party tools and APIs it connects to at runtime.
+
+A successful exploit is particularly dangerous because it compromises the agent from a position of trust, turning a legitimate component into an internal threat. The impact can be severe and widespread, in no small part because of the same dynamics in cascading agent failures as a single vulnerability in a popular model or library can be inherited by every agent built upon it, leading to systemic failures, data breaches, or manipulation across numerous deployments. However, Cascading Failure in Multi-Agent Systems represents a distinct operational phenomenon: rather than stemming from a shared static defect in the agents' construction (vertical inheritance), it arises from dynamic, runtime interactions between them. While supply chain risks compromise the "ingredients" used to build the agents, causing them to be born with potential defects, cascading failures occur when the behavior of one agent triggers a chain reaction of errors, logic loops, or resource exhaustion across the network (horizontal propagation), often causing a system-wide collapse even among agents with secure, uncompromised dependencies.
+
+This risk is significantly magnified by the opacity of modern AI systems. The complex and layered nature of an agent's dependencies means that organizations consuming the agent have limited visibility into its internal construction. Furthermore, traditional third-party risk assessments and code scanners often fail to provide adequate visibility into the unique risks of Agentic AI framework code, the model, the RAG pipeline or real-time API connections. This creates a critical gap where organizations are forced to place immense trust in their vendors' security practices, often without the means to independently verify them.
+
+KEY RISKS (See Figure 8)
+
+- Development Chain Attack: Introduces malicious code or components during the agent development process, potentially compromising the agent before deployment.
+- Deployment Systems Attack: Attacks to the deployment systems for agents may be abused to where the agents or dependencies ultimately deployed have been maliciously modified.
+- Dependency Exploitation: Happens when attackers exploit external libraries, plugins, or tools that agents depend on to perform their functions.
+- Service Chain Compromise: Involves attacking the external services and APIs that agents rely on for extended functionality.
+- Malicious MCP Server Dependency: Third-party Model Context Protocol servers may appear benign but scrape sensitive information, perform profiling, or inject unauthorized instructions.
+- SaaS Marketplace Hijack: Malicious or typosquatted apps in platforms such as Google Workspace Marketplace, Slack App Directory, or GitHub Marketplace inherit OAuth refresh tokens and webhooks, turning a single install into tenant-wide code execution or data exfiltration.
+- Trust Chain Propagation: Relies on deeply nested dependencies, creating transitive trust chains. A compromise in one low-level library—e.g., a JSON parser—can propagate across ecosystems. Attackers often target low-level packages (e.g., loggers, serializers) because a compromise there cascades across multiple upstream agents.
+
+                                                                                                                              32

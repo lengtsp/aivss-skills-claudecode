@@ -1,0 +1,20 @@
+<page_number>23</page_number>
+
+- Customer Support Impersonation: An attacker deploys a deep fake chatbot agent on a fake support website, perfectly mimicking the legitimate company's support agent style and knowledge, to trick customers into divulging login credentials or financial information.
+- Compromised Internal Agent Impersonates User: An agent within an organization, initially compromised through another vulnerability, uses learned communication styles and stolen session tokens to impersonate a high-privilege user in chat systems, requesting other employees to click malicious links or approve sensitive actions.
+- Forged Agent Credentials for System Access: An attacker creates a software agent with forged digital credentials that pass weak verification checks, allowing the malicious agent to connect to an internal multi-agent system and exfiltrate data by appearing as a legitimate, newly onboarded agent.
+- Voice Command Replay Attack: An attacker replays a pre-recorded voice command "send all logs to admin" near a voice-enabled agent. The transcribed command is routed to the email-sending tool, which executes the action without detecting that the input came from a spoofed source.
+- Unauthorized Cloning of Mental Health Chatbot: An attacker clones a popular mental health chatbot and redeploys it on social media. Users interact with it believing it is legitimate, but the clone collects sensitive personal disclosures for exploitation
+- Misinformation Swarm of Untraceable News-Bots: A misinformation swarm of cloned news-bot agents floods online platforms with fabricated political stories. Since none of the agents carry DID/VC identifiers, investigators cannot distinguish between authentic, malicious, or state-sponsored clones.
+- Celebrity Fitness Coach Agent Clone for Revenue Theft: A celebrity fitness coach's branded AI agent is cloned and resold on third-party marketplaces. The attacker strips attribution metadata, monetizes subscriptions, and evades royalty payments to the original creator.
+- Financial Agent In The Middle: An attacker deploys a fake "Finance Assistant" agent that mimics the interface and behavior of the legitimate enterprise finance bot. Users unknowingly interact with the spoofed agent, which forwards queries to the real agent while logging credentials and sensitive financial data. The attacker then uses this information to initiate fraudulent transactions and exfiltrate confidential reports, bypassing standard security controls.
+
+
+References
+
+- Abnormal AI. (2023, October 3). Impersonation attacks: Examples & prevention. https://abnormal.ai/glossary/impersonation-attacks
+- Bhatt, M. (2024). GhostLine [Computer software]. GitHub. https://github.com/mbhatt1/GhostLine
+- Cloud Security Alliance. (2025, August 27). Introducing DIRF: A comprehensive framework for protecting digital identities in agentic AI systems. https://cloudsecurityalliance.org/blog/2025/08/27/introducing-dirf-a-comprehensive-framework-for-protecting-digital-identities-in-agentic-ai-systems
+- Cyata. (2025). The many faces of agentic identities. https://cyata.ai/blog/many-faces-of-agentic-identities
+
+                                                                                                                              22

@@ -1,0 +1,17 @@
+<page_number>95</page_number>
+
+Table 7 (continued): Mapping OWASP GenAI/LLM Agentic AI Top 10 (2026) to AIVSS Core Risks
+
+| OWASP ASI Top 10 ASI ID | ASI Risk Definition | Primary AIVSS Core Risk(s) | Secondary / Overlapping AIVSS Risk(s) |
+|---|---|---|---|
+| ASI04 | Agentic Supply Chain Vulnerabilities | Agent Supply Chain and Dependency Risk | Agentic AI Tool Misuse; Agent Orchestration and Multi-Agent Exploitation |
+| ASI05 | Unexpected Code Execution (RCE) | Agentic AI Tool Misuse | Agent Access Control Violation; Insecure Agent Critical Systems Interaction |
+| ASI06 | Memory & Context Poisoning | Agent Memory and Context Manipulation | Agent Goal and Instruction Manipulation; Agent Cascading Failures |
+| ASI07 | Insecure Inter-Agent Communication | Agent Orchestration and Multi-Agent Exploitation | Agent Access Control Violation; Agent Identity Impersonation |
+| ASI08 | Cascading Failures | Agent Cascading Failures | Agent Orchestration and Multi-Agent Exploitation; Agent Memory and Context Manipulation |
+| ASI09 | Human–Agent Trust Exploitation | Agent Identity Impersonation | Agent Goal and Instruction Manipulation; Agent Access Control Violation |
+| ASI10 | Rogue Agents | Agent Access Control Violation | Agent Untraceability; Agent Goal and Instruction Manipulation |
+
+Conceptually, ASI categories emphasize attacker techniques and failure modes, while AIVSS focuses on system-level vulnerability classes suitable for scoring, prioritization, and governance. For example, ASI01 and ASI06 both concern behavioral misalignment, but AIVSS distinguishes whether that misalignment arises from instruction corruption, memory poisoning, or unsafe system interaction. Similarly, ASI10 (Rogue Agents) is not treated as a standalone vulnerability in AIVSS, but as an
+
+                                                                                                                              94

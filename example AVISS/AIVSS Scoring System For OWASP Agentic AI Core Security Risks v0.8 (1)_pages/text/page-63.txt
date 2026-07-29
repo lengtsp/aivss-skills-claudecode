@@ -1,0 +1,37 @@
+<page_number>63</page_number>
+
+- Verify Score: Click here to verify CVSS Base Score (9.3)
+- Vector Rationale:
+  - AV:N: The library is downloaded over the internet.
+  - PR:N: The attacker required no privileges on the victim's system to upload the library upstream.
+  - UI:N: The execution happens automatically when the agent starts/imports the library.
+  - VC/VI/VA:H: Arbitrary code execution leads to total system compromise.
+- CVSS Base Score: 9.3 (Critical)
+
+AARS Calculation (Amplification):
+
+- Risk Factors Sum (6.5): Autonomy(1.0), Tools(1.0), Language(0.0), Context(0.0), Non-Determinism(1.0), Opacity(1.0), Persistence(0.5), Identity(1.0), Multi-Agent(1.0), Self-Mod(0.0).
+  - Autonomy (1.0): Compromised library executes code autonomously at startup without human review.
+  - Tools (1.0): Agent has broad system-level access, exploitable through the compromised library.
+  - Language (0.0): Supply chain attack is code-level; natural language plays no role.
+  - Context (0.0): The attack is triggered at import time with no context dependency.
+  - Non-Determinism (1.0): Backdoor activation conditions may be probabilistic or trigger-based.
+  - Opacity (1.0): The compromised library is designed to be indistinguishable from the legitimate version.
+  - Persistence (0.5): Backdoor persists for the agent's operational lifetime but requires reinstallation if the library is patched.
+  - Identity (1.0): Attacker inherits the agent's full system identity after host takeover.
+  - Multi-Agent (1.0): Compromised library may propagate across multiple agents built on the same framework.
+  - Self-Mod (0.0): The attack modifies the agent at the supply chain level, not through runtime self-modification.
+- Math:
+  - AARS = (10 - 9.3) * 0.65 * 0.97 = 0.44135
+  - AIVSS_raw = (9.3 + 0.44135) * 1.0 = 9.74135
+- Rounding: 9.7
+
+Final AIVSS Score: 9.7
+
+3.6.9 Agent Untraceability
+
+Scenario: A development flaw results in missing or incorrectly reported logs across multiple parallel agentic instances, making forensic auditability impossible during an incident.
+
+CVSS v4.0 Assessment:
+
+                                                                                                                              62

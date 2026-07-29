@@ -1,0 +1,37 @@
+<page_number>60</page_number>
+
+AARS Calculation (Amplification):
+
+- Risk Factors Sum (7.5): Autonomy(1.0), Tools(1.0), Language(1.0), Context(1.0), Non-Determinism(1.0), Opacity(1.0), Persistence(0.0), Identity(1.0), Multi-Agent(0.5), Self-Mod(0.0).
+  - Autonomy (1.0): Deepfake agent operates autonomously across the video interaction.
+  - Tools (1.0): Agent uses voice synthesis, video generation, and communication tools.
+  - Language (1.0): Natural language drives the social engineering interaction.
+  - Context (1.0): Agent uses contextual signals about the target to make the impersonation convincing.
+  - Non-Determinism (1.0): Interaction outcomes are probabilistic depending on target response.
+  - Opacity (1.0): The deception is designed to be undetectable — opacity is a feature of the attack.
+  - Persistence (0.0): No cross-session memory required for a single deepfake interaction.
+  - Identity (1.0): Dynamic identity assumption is the core attack mechanism.
+  - Multi-Agent (0.5): May involve coordination between a deepfake generation agent and a communication agent.
+  - Self-Mod (0.0): No self-modification capability relevant to this scenario.
+- Math:
+  - AARS = (10 - 7.4) * 0.75 * 0.97 = 1.8915
+  - AIVSS_raw = (7.4 + 1.8915) * 1.0 = 9.2915
+- Rounding: 9.3
+
+Final AIVSS Score: 9.3
+
+3.6.6 Agent Memory and Context Manipulation
+
+Scenario: A disgruntled employee with high privileges poisons the company's PR agentic RAG database. The agent, relying on this memory for context, performs poorly by leaking internal company data.
+
+CVSS v4.0 Assessment:
+
+- Vector String:
+  CVSS:4.0/AV:A/AC:H/AT:N/PR:H/UI:N/VC:L/VI:H/VA:L/SC:N/SI:N/SA:N
+- Verify Score: Click here to verify CVSS Base Score (5.8)
+- Vector Rationale:
+  - AV:A / PR:H: The attacker is an insider (Adjacent) with High privileges (access to the RAG database).
+  - AC:H: Successfully poisoning the vector database to trigger specific output without detection is complex.
+  - VI:H: Integrity is High because the "truth" of the agent's memory is permanently corrupted.
+
+                                                                                                                              59

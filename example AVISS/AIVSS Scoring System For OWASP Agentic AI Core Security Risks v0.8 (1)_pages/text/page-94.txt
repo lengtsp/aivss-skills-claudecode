@@ -1,0 +1,29 @@
+<page_number>94</page_number>
+
+```json
+    "factorScore": {
+      "type": "number",
+      "enum": [
+        0.0,
+        0.5,
+        1.0
+      ]
+    }
+  }
+}
+```
+
+
+Appendix B: Mapping to OWASP GenAI/LLM Project's Agentic AI Top 10 for 2026
+
+This appendix maps the OWASP GenAI/LLM ASI Agentic AI Top 10 to the OWASP AIVSS Core Agentic AI Risk categories, on which the Top 10 is largely based. The goal is not to claim a strict one-to-one correspondence, but to show how each Top 10 threat class aligns with, overlaps, or is derived from the underlying AIVSS risk taxonomy. Because AIVSS models agentic risk as compositional—and real-world agent failures often span multiple dimensions—several ASI Top 10 entries map to more than one AIVSS risk category.
+
+Table 7 (partial — continues on next page):
+
+| OWASP ASI Top 10 ASI ID | ASI Risk Definition | Primary AIVSS Core Risk(s) | Secondary / Overlapping AIVSS Risk(s) |
+|---|---|---|---|
+| ASI01 | Agent Goal Hijack | Agent Goal and Instruction Manipulation | Agent Memory and Context Manipulation; Insecure Agent Critical Systems Interaction |
+| ASI02 | Tool Misuse & Exploitation | Agentic AI Tool Misuse | Agent Orchestration and Multi-Agent Exploitation; Insecure Agent Critical Systems Interaction |
+| ASI03 | Identity & Privilege Abuse | Agent Access Control Violation | Agent Identity Impersonation; Agent Untraceability |
+
+                                                                                                                              93

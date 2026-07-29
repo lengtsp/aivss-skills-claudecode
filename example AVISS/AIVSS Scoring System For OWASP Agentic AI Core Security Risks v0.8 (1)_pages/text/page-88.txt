@@ -1,0 +1,31 @@
+<page_number>88</page_number>
+
+Key Contributors (continued)
+
+| Contributor's Name | Affiliation | LinkedIn Profile Link |
+|---|---|---|
+| Vidhi Kulkarni | Georgia Tech | https://www.linkedin.com/in/vidhi-kulkarni/ |
+| Viswanath S Chirravuri | ThalesGroup | https://www.linkedin.com/in/chviswanath/ |
+| Ying-Jung Chen | Independent Consulting | https://www.linkedin.com/in/yj-elizabeth-chen/ |
+| Youssef Harkati | BrightOnLABS | https://www.linkedin.com/in/youssef-h-498141144/ |
+| Behnaz Karimi | Owasp AI Exchange | https://www.linkedin.com/in/behnaz-karimi-behi/ |
+| Miracle Owolabi | Owasp AI Exchange | https://www.linkedin.com/in/miracleowolabi-security/ |
+
+We also acknowledge the broader OWASP community and all additional contributors who participate through reviews, discussions, events, and open collaboration. The project continues to welcome new contributors and leaders and remains grounded in community-led, vendor-neutral security work delivered through open source projects and global education. To sign up, please use this google doc
+
+
+Appendix A: AIVSS-Agentic Report JSON Schema
+
+This JSON schema standardizes the reporting structure for Agentic AI risk assessments by organizing data into system metadata and detailed vulnerability findings. It enforces a strict data model where technical severity (CVSS) acts as a baseline, which is then modified by ten discrete agentic amplification factors—such as autonomy, tool access, and persistent memory—scored on a defined ordinal scale. By validating these inputs alongside the Threat Multiplier and Mitigation Multiplier, the schema ensures that the resulting Agentic AI Risk Score (AARS) and final AIVSS score are calculated consistently, making the assessment machine-readable and interoperable across different security tools and auditing platforms.
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AIVSS-Agentic Assessment Schema",
+  "description": "Standardized schema for recording Agentic AI Risk assessments based on the AIVSS-Agentic Risk Amplification Model (Section 3).",
+  "type": "object",
+  "required": [
+    "metadata",
+```
+
+                                                                                                                              87

@@ -1,0 +1,32 @@
+<page_number>45</page_number>
+
+1.1 The "Force Multiplier" Concept
+
+The framework posits that agentic capabilities do not just add new risks; they fundamentally expand the "blast radius" of existing technical vulnerabilities.
+
+1. Core Agency: Unlike passive software, agents can autonomously chain vulnerabilities together to achieve a goal.
+2. Environmental Permeability: Agents bridge the gap between digital instructions (Natural Language) and system execution (Tools), allowing technical flaws to cross system boundaries.
+3. Probabilistic Behavior: The non-deterministic nature of agents means risk is not binary; a vulnerability may only trigger under specific stochastic conditions, requiring a shift from "exploitability" to "probability" in assessment.
+
+This theoretical foundation necessitates the Risk Amplification Model detailed in Section 3, where technical severity serves as a baseline, and agentic capabilities provide the uplift.
+
+
+2. Agentic Risk Amplification Factors
+
+To calculate the Agentic AI Risk Score (AARS) in Section 3, the system must be assessed against 10 specific factors. These factors represent the specific capabilities that drive the amplification described in Section 1.
+
+2.1 Agentic Risk Factor Scoring
+
+Table 1 outlines the three-point scoring scale used to quantify the presence of specific agent characteristics for input into the AARS Equation.
+
+Each factor is scored on a 3-point scale. This score (0.0, 0.5, or 1.0) is the direct input for the AARS Equation in Section 3.3.
+
+Table 1: The 3-point scale used to evaluate factors for Section 3.3.
+
+| Level | Score | Description |
+|---|---|---|
+| None / Not Present | 0.0 | The agent does not possess this characteristic. |
+| Partial / Limited | 0.5 | The characteristic is present but constrained or limited. |
+| Full / Unconstrained | 1.0 | The characteristic is a primary, fully-enabled feature. |
+
+                                                                                                                              44

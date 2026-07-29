@@ -1,0 +1,24 @@
+<page_number>86</page_number>
+
+Key Contributors (continued)
+
+| Contributor's Name | Affiliation | LinkedIn Profile Link |
+|---|---|---|
+| Nicholas Carlini | Anthropic | https://nicholas.carlini.com |
+| Nir Paz | Tango Secure | https://www.linkedin.com/in/paznir/ |
+| Omar A. Turner | Microsoft | www.linkedin.com/in/omarturner |
+| Om Narayan | Amazon Web Services | https://www.linkedin.com/in/om-narayan/ |
+| Paola Garcia Cardenas | NYU, OWASP/OpenCRE | https://www.linkedin.com/in/paogarciac/ |
+| Paul Son | Doctoral Candidate Colorado Technical University | (blank) |
+| Prateek Kalasannavar | Lenovo | https://www.linkedin.com/in/pmk |
+| Praveen Gupta | Uber Technologies Inc | https://www.linkedin.com/in/guptapraveen2/ |
+| Rajivarnan R | SECNORA | https://www.linkedin.com/in/rajivarnan/ |
+| Rico Komenda | adesso SE | https://www.linkedin.com/in/ricokomenda/ |
+| Rob Arnold | Acorn Pass | https://www.acornpass.com/rob-arnold |
+| Rob Joyce | Joyce Cyber LLC | https://www.linkedin.com/in/rob-joyce-b43445116/ |
+| Sailik Sengupta | Amazon Web Services | https://sailik1991.github.io/ |
+| Sam Watts | Lakera | https://www.linkedin.com/in/samuel-watts/ |
+| Saquib Saifee | IBM | https://linkedin.com/in/saquibsaifee |
+| Semih Gelişli | CTO | https://www.linkedin.com/in/sgelisli |
+
+                                                                                                                              85

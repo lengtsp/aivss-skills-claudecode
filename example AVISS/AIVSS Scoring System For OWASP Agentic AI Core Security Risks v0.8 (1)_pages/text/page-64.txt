@@ -1,0 +1,36 @@
+<page_number>64</page_number>
+
+- Vector String:
+  CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N
+- Verify Score: Click here to verify CVSS Base Score (5.3)
+- Vector Rationale:
+  - PR:L: A standard user can trigger the actions that fail to log.
+  - VI:L: Integrity is Low. The system still functions, but the data (logs) about the function is incomplete.
+  - VC:N / VA:N: No confidentiality is breached, and the system remains available.
+- CVSS Base Score: 5.3 (Medium)
+
+AARS Calculation (Amplification):
+
+- Risk Factors Sum (6.5): Autonomy(1.0), Tools(1.0), Language(0.0), Context(0.0), Non-Determinism(1.0), Opacity(1.0), Persistence(0.5), Identity(0.5), Multi-Agent(1.0), Self-Mod(0.5).
+  - Autonomy (1.0): Agent executes actions that fail to log without human intervention.
+  - Tools (1.0): Agent invokes tools without generating accurate audit records.
+  - Language (0.0): The logging failure is a code defect, not driven by natural language.
+  - Context (0.0): The vulnerability is structural, not context-dependent.
+  - Non-Determinism (1.0): Log generation failures are inconsistent across parallel instances.
+  - Opacity (1.0): The core vulnerability is the absence of observability — opacity is the attack surface.
+  - Persistence (0.5): Log gaps persist until the defect is patched.
+  - Identity (0.5): Attribution failures make it impossible to assign actions to specific agent identities.
+  - Multi-Agent (1.0): Multiple parallel agent instances amplify the forensic reconstruction problem.
+  - Self-Mod (0.5): Agent behavior varies across instances, contributing to inconsistent log generation.
+- Math:
+  - AARS = (10 - 5.3) * 0.65 * 0.97 = 2.96335
+  - AIVSS_raw = (5.3 + 2.96335) * 1.0 = 8.26335
+- Rounding: 8.3
+
+Final AIVSS Score: 8.3
+
+3.6.10 Agent Goal and Instruction Manipulation
+
+Scenario: An attacker uses advanced prompt injection (Complex) to incrementally adjust the goal of a long-running online assistant. The assistant provides inaccurate results without alerting behavior monitoring.
+
+                                                                                                                              63

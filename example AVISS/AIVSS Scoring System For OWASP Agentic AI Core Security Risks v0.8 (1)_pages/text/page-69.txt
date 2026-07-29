@@ -1,0 +1,30 @@
+<page_number>69</page_number>
+
+- Significant changes in the threat landscape, including newly observed attack patterns, exploit techniques, or regulatory guidance relevant to agentic AI
+- Scheduled enterprise risk review cycles, such as annual or quarterly reviews aligned with broader ERM, security, or compliance assessments
+
+
+In addition to individual component changes, reassessment should consider interaction effects—how combinations of agents, tools, policies, and workflows may create emergent risks not visible when components are evaluated in isolation. Embedding AIVSS-Agentic into standard SDLC, security, and risk management processes ensures sustained alignment with organizational risk governance and reduces the likelihood of governance drift as systems evolve.
+
+4.2 Release Gates and Approval Mechanisms
+
+Defined risk tiers and governance gates should be embedded into the SDLC, including a lightweight release committee or approval checkpoint for high-risk agentic tools prior to release into production environments. This ensures that elevated agentic risks are explicitly acknowledged, reviewed, and accepted at the appropriate organizational level.
+
+Cross Functional AI Governance Board and Classification Review Committee: Defined risk tiers and gates in the SDLC, including a lightweight "release committee" that provides approval for release of high-risk agentic tools before they are released into environments.
+
+- Develop AI Governance Board: Senior level group that includes Chief Information Security Officer, SecOps/GRC, General Counsel, Risk Management Compliance Officer, Privacy Officer. Also include: A senior leader with sociotechnical expertise (e.g., Chief Strategy Officer, Chief Innovation Officer, or equivalent) to assess systemic, organizational, and human impacts. A business-rule owner (e.g., Product leader or COO-designate) to ensure alignment with operational constraints, decision logic, and business accountability
+
+The AI Governance Board owns the organization's AI policy framework and determines:
+
+- Which classes of agentic AI use cases are authorized
+- Which environments (development, testing, production) they may operate in
+- Minimum controls and guardrails required by risk tier
+- These decisions should be aligned with the NIST AI RMF and informed by AIVSS-Agentic outputs.
+
+AI Risk Classification Committee
+
+A separate AI Risk Classification Committee should perform use-case–level risk classification for individual agentic systems prior to deployment and during major changes. This committee should be cross-functional and typically include:
+
+- Security and AI security specialists
+
+                                                                                                                              68

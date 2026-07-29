@@ -1,0 +1,11 @@
+<page_number>73</page_number>
+
+Table 6 (continued): AI Threat Taxonomies and Key References
+
+| Taxonomy/Reference | Description | Link |
+|---|---|---|
+| MITRE ATLAS™ (Adversarial Threat Landscape for Artificial-Intelligence Systems) | A knowledge base of adversary tactics, techniques, and case studies based on real-world observations of attacks against AI systems. Useful for understanding potential attack vectors against agent components. | https://atlas.mitre.org/ |
+| NIST AI Risk Management Framework (AI RMF 1.0) | A voluntary framework developed by NIST to better manage risks to individuals, organizations, and society associated with artificial intelligence. Provides guidance on governing, mapping, measuring, and managing AI risks. | https://www.nist.gov/itl/ai-risk-management-framework |
+| Agentic AI Threat Modeling Framework: MAESTRO | The Cloud Security Alliance MAESTRO framework is a reference architecture for analyzing security, safety, and governance risks in agentic AI systems. It defines a seven-layer model spanning foundation models, data operations, agent frameworks, deployment infrastructure, evaluation and observability, cross-cutting security and compliance, and the external agent ecosystem. MAESTRO is used to reason about where agentic AI risks arise within real-world system architectures, providing structural context for threat modeling and risk identification without prescribing scoring, controls, or mitigation priorities. | https://cloudsecurityalliance.org/blog/2025/02/06/agentic-ai-threat-modeling-framework-maestro |
+
+                                                                                                                              72

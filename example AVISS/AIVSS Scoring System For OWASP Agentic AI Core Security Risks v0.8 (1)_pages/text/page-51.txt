@@ -1,0 +1,30 @@
+<page_number>51</page_number>
+
+- Do not average scores across findings. Averaging ordinal values produces a number that has no meaningful interpretation. Use the individual finding score and its severity band as the unit of analysis.
+- Interpret findings by Severity Band, not decimal precision. Score differences within the same severity band — for example, 9.4 versus 9.7, both Critical — should be treated as equivalent for prioritization purposes. Score differences that cross a band boundary — for example, 6.8 (Medium) versus 7.2 (High) — remain meaningful and should be acted on accordingly.
+
+The decimal precision in AIVSS outputs reflects the mathematical rigour of the amplification calculation, not a claim that a score of 9.7 represents meaningfully greater risk than 9.4 in operational terms. Assessors should resist the temptation to rank findings by decimal score within the same severity band.
+
+Meanwhile, as a parallel but complementary effort, the OWASP AIVSS Project team is working with industry and academic partners on a qualitative approach (specifically the SSVC (Stakeholder-Specific Vulnerability Categorization) methodology) to enable the industry to perform decision-tree-based prioritization of Agentic AI risks. SSVC's stakeholder-specific decision trees are well suited to complement AIVSS severity bands by translating scores into context-specific remediation decisions, and the two approaches are designed to be used together rather than as alternatives.. Community members can contribute to the draft using the link.
+
+3.3 Agentic AI Risk Score (AARS) Calculation
+
+The AARS is a Vulnerability-Specific Score that calculates the Agentic Uplift - the portion of the remaining "risk gap" (up to 10.0) that is bridged by agentic capabilities. It is computed as an uplift term and is combined with CVSS_Base later in the AIVSS equation.
+
+3.3.1 Calculation Method
+
+For each vulnerability:
+
+1. Review the 10 Risk Amplification Factors (defined in Section 2.3).
+2. Assign a value to each factor (0.0, 0.5, or 1.0).
+3. Calculate Factor_Sum:
+   Sum the scores assigned to all 10 Risk Amplification Factors from Section 2.3.
+   Factor_Sum = Autonomy + Tools + Language + Context + Non-Determinism + Opacity + Persistence + Identity + Multi-Agent + Self-Mod
+   Maximum possible Factor_Sum = 10.0 (all factors scored 1.0)
+4. Apply the Formula:
+
+   AARS = (10 - CVSS_Base) * (Factor_Sum / 10) * ThM
+
+Where:
+
+                                                                                                                              50

@@ -1,0 +1,12 @@
+<page_number>29</page_number>
+
+- Server-Side Request Forgery: Performing SSRF attacks to control agents as a medium to attack otherwise unreachable internal critical systems from the affected server to other networks which are reachable from the vulnerable server
+- CI/CD SaaS Pipeline Tampering: Agents with deployment-bot scopes can modify GitHub Actions, GitLab CI, or CircleCI workflows, injecting malware or causing production outages.
+- Unintended Automated Critical Decisions or Actions: Take place when agentic systems are not properly restricted in their capabilities to act on critical systems, resulting in decisions made or actions performed without proper human oversight.
+- Feedback Loop Exploitation: Triggers resource exhaustion, system instability, or denial-of-service conditions occurs when attackers induce malicious cycles or feedback loops within agent networks.
+- Agent Misconfiguration Exploitation: Exploits misconfigured agents or insecure default settings, leveraging administrative or operational errors to execute unauthorized commands or escalate privileges.
+- Direct Critical System Access: Occurs when AI agents directly interact with critical infrastructure without intermediary security controls, immediate system modification or shutdown based on autonomous decision-making.
+- Multi-System Simultaneous Manipulation: Happens when agents leverage their ability to interact with multiple critical systems concurrently, amplifying impact through coordinated actions across interconnected infrastructure.
+- Real-Time Operational Override: Takes place when agents bypass normal operational procedures and directly execute commands on live production systems without proper validation or rollback mechanisms.
+
+                                                                                                                              28

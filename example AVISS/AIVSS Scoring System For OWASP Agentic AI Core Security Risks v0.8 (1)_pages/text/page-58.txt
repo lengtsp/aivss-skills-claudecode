@@ -1,0 +1,37 @@
+<page_number>58</page_number>
+
+- Risk Factors Sum (8.0): Autonomy(1.0), Tools(0.5), Language(1.0), Context(1.0), Non-Determinism(1.0), Opacity(1.0), Persistence(0.5), Identity(0.5), Multi-Agent(1.0), Self-Mod(0.5).
+  - Autonomy (1.0): Downstream agents autonomously act on the injected message without human verification.
+  - Tools (0.5): Limited tool scope at the initial agent; broader at downstream agents.
+  - Language (1.0): Natural language message triggers the cascade across agent boundaries.
+  - Context (1.0): Downstream agents use broad context from upstream agent outputs.
+  - Non-Determinism (1.0): Error propagation path is probabilistic depending on agent state.
+  - Opacity (1.0): The chain of causation across agents is not traceable in real time.
+  - Persistence (0.5): Session-based state propagation; no long-term memory in this scenario.
+  - Identity (0.5): Limited identity switching across the agent chain.
+  - Multi-Agent (1.0): The cascade explicitly involves multiple connected agents — the primary attack surface.
+  - Self-Mod (0.5): Downstream agents may modify retry logic dynamically.
+- Math:
+  - AARS = (10 - 7.1) * 0.80 * 0.97 = 2.2504
+  - AIVSS_raw = (7.1 + 2.2504) * 1.0 = 9.3504
+- Rounding: 9.4
+
+Final AIVSS Score: 9.4
+
+3.6.4 Agent Orchestration and Multi-Agent Exploitation
+
+Scenario: A malicious actor exploits a vulnerability in a central orchestration agent. This compromise impacts goal negotiations for all connected agents, causing data leakage and anomalous deletions.
+
+CVSS v4.0 Assessment:
+
+- Vector String:
+  CVSS:4.0/AV:A/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H
+- Verify Score: Click here to verify CVSS Base Score (9.4)
+- Vector Rationale:
+  - AV:A: Orchestrators are typically internal (Adjacent network), not directly exposed to the public internet.
+  - PR:L: Requires internal access or a compromised low-level service account.
+  - VC/VI/VA:H: Total compromise of the orchestrator.
+  - SC/SI/SA:H: Since the orchestrator controls all other agents, the downstream impact (Subsequent System) is also critical.
+- CVSS Base Score: 9.4 (Critical)
+
+                                                                                                                              57

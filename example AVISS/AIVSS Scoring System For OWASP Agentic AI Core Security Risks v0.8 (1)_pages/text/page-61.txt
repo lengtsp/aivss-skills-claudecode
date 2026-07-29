@@ -1,0 +1,38 @@
+<page_number>61</page_number>
+
+- VC:L: The leak is incidental to the corruption, not a full system dump.
+- CVSS Base Score: 5.8 (Medium)
+
+AARS Calculation (Amplification):
+
+- Risk Factors Sum (7.5): Autonomy(1.0), Tools(0.5), Language(1.0), Context(1.0), Non-Determinism(0.5), Opacity(1.0), Persistence(1.0), Identity(0.0), Multi-Agent(0.5), Self-Mod(1.0).
+  - Autonomy (1.0): PR agent acts autonomously on poisoned RAG context without human verification.
+  - Tools (0.5): Agent has limited tools — primarily retrieval and content generation.
+  - Language (1.0): Natural language output is the primary attack vector — poisoned context produces harmful output.
+  - Context (1.0): The RAG database is the agent's primary context source — the attack target.
+  - Non-Determinism (0.5): Some variance in how the agent uses retrieved context, but RAG injection is reliable.
+  - Opacity (1.0): The source and integrity of retrieved context is not visible to the agent.
+  - Persistence (1.0): The poisoned RAG database persists across all agent sessions — the attack is durable.
+  - Identity (0.0): No identity switching relevant to this scenario.
+  - Multi-Agent (0.5): Limited downstream agent interaction.
+  - Self-Mod (1.0): The agent modifies its own knowledge base context through RAG retrieval — the poisoning mechanism.
+- Math:
+  - AARS = (10 - 5.8) * 0.75 * 0.97 = 3.0555
+  - AIVSS_raw = (5.8 + 3.0555) * 1.0 = 8.8555
+- Rounding: 8.9
+
+Final AIVSS Score: 8.9
+
+3.6.7 Insecure Agent Critical Systems Interaction
+
+Scenario: Malware on a maintenance laptop feeds an autonomous water treatment agent false baseline data. The agent autonomously shuts down the city's water supply and executes automated decontamination.
+
+CVSS v4.0 Assessment:
+
+- Vector String:
+  CVSS:4.0/AV:A/AC:L/AT:N/PR:H/UI:N/VC:N/VI:H/VA:H/SC:N/SI:N/SA:N
+- Verify Score: Click here to verify CVSS Base Score (6.9)
+- Vector Rationale:
+  - AV:A: The attack originates from a maintenance laptop on the local network (Adjacent).
+
+                                                                                                                              60

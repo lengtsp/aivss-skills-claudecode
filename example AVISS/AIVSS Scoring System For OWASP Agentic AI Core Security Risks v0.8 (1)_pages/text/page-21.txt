@@ -1,0 +1,21 @@
+<page_number>21</page_number>
+
+5. Agent Identity Impersonation
+
+DESCRIPTION This risk class includes instances of agentic AI systems intentionally or unintentionally impersonating real humans or real authenticated systems to harmful effects. This covers two vulnerability types based on identity subversion within agentic systems:
+1. Agent impersonation of other agents, wherein a malicious or compromised agent assumes the identity or operational role of another agent.
+2. Agent impersonation of humans, wherein an agent is manipulated or designed to simulate human behavior or identity with deceptive intent.
+
+While these subcategories will tangibly take different forms, they both exploit the trust placed in perceived identities, potentially leading to unauthorized access, social engineering, manipulation of decisions, or reputational damage. As agentic interaction and integration increase, both with other agents and with humans, the ability for either to be impersonated will pose an increased threat.
+
+KEY RISKS (See Figure 5)
+
+- Agent Impersonation: A malicious agent uses identity spoofing techniques to bypass authentication, authorization and monitoring systems, gaining unauthorized access to systems or permissions to interact with other agents. This could enable the agent to perform harmful actions or influence other agents without proper repudiation or detection.
+- Human Impersonation: A malicious agent uses human interaction mediums (social media comment sections, audio or video sharing systems, or direct communication channels) to manipulate human behavior, spoof a real human's identity, or bypass human oriented authentication controls (like voice recognition).
+- Compromised Agent Identity Verification: Weaknesses in agent identity verification, either due to outdated methods or due to vulnerable verification systems, enable Agent Impersonation.
+- Misleading Agent Card & Capabilities: A malicious agent crafts an agent card and description to falsely represent its capabilities, origin, or affiliations to gain undue trust or access. This risk can lead to downstream Tool Squatting vulnerabilities as described in Section 1.
+- Exploitation of Human Trust: An attacker leverages an agent with human spoofing capabilities (such as voice or video deepfake generation technology) to manipulate human targets with spoofed human communications, using trusted communication channels like email or video call to exploit the implicit trust in human verification systems.
+- Shared Identity Pools: Agents often use shared service accounts or common API keys for convenience, creating a single point of failure. Compromise of one agent effectively compromises all others sharing the same identity.
+- Unauthorized Cloning of Agents or Humans: Without explicit consent and provenance controls, malicious actors can replicate agents or human likenesses (voice, face, writing style). This expands impersonation from a one-off spoofing attempt into systemic clone proliferation.
+
+                                                                                                                              20

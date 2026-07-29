@@ -1,0 +1,15 @@
+<page_number>18</page_number>
+
+KEY RISKS (See Figure 4)
+
+- Inter-Agent Communication Exploitation: Occurs when adversaries intercept, manipulate, or inject messages exchanged between agents. This risk is exacerbated by weak or missing encryption, lack of message integrity validation, absent authentication between agents, or implicit trust in agent endpoints, enabling command injection, data tampering, or workflow subversion.
+- Shared Knowledge Poisoning: Occurs when attackers corrupt the shared knowledge base (i.e, shared memory object, shared RAG, etc.), or environmental objects that multiple agents depend on to coordinate their actions. By introducing false or misleading information into this shared context, attackers can cause widespread misinterpretation and flawed decision-making across the agent network. In terms of orchestrated systems, attackers can affect multiple agents and cause cascading effects by leveraging the orchestrator's ability to execute multiple agents for their purpose.
+- Trust Relationship Abuse: Occurs when adversaries exploit implicit trust relationships established between cooperating agents to perform unauthorized actions, escalate privileges or bypass validation controls.
+- Coordination Protocol Manipulation: Involves attacking the mechanisms that orchestrate multiple agents' activities, by subverting orchestration logic, adversaries can re-route workflows, inject unauthorized tasks, or synchronize multiple agents for coordinated misuse, potentially causing cascading failures or unauthorized operations.
+- Session Fixation and Replay Attacks: Occurs when attackers reuse or predict session identifiers in multi-agent workflows, allowing them to inject or replay agent instructions and interfere with ongoing coordinated tasks across agents.
+  In autonomous multi-agent ecosystems where agents rely heavily on the structured message passing, long lived session and workflow tokens this risk is significantly amplified.
+- Capability Drift and Schema Mismatch: Happens when agents register outdated, inconsistent, or malicious capabilities in shared registries, memory poisoning, leading to misrouted tasks, failed orchestration, or exploitation of mismatched agent expectations.
+- Rogue Autonomy: A single purpose unaligned agent can influence other agents within a network to work against the intended goals
+-
+
+                                                                                                                              17

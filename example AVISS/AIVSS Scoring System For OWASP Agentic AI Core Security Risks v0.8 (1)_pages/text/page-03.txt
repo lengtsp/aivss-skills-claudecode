@@ -1,0 +1,34 @@
+<page_number>3</page_number>
+
+    3.6.1 Agentic AI Tool Misuse ......................................................................................... 55
+    3.6.2 Agent Access Control Violation ........................................................................... 56
+    3.6.3 Agent Cascading Failures .................................................................................... 57
+    3.6.4 Agent Orchestration and Multi-Agent Exploitation ............................................. 58
+    3.6.5 Agent Identity Impersonation ............................................................................... 59
+    3.6.6 Agent Memory and Context Manipulation ........................................................... 60
+    3.6.7 Insecure Agent Critical Systems Interaction ....................................................... 61
+    3.6.8 Agent Supply Chain and Dependency Risk ........................................................ 62
+    3.6.9 Agent Untraceability .............................................................................................. 63
+    3.6.10 Agent Goal and Instruction Manipulation .......................................................... 64
+3.7 Summary of AIVSS Scores ......................................................................................... 66
+4. AIVSS-Agentic Implementation Guide ......................................................................... 67
+    4.1 Lifecycle Integration .................................................................................................. 68
+    4.2 Release Gates and Approval Mechanisms .............................................................. 69
+5. Integration with Risk Management Frameworks ......................................................... 71
+6. AI Threat Taxonomies and Key References ................................................................ 72
+7. Continuous Improvement .............................................................................................. 76
+8. Disclaimer ....................................................................................................................... 77
+Acknowledgement ............................................................................................................... 78
+Appendix A: AIVSS-Agentic Report JSON Schema ........................................................ 88
+Appendix B: Mapping to OWASP GenAI/LLM Project's Agentic AI Top 10 for 2026 ..... 94
+Appendix C: Mapping CSA MAESTRO Layers to OWASP AIVSS Agentic AI Core Security Risks .... 96
+Appendix D: Contributor Survey Findings and Relative Risk Ranking .......................... 97
+
+
+Executive Summary
+
+By 2026, agentic AI systems are increasingly moving from experimental use into sustained deployment across enterprise and AI native startups. These systems differ from earlier AI applications by operating continuously, pursuing goals over time, and interacting directly with external tools, systems, and other agents. While adoption is accelerating, there remains no widely accepted or standardized definition of Agentic AI across industry, standards bodies, or academic research, which complicates system design, evaluation, and risk management.
+
+This document adopts a pragmatic working definition of Agentic AI systems as capable of autonomously defining and pursuing goals, reasoning and planning based on their understanding of the environment, and taking actions through external tools and leveraging memory and context to execute actions. The definition is intentionally functional rather than exhaustive, reflecting current deployment realities while allowing for future architectural evolution. As agentic capabilities expand, security risks will also become more pronounced, including persistent state manipulation, unintended
+
+                                                                                                                              2

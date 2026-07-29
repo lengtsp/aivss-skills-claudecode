@@ -1,0 +1,31 @@
+<page_number>16</page_number>
+
+infrastructure management) represents a cascade risk category where current detection and containment approaches are likely to be insufficient.
+
+[Graph / Diagram Details: Figure 3 — flowchart titled "Agent Cascading Failures — Key Risks". Top box "Compromised Agent" (propagates across connected systems) branches down via arrows into 3 boxes:
+
+"Trust & Pivoting" (left, pink):
+- Cross-system exploitation
+- Lateral movement via trusted channels
+- SaaS-to-SaaS pivoting
+
+"Amplification & Coordination" (right, green):
+- Impact amplification
+- Harmful collaboration
+
+"Integrity & Reasoning Poisoning" (bottom-center, blue):
+- Data poisoning & misleading context injection
+- Hallucination propagation
+
+Dashed curved lines connect all three boxes together at the bottom, indicating interrelation.]
+
+Figure 3. Agent Cascading Failures Key Risks
+
+
+EXAMPLE ATTACK SCENARIOS
+
+- Uncontrolled Retry Loops: A compromised customer service agent introduced corrupted data, causing downstream loan and fraud detection agents to fail validation. These agents misclassified the errors as transient, triggering self-amplifying retry loops that overwhelmed core systems and allowed fraudulent transactions to bypass safeguards.
+- Supply Chain Poisoning: Attackers infiltrated a code review agent to inject backdoors, causing dependent pipeline agents to malfunction. This failure cascaded through the development agents, resulting in the automated distribution of malware-infected updates to customers without triggering monitoring systems.
+- Operational Gridlock: Hackers compromised a predictive maintenance agent and manipulated failure predictions. This triggered cascading shutdowns across assembly line,
+
+                                                                                                                              15

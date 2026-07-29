@@ -1,0 +1,23 @@
+<page_number>76</page_number>
+
+Table 6 (continued):
+
+| Taxonomy/Reference | Description | Link |
+|---|---|---|
+| CSA and OWASP AI Exchange Agentic AI Red Teaming Guide | This guide details how to simulate adversarial attacks against Agentic AI to uncover and mitigate vulnerabilities. It covers 12 threat categories—including supply chain attacks, permission escalation, multi-agent collusion, memory poisoning, and hallucination chains—with actionable test requirements, attack vectors, and reporting templates | https://cloudsecurityalliance.org/artifacts/agentic-ai-red-teaming-guide |
+
+Table 6: AI Threat Taxonomies and Key References
+This list is not exhaustive but provides a strong foundation for understanding the broader context in which AIVSS-Agentic operates and the types of threats it aims to help quantify for Agentic AI systems.
+
+
+7. Continuous Improvement
+
+Pattern-Based Improvement Organizations that have deployed AIVSS-Agentic successfully over multiple assessment cycles typically develop comprehensive repositories documenting recurring vulnerability patterns and their associated mitigations. These knowledge bases capture not just the vulnerabilities themselves, but the specific architectural decisions, configuration choices, and operational contexts that enabled them. The accumulated insights from past assessments become increasingly valuable reference material, reducing the time required to identify similar risks in new deployments while improving the consistency of scoring decisions across different assessment teams.
+
+The compounding nature of this institutional knowledge argues strongly for establishing formal documentation practices from the initial AIVSS deployment. Even preliminary assessments yield valuable patterns: common misconfigurations in tool access controls, recurring gaps in agent memory isolation, or typical oversights in multi-agent trust relationships. Organizations that defer structured documentation often find themselves repeating costly discovery processes that earlier assessments had already uncovered.
+
+Modern privacy-preserving techniques, including differential privacy and secure multi-party computation, now enable organizations to benefit from collective learning without exposing proprietary system details. Assessment data can be transformed to extract generalizable patterns while stripping identifying characteristics of specific implementations. This allows security teams to contribute to and benefit from industry-wide pattern libraries without compromising their own architectural secrets or revealing deployment-specific vulnerabilities to potential adversaries.
+
+The field of Agentic AI is characterized by rapid innovation, leading to the emergence of new capabilities, architectural patterns, and, consequently, novel security risks. Similarly, attacker TTPs (Tactics, Techniques, and Procedures) targeting these advanced systems will continue to evolve.
+
+                                                                                                                              75

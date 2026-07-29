@@ -1,0 +1,17 @@
+<page_number>15</page_number>
+
+where agents have broader access to various cloud, on-prem, and SaaS resources and systems. The impact of successful attacks can be exponentially larger than the initial compromise, potentially affecting entire organizational infrastructures, cloud environments, downstream SaaS tenants and connected systems.
+
+KEY RISKS (See Figure 3)
+
+- Harmful Collaboration: Occurs when numerous agents, each following individually safe and valid instructions, interact in unexpected ways, resulting in a collectively damaging or destructive outcome.
+- Cross-System Exploitation: Happens when attackers use one compromised agent to gain access to multiple connected systems through pre-existing trust relationships. For example, an attacker compromises one AI agent or subsystem and then leverages the implicit trust, shared credentials, delegated permissions, or automatic workflows between AI agents to pivot into additional connected systems.
+- Impact Amplification: This involves exploiting an agent's legitimate access patterns to amplify the impact of an initial compromise.
+- Lateral Movement via Trusted Channels: Attackers exploit trusted agent-to-agent channels, allowing lateral movement across networks and abusing shared secrets, tokens, or orchestration permissions to execute privileged actions without triggering traditional security alerts.
+- SaaS-to-SaaS Pivoting: A compromised agent abuses pre-authorised integrations (e.g., Zapier, Workato, Power Automate) to invoke downstream SaaS actions, multiplying the blast radius across several business units.
+- Data Poisoning and Misleading Context Injection: Adversaries deliberately introduce corrupted training data or deceptive contextual information into agentic AI systems, causing compromised agents to propagate erroneous decisions, faulty reasoning, or malicious behaviors to other connected systems, undermining integrity and reliability of the broader ecosystem.
+- Hallucination Propagation: Occurs when one agent generates hallucinated or incorrect output that is interpreted as legitimate input by other agents or systems. In multi-agent workflows or environments with tool chaining, these hallucinations can propagate downstream, amplifying risk, corrupting actions, or misleading decision-making. Cascading hallucinations may emerge accidentally from model behavior or be deliberately induced by adversaries exploiting model biases, vague prompts, exploiting business logic or crafted tool descriptions. Detecting and containing hallucination spread is critical to maintaining agentic system integrity.
+
+Future Unknowns: As agentic systems are deployed at greater scale and interconnected through shared orchestration platforms and standardised protocols (A2A, MCP), the blast radius of a single cascade event will expand significantly. Market-based multi-agent systems — where agents competitively bid for tasks or resources — introduce economic feedback loops as an emerging cascade attack surface not yet well-understood. The interaction between hallucination propagation and real-time decision-making in safety-critical deployments (autonomous vehicles, medical systems,
+
+                                                                                                                              14

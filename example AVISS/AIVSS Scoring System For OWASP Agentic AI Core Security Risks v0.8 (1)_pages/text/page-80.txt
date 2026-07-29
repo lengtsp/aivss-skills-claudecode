@@ -1,0 +1,22 @@
+<page_number>80</page_number>
+
+Precize.ai; Walker Lee Dimon, MITRE; Xiaochen Zhang, AI 2030; Ying-Jung Chen, Georgia Institute of Technology.
+
+Key Contributors
+
+We acknowledge the key contributors listed alphabetically by first name in the provided contributor table for their direct contributions to AIVSS across drafting, review, research, tool implementation, and community building.
+
+| Contributor's Name | Affiliation | LinkedIn Profile Link |
+|---|---|---|
+| Aamiruddin Syed | AGCO Corp | https://www.linkedin.com/in/aamiruddin-syed/ |
+| Abhinavdutt Singh | Nir-vaana Consulting & Services | www.linkedin.com/in/abhinavduttsingh |
+| Abhishek M Shivalingaiah | Amazon | https://www.linkedin.com/in/abhishekmshivalingaiah/ |
+| Ads Dawson | Dreadnode | https://www.linkedin.com/in/adamdawson0/ |
+| Akhila Nama | Box, Inc | https://linkedin.com/in/akhilanama/ |
+| Alaeddin Selçuk Gürel | Bahçeşehir University | https://www.linkedin.com/in/alaeddin-sel%C3%A7uk-g%C3%BCrel-549594144/ |
+| Alex Leung | OWASP AI Exchange | https://www.linkedin.com/in/atleung/ |
+| Alex Polyakov | Adversa AI | https://www.linkedin.com/in/alex-polyakov-cyber/ |
+| Amy R. Steagall | Stanford University | www.linkedin.com/in/amy-steagall-hess-029b0350 |
+| Amritha Lal | Amazon Web Services | https://www.linkedin.com/in/amrithalalk/ |
+
+                                                                                                                              79

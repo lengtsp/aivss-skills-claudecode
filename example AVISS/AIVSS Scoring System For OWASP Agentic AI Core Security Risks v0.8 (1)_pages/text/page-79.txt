@@ -1,0 +1,28 @@
+<page_number>79</page_number>
+
+community education, and the framework reflects sustained input from practitioners across industry, academia, and the public sector.
+
+Distinguished Review Board
+
+The OWASP AIVSS Distinguished Review Board provides strategic guidance and expert oversight for the AIVSS framework. The Distinguished Review Board members, listed alphabetically by first name, include:
+
+- Amy R. Steagall, Chief Information Security Officer, Stanford University
+- Andrew Coyne, CISO, Banner Health, Former CISO, Mayo Clinic
+- Apostol Vassilev, Research Supervisor, NIST
+- Jason Clinton, Deputy CISO, Anthropic
+- Jeff Williams, Former Global OWASP Chair, Founder and CTO, Contrast Security
+- Jim Reavis, Founder and CEO of Cloud Security Alliance
+- Kevin Rocque, Managing Director/Executive Vice President, Global Technology Risk Officer, TD Bank
+- Martin Stanley, AI Risk Management Framework Lead, NIST
+- Michael Tran Duff, University Chief Information Security and Data Privacy Officer, Harvard University
+- Rob Joyce, Former Special Assistant to the President and Cybersecurity Coordinator
+
+Leader Authors
+
+Ken Huang, Michael Bargury, Vineeth Sai Narajala, Bhavya Gupta, and Tim Marple.
+
+Founding Members
+
+We acknowledge the founding members of the OWASP AIVSS project, who established the initial foundation of the framework through early design decisions, working sessions, reviews, and community collaboration. The founding members are: Adam Dawson, Dreadnode; Advait Patel, Broadcom, IEEE; Akram Sheriff, Cisco; Alex Polyakov, adversa.ai; Anat Bremler-Barr, Tel Aviv University; Anton Chuvakin, Google; Apostol Vassilev, NIST; Charles Iheagwara, AstraZeneca; Chris Hughes, Aquia; Dan Goldberg, Omnicom; Daniela Muhaj, AI 2030; David Ames, PwC; David Campbell, Scale AI; David Haber, Lakera; David Webb, Cybersecurity and Infrastructure Security Agency; Dennis Xu, Gartner; Diana Kelley, Noma Security; Edward Lee, JP Morgan; Idan Habler, Intuit; Jason Clinton, Anthropic; Jason Haddix, Arcanum Information Security; Joshua Beck, SAS; Keith Hoodlet, Trail of Bits; Ken Huang, OWASP; Kevin Simmonds, PWC; Krystal Jackson, Center for Long-Term Cybersecurity, UC Berkeley; Leon Derczynski, NVIDIA; Mahesh Lambe, MIT, Unify Dynamics; Manish Bhatt, Amazon Kuiper Security; Marissa Dotter, MITRE; Mark Breitenbach, Dropbox; Martin Stanley, Independent; Matthew Versaggi, White House Presidential Innovation Fellow; Michael Bargury, Zenity; Nate Lee, Cloudsec.ai; Om Narayan, AWS; Omar A. Turner, Microsoft; Prashant Kulkarni, Google Cloud; Ramesh Raskar, MIT Media Lab; Rob Joyce, PwC; Ron F. Del Rosario, SAP; Samantha Siau, Anthropic; Siah Burke, Siah.ai; Sunil Agrawal, Glean; Sushmitha Janapareddy, American Express; Tal Shapira, Reco AI; Vineeth Sai Narajala, AWS; Vishwas Manral,
+
+                                                                                                                              78

@@ -1,0 +1,22 @@
+<page_number>10</page_number>
+
+- Adversa AI. (n.d.). MCP security top 25: A list of most common vulnerabilities in MCP. https://adversa.ai/mcp-security-top-25-mcp-vulnerabilities
+- Anthropic. (2025, June 20). Agentic misalignment: How LLMs could be insider threats. https://www.anthropic.com/research/agentic-misalignment
+- CyberArk. (2025, May 30). Poison everywhere: No output from your MCP server is safe. https://www.cyberark.com/resources/threat-research-blog/poison-everywhere-no-output-from-your-mcp-server-is-safe
+- Fortune. (2024, May 21). AI regulation guidelines terminator kill switch summit Bletchley Korea. https://fortune.com/2024/05/21/ai-regulation-guidelines-terminator-kill-switch-summit-bletchley-korea/
+- Huang, J., Huang, K., & Hughes, C. (2025). AI agents in offensive security. In K. Huang (Ed.), Agentic AI. Progress in IS. Springer. https://doi.org/10.1007/978-3-031-90026-6_6
+- Huang, K., & Habler, I. (2025, April 30). Threat modeling Google's A2A protocol with the MAESTRO framework. Cloud Security Alliance. https://cloudsecurityalliance.org/blog/2025/04/30/threat-modeling-google-s-a2a-protocol-with-the-maestro-framework
+- Invariant Labs. (2025, April 1). MCP security notification: Tool poisoning attacks. https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks
+- Narajala, V. S., Huang, K., & Habler, I. (2025). Securing GenAI multi-agent systems against tool squatting: A zero trust registry-based approach. arXiv. https://arxiv.org/pdf/2504.19951
+- OWASP. (n.d.). Non-human identities top 10: 4-Insecure authentication. https://owasp.org/www-project-non-human-identities-top-10/2025/4-insecure-authentication/
+- Ramel, D. (2025, June 25). MCP servers hit by 'NeighborJack' vulnerability and more. Virtualization Review. https://virtualizationreview.com/articles/2025/06/25/mcp-servers-hit-by-neighborjack-vulnerability-and-more.aspx
+- The Register. (2025, December 1). Google's vibe coding platform deletes entire drive. https://www.theregister.com/2025/12/01/google_antigravity_wipes_d_drive/
+- Upwind. (2025, April 18). Unpacking the security risks of Model Context Protocol (MCP) servers. https://www.upwind.io/feed/unpacking-the-security-risks-of-model-context-protocol-mcp-servers
+- Windows Experience Blog. (2025, May 19). Securing the Model Context Protocol: Building a safer agentic future on Windows. https://blogs.windows.com/windowsexperience/2025/05/19/securing-the-model-context-protocol-building-a-safer-agentic-future-on-windows/
+
+
+2. Agent Access Control Violation
+
+DESCRIPTION
+
+                                                                                                                              9

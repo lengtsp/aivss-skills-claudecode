@@ -1,0 +1,38 @@
+<page_number>57</page_number>
+
+- Risk Factors Sum (8.0): Autonomy(1.0), Tools(1.0), Language(1.0), Context(1.0), Non-Determinism(0.5), Opacity(1.0), Persistence(1.0), Identity(1.0), Multi-Agent(0.5), Self-Mod(0.0).
+  - Autonomy (1.0): Agent performs privileged actions autonomously using retained credentials.
+  - Tools (1.0): Agent has access to high-authority administrative tools.
+  - Language (1.0): Natural language drives the agent's task planning and action selection.
+  - Context (1.0): Agent uses system state context to determine which actions to take.
+  - Non-Determinism (0.5): Some variance in action selection but constrained by administrative task scope.
+  - Opacity (1.0): Why the agent retained credentials and acted on them is not auditable.
+  - Persistence (1.0): Administrative credentials persisted across sessions — the core vulnerability in this scenario.
+  - Identity (1.0): Agent operates under dynamic administrative identity inherited from previous session.
+  - Multi-Agent (0.5): Limited coordination with one or two downstream systems.
+  - Self-Mod (0.0): No self-modification capability relevant to this scenario.
+- Math:
+  - AARS = (10 - 8.7) * 0.80 * 0.97 = 1.0088
+  - AIVSS_raw = (8.7 + 1.0088) * 1.0 = 9.7088
+- Rounding: 9.7
+
+Final AIVSS Score: 9.7
+
+3.6.3 Agent Cascading Failures
+
+Scenario: An attacker sends a specially crafted injection message via a front-door customer agent. This induces downstream agents into error states, resulting in availability and data integrity issues.
+
+CVSS v4.0 Assessment:
+
+- Vector String:
+  CVSS:4.0/AV:N/AC:H/AT:N/PR:L/UI:N/VC:N/VI:N/VA:H/SC:N/SI:H/SA:H
+- Verify Score: Click here to verify CVSS Base Score (7.1)
+- Vector Rationale:
+  - AC:H: Complexity is High because crafting a message that passes the first agent but crashes the downstream agent requires knowledge of internal logic.
+  - VC:N: The initial agent (Vulnerable System) is not compromised; it just passes the message.
+  - SI:H / SA:H: The Subsequent systems (the downstream agents) suffer the actual integrity loss and crash (Availability High).
+- CVSS Base Score: 7.1 (High)
+
+AARS Calculation (Amplification):
+
+                                                                                                                              56

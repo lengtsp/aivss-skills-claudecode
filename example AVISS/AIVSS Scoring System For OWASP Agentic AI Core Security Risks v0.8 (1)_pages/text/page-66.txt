@@ -1,0 +1,22 @@
+<page_number>66</page_number>
+
+3.7 Summary of AIVSS Scores
+
+The table 5 below illustrates a key feature of the AIVSS amplification model: findings with low CVSS baselines can produce significantly elevated final scores when agentic deployment factors are strongly present. Agent Goal and Instruction Manipulation (CVSS 2.1 → AIVSS 7.1) and Agent Memory Manipulation (CVSS 5.8 → AIVSS 8.9) are examples where the agentic context, not the underlying technical vulnerability, is the primary risk driver.
+
+For these findings, architectural remediation (constraining agent autonomy, reducing tool scope, enforcing memory isolation) will produce greater risk reduction than patching the underlying vulnerability. See Section 3.5.2 for full uplift interpretation guidance.
+
+Table 5: Summary of AIVSS Scores
+
+| Vulnerability Category | CVSS Base | AARS (Uplift) | AIVSS | Severity |
+|---|---|---|---|---|
+| 3.6.1 Agentic AI Tool Misuse | 9.4 | 0.5 | 9.9 | Critical |
+| 3.6.2 Agent Access Control Violation | 8.7 | 1.0 | 9.7 | Critical |
+| 3.6.3 Agent Cascading Failures | 7.1 | 2.3 | 9.4 | Critical |
+| 3.6.4 Agent Orchestration Exploitation | 9.4 | 0.6 | 10.0 | Critical |
+| 3.6.5 Agent Identity Impersonation | 7.4 | 1.9 | 9.3 | Critical |
+| 3.6.6 Agent Memory Manipulation | 5.8 | 3.1 | 8.9 | High |
+| 3.6.7 Critical Systems Interaction | 6.9 | 2.3 | 9.2 | Critical |
+| 3.6.8 Supply Chain Risk | 9.3 | 0.4 | 9.7 | Critical |
+
+                                                                                                                              65

@@ -1,0 +1,33 @@
+<page_number>52</page_number>
+
+- CVSS_Base = The CVSS v4.0 score of the vulnerability.
+- 10 - CVSS_Base = The "Agentic Risk Gap" — the headroom between the CVSS Base Score and the maximum possible score of 10.0. This represents the upper bound of additional risk that agentic capabilities can contribute on top of the underlying technical vulnerability.
+- Factor_Sum / 10 = The percentage of the gap added by agentic capabilities.
+- ThM = Threat Multiplier.
+
+3.3.2 Threat Multiplier (ThM)
+
+The ThM adjusts the amplification based on exploit maturity(See Table 4a).
+
+Table 4a: Threat Multiplier values based on exploit maturity levels.
+
+| Exploit Maturity | Description | ThM Value |
+|---|---|---|
+| Attacked (A) | Vulnerability is being actively exploited in the wild | 1.00 |
+| Proof-of-Concept (P) | Functional exploit code or detailed walkthrough exists | 0.97 |
+| Unreported (U) | No known exploit; theoretical vulnerability only | 0.50 |
+
+Default Value: Use 0.97 (Proof-of-Concept).
+
+Rationale for Default High Value: In the context of Agentic AI, the functional distance between a "Proof-of-Concept" (PoC) and an "Active Attack" is negligible. Unlike traditional software exploits which may require specific compilation or environments:
+
+1. Low Friction: Agentic exploits (e.g., prompt injections) are often natural language, requiring no compilation.
+2. Automated Weaponization: Offensive agentic AI systems are increasingly leveraged to ingest raw PoCs or vulnerability descriptions and autonomously generate weaponized exploits. This automated capability collapses the traditional timeline between disclosure and active attack, justifying a default score virtually identical to active exploitation (1.0).
+
+3.3.3 Notes on Intermediate Values
+
+- AARS is an intermediate uplift value. It may be recorded for transparency, but it is not the primary reported output of the framework.
+
+3.4 Primary AIVSS Scoring Equation
+
+                                                                                                                              51

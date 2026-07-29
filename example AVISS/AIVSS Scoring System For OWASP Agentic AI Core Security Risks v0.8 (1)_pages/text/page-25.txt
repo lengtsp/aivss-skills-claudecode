@@ -1,0 +1,15 @@
+<page_number>25</page_number>
+
+agent-specific rather than universal, requiring individual agent assessment as part of security evaluation.
+
+KEY RISKS (See Figure 6)
+
+- Context and Memory Manipulation: Involves deliberately corrupting an agent's stored context or memory to influence future decisions or actions.
+- Context Amnesia Exploitation: Occurs when attackers manipulate an agent's ability to maintain consistent context, through context injection, memory corruption or context resets. This can cause an agent to forget critical security constraints or operational parameters.
+- Cross-Session Data Leakage: Happens when attackers exploit how agents maintain state across different sessions, potentially accessing sensitive information from previous or future interactions.
+- Cross-User Memory Contamination: Malicious context or corrupted information is stored in an agent's memory from an interaction with one user and is then reused in an unrelated session with another user due to lack of memory isolation/allocation per user; thereby leading to manipulated or harmful outcomes.
+- Context Drift Exploits: Gradual memory shifts lead to unintended actions, bypassing security checks.
+- Residual Memory Exploitation: Unencrypted or long-lived memory zones retain prior session data, enabling cross-tenant leakage of sensitive information, such as private instructions or user data, potentially violating privacy regulations (e.g. GDPR Article 17).
+- Cognitive Resilience Variance: Different models exhibit varying abilities to recognize and refuse malformed or nonsensical input that may signal memory manipulation attempts. Models with lower cognitive resilience may accept and process corrupted context as valid, increasing susceptibility to memory poisoning attacks.
+
+                                                                                                                              24

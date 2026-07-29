@@ -1,0 +1,19 @@
+<page_number>68</page_number>
+
+- Security Operations (SecOps) Team and Governance, Risk, and Compliance (GRC) Team: Can provide critical input on existing security controls, current monitoring capabilities for agent activities, and access to logs relevant to incident response should any of the Core risks be exploited. These teams may also be responsible for managing security protocols for platforms hosting the agents and ensuring compliance with organizational security policies.
+- Risk Management/Compliance Officer: Ensures the AIVSS-Agentic assessment process and its outputs (the list of scored vulnerability categories) align with the organization's broader enterprise risk management (ERM) framework and relevant regulatory/compliance obligations (e.g., AI Act, GDPR).
+- System Owners/Business Stakeholders: Provides context on the criticality of the Agentic AI system to business operations, defines acceptable risk levels for different types of impacts (which informs Environmental Metrics and Impact Metrics), and champions resources for remediation based on the prioritized list of scored vulnerabilities
+- Chief Security Officer (CISO/CSO/equivalent): Assesses the severity and potential impact of scores on business operations. Translates critical risks into business context, communicates findings and remediation plans to the Board of Directors. Collaborates with stakeholders to proactively develop secure architecture and frameworks.
+- AI Reliability & Policy Engineer (AI RPE): Designs, implements, and maintains policy-as-code, guardrails, and reliability controls that operationalize AIVSS. Translates assessed amplification factors and AARS outcomes into enforceable system constraints (e.g., tool access policies, autonomy boundaries, memory retention rules, escalation thresholds, and human-in-the-loop requirements). Partners closely with Agent Developers and SecOps to ensure mitigations remain effective over time as agent behavior, models, or operating environments change. Serves as the connective role between assessment results, runtime governance, and continuous assurance.
+
+In practice, organizations may benefit from using a system architecture framework to structure the identification of agentic AI risks prior to applying AIVSS scoring. The Cloud Security Alliance MAESTRO framework is commonly used for this purpose, providing a seven-layer reference model that helps ensure assessment coverage across models, data flows, agent frameworks, infrastructure, observability, security controls, and external ecosystems.
+
+Assessors can use MAESTRO to guide threat modeling workshops, architectural reviews, and scoping activities, and then apply AIVSS to score the identified risks consistently. This approach avoids architectural blind spots while preserving AIVSS as the primary mechanism for severity assessment and prioritization. Details on the MAESTRO framework are available here.
+
+4.1 Lifecycle Integration
+
+The AIVSS agentic assessment should be continuous and iterative, rather than a one-time evaluation. Re-assessments should be explicitly triggered whenever changes occur that may alter the system's risk profile, including:
+
+- Material changes to system architecture, such as the introduction of new agents, tools, models, memory stores, orchestration layers, or external integrations
+
+                                                                                                                              67

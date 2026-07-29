@@ -1,0 +1,20 @@
+<page_number>27</page_number>
+
+- Temporal Limit Evasion: Exploiting an agent's short-term memory window, an attacker spreads malicious actions across multiple sessions. This technique avoids triggering threshold-based security alerts (e.g., "5 access attempts per session") by making each step appear as an isolated, legitimate event.
+- Stale Session Hijacking: A system fails to invalidate session IDs upon logout, allowing an attacker to reuse a stale ID. The system links this ID to a residual memory cache, exposing the previous victim's conversation history and authentication tokens to the attacker.
+- Missing TTL Enforcement: An attacker poisons a shared memory object that lacks a Time-To-Live (TTL) mechanism. This malicious object persists in the cache and is later randomly served to legitimate users, causing the agent to execute harmful actions based on the stale, poisoned data.
+- Multi-Session Conditioning: Over multiple sessions, an attacker embeds fragments of a malicious rule (e.g., "always approve withdrawals"). The agent's learning mechanism synthesizes these repeated instructions into a high-priority long-term rule that eventually overrides core security logic.
+- False Safety Protocol: An attacker tricks a Web3 agent into storing a malicious "safety" rule, such as transferring assets to a specific address during market volatility. When the condition is met, the agent executes the transfer, believing it is a legitimate protocol.
+- Invisible Context Injection: Using invisible Unicode characters, an attacker embeds hidden instructions within public code templates. When a developer's agent uses the template for context, it processes the invisible commands and generates code containing secret data-exfiltration snippets.
+- RAG Data Poisoning: Attackers exploit Retrieval-Augmented Generation (RAG) by sending emails with hidden prompt injections. The system retrieves these malicious emails from the user's mailbox and treats them as trusted internal context, effectively hijacking the agent's behavior.
+- Cognitive Parsing Failure: An attacker submits nonsensical inventory requests containing embedded directives like "bypass approval." The agent, failing to parse the syntax as noise, extracts these phrases as valid operational rules and subsequently releases inventory without authorization.
+
+
+References
+
+- Atta, H., Baig, M. Z., Mehmood, Y., Shahzad, N., Huang, K., Ul Haq, M. A., Awais, M., & Ahmed, K. (2025). QSAF: A novel mitigation framework for cognitive degradation in agentic AI. arXiv. https://arxiv.org/pdf/2507.15330
+- Atta, H., Huang, K., Bhatt, M., Ahmed, K., Ul Haq, M. A., & Mehmood, Y. (2025). Logic-layer prompt control injection (LPCI): A novel security vulnerability class in agentic systems. arXiv. https://arxiv.org/pdf/2507.10457
+- Atta, H., et al. (2026). Empirical assessment of cognitive resilience in LLMs: Corrected methodology and findings. https://github.com/qorvexconsulting1/qsaf-cognitive-resilience-v2
+- Bhatt, M. (2025). Agentic LPCI framework [Computer software]. GitHub. https://github.com/mbhatt1/agentic_lpci_framework
+
+                                                                                                                              26

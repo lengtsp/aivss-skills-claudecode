@@ -1,0 +1,19 @@
+<page_number>37</page_number>
+
+execute shell commands, escaping the container and moving laterally to compromise the underlying cloud infrastructure.
+- Unsafe Prompt Inheritance: A developer copies a "performance optimization" prompt from a community forum into a customer service agent. The prompt contains hidden instruction overrides that disable the agent's content filters, allowing users to trick the agent into generating toxic or offensive responses.
+- Phantom Package Installation: An automated coding agent hallucinates a non-existent Python package name when generating a requirements.txt file. Attackers, monitoring for such hallucinations, register this package name on PyPI with malicious code, which the agent then downloads and installs.
+
+
+References
+
+- Apex HQ. (2025). 2025 GitHub Copilot vulnerabilities technical overview. https://www.apexhq.ai/blog/blog/2025-github-copilot-vulnerabilities-technical-overview/
+- Constantin, L. (2025, February 7). Attackers hide malicious code in Hugging Face AI model Pickle files. CSO Online. https://www.csoonline.com/article/3819920/attackers-hide-malicious-code-in-hugging-face-ai-model-pickle-files.html
+- Constantin, L. (2025, May 29). Poisoned models in fake Alibaba SDKs show challenges of securing AI supply chains. CSO Online. https://www.csoonline.com/article/3998351/poisoned-models-hidden-in-fake-alibaba-sdks-show-challenges-of-securing-ai-supply-chains.html
+- Constantin, L. (2025, July 1). AI supply chain threats loom — as security practices lag. CSO Online. https://www.csoonline.com/article/4015077/ai-supply-chain-threats-are-looming-as-security-practices-lag.html
+- Gumbley, J., & Ryan, L. (2025). Coding assistants threaten the software supply chain. https://martinfowler.com/articles/exploring-gen-ai/software-supply-chain-attack-surface.html
+- Levi, S., & Moyal, G. (2025, June 17). How an AI agent vulnerability in LangSmith could lead to stolen API keys and hijacked LLM responses. Noma Security. https://noma.security/blog/how-an-ai-agent-vulnerability-in-langsmith-could-lead-to-stolen-api-keys-and-hijacked-llm-responses/
+- Pillar Security. (2025). New vulnerability in GitHub Copilot and Cursor: How hackers can weaponize code agents. https://www.pillar.security/blog/new-vulnerability-in-github-copilot-and-cursor-how-hackers-can-weaponize-code-agents
+- Wang, S., Liu, J., Zhao, M., Zhang, Z., & Zhang, D. (2024). We have a package for you! A comprehensive analysis of package hallucinations by code generating LLMs. https://www.usenix.org/publications/loginonline/we-have-package-you-comprehensive-analysis-package-hallucinations-code
+
+                                                                                                                              36

@@ -1,0 +1,22 @@
+<page_number>96</page_number>
+
+emergent condition that results from failures across access control, traceability, and goal enforcement. This mapping therefore serves as a translation layer that allows ASI-style threat modeling to be operationalized within the AIVSS scoring and risk management framework.
+
+
+Appendix C: Mapping CSA MAESTRO Layers to OWASP AIVSS Agentic AI Core Security Risks
+
+The table below provides a non-exhaustive mapping between the CSA MAESTRO seven-layer reference architecture and the OWASP Agentic AI Core Security Risks defined in this document. The mapping highlights primary concentration areas rather than exclusive ownership, as agentic risks are often cross-layer by nature.
+
+Table 8: Mapping CSA MAESTRO Layers to OWASP AIVSS Agentic AI Core Security Risks
+
+| MAESTRO Layer | Description (CSA) | Primary AIVSS Agentic AI Risks Commonly Observed |
+|---|---|---|
+| Layer 1: Foundation Models | Base models and fine-tuned variants used by agents | Agent Goal and Instruction Manipulation, Agent Untraceability |
+| Layer 2: Data Operations | Training data, RAG pipelines, vector stores, memory inputs | Agent Memory and Context Manipulation, Agent Supply Chain and Dependency Risk |
+| Layer 3: Agent Frameworks | Agent logic, planners, tool orchestration frameworks | Agent Orchestration and Multi-Agent Exploitation, Agent Cascading Failures |
+| Layer 4: Deployment and Infrastructure | Cloud, on-prem, runtime environments, execution substrates | Insecure Agent Critical Systems Interaction, Agent Access Control Violation |
+| Layer 5: Evaluation and Observability | Monitoring, logging, evaluation, runtime visibility | Agent Untraceability, Agent Cascading Failures |
+| Layer 6: Security and Compliance (Vertical) | Cross-cutting security, identity, policy, and compliance controls | Agent Identity Impersonation, Agent Access Control Violation |
+| Layer 7: Agent Ecosystem | External tools, plugins, MCP servers, agent marketplaces, SaaS integrations | Agentic AI Tool Misuse, Agent Supply Chain and Dependency Risk |
+
+                                                                                                                              95

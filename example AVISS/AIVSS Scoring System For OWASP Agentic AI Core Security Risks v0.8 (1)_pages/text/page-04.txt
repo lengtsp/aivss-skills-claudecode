@@ -1,0 +1,17 @@
+<page_number>4</page_number>
+
+tool use, cascading failures, and gaps in accountability. Many of these risks are not fully addressed by existing application security or AI governance approaches, further underscoring the need for agent-specific risk analysis and assessment frameworks.
+
+To support system-level reasoning about where agentic AI risks emerge, this document is informed by the Cloud Security Alliance MAESTRO reference architecture for Agentic AI. MAESTRO defines a seven-layer system decomposition spanning foundation models, data operations, agent frameworks, deployment infrastructure, evaluation and observability, cross-cutting security and compliance, and the broader agent ecosystem. While AIVSS focuses on identifying, categorizing, and scoring agentic AI security risks, MAESTRO provides an architectural lens for understanding how those risks manifest across different layers of an agentic system. Used together, MAESTRO and AIVSS enable consistent identification of agentic risks within real-world system architectures without altering the scoring methodology defined in this document (See Appendix C for the Mappings between MAESTRO and AIVSS).
+
+AIVSS is aligned with the NIST AI Risk Management Framework's Govern, Map, Measure, and Manage functions. AIVSS establishes Govern elements through defined roles and responsibilities for scoring, while enumerated risks support the Map function by identifying vulnerabilities across agentic AI systems. AIVSS provides risk prioritization and scoring as a data point to the "Measure" function's TEVV (Test, Evaluation, Verification, and Validation) activities, enabling systematic vulnerability assessments throughout the agentic AI system lifecycle. The standardized AIVSS risk scoring enables organizations to prioritize risk response activities within the "Manage" function, with these measures informing decisions to continue use of an agentic AI system, limit features, or discontinue its use.
+
+This document is structured in two key parts to address Agentic AI Security Risks. Part 1, "The OWASP Agentic AI Core Security Risks," provides a detailed exposition of the most critical vulnerabilities specific to agentic systems, drawing from cross-industry analysis and MAESTRO threat modeling. Part 2, "The AIVSS-Agentic Scoring System and Application," then introduces a specialized vulnerability scoring framework designed to quantify these unique risks, offering a methodology for consistent assessment and prioritization to enhance the security of Agentic AI deployments.
+
+As agentic AI technologies and approaches rapidly evolve, the initial list of core security risks for agentic systems will naturally require updates and expansions over time. Accordingly, this document is intended as a living framework, inviting contributions and refinements to ensure it remains relevant to emerging threats and unanticipated vulnerabilities.
+
+Published together with the v0.8 release, we have made available the official Crosswalk between OWASP AIVSS and AIUC-1. This companion resource provides a direct mapping to facilitate seamless integration for risk assessment and compliance workflows.
+
+Access the Crosswalk here: https://aivss.owasp.org/aiuc-crosswalk/index.html
+
+                                                                                                                              3

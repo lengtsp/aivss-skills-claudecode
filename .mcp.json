@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "aivss-assessment-skills": {
+      "type": "stdio",
+      "command": "python3",
+      "args": ["example AVISS/aivss_mcp_server.py"],
+      "env": {}
+    }
+  }
+}

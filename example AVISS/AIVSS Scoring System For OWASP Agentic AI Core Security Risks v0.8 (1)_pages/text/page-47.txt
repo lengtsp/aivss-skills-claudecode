@@ -1,0 +1,18 @@
+<page_number>47</page_number>
+
+Table 2 (continued): Operational definitions and scoring rubric for the ten agentic factors
+
+| Factor | Operational Definition | Scoring: 0.0 (None) | Scoring: 0.5 (Partial) | Scoring: 1.0 (Full) |
+|---|---|---|---|---|
+| 3. Language | Reliance on Natural Language (NL) for control logic. | Structured API inputs only; no NL driving logic. | NL used for retrieval/Q&A, not execution. | NL prompts directly drive tool execution and planning. |
+| 4. Context | Uses sensors/env state to decide actions. | None; operates in a vacuum. | Uses narrow signals (e.g., specific user location only). | Broad environmental signals drive autonomous decisions. |
+| 5. Non-Determinism | Variance that can change outcomes. | Deterministic (Rule-based/Fixed seed). | Bounded variance with strict guardrails. | High variance; weak guards; probabilistic logic. |
+| 6. Opacity | Introspection, logs, traceability of thought. | Full traceability; deterministic logging. | Partial/fragmented logs; "black box" reasoning. | Low visibility; inability to trace why an action was taken. |
+| 7. Persistence | Extent to which agent retains memory. | No memory (stateless). | Ephemeral/session-based memory only. | Long-term memory (Vector DB) persists across sessions. |
+| 8. Identity | Runtime role/identity changes. | Fixed identity/service account. | Limited swaps (e.g., scoped per specific tool). | Can assume roles or cross tenant boundaries dynamically. |
+| 9. Multi-Agent | Coordination with other agents/services. | Isolated instance. | Limited coordination with 1-2 known agents. | Complex orchestration; swarm patterns; market-based logic. |
+| 10. Self-Mod | Can it change goals/tools/code? | None; static configuration. | Can update its own system prompts/config only. | Can alter tools, control flow, or generate/execute code. |
+
+Table 2: Operational definitions and scoring rubric for the ten agentic factors
+
+                                                                                                                              46

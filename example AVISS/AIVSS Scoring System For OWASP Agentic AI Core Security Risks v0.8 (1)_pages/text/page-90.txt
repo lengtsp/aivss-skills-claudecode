@@ -1,0 +1,49 @@
+<page_number>90</page_number>
+
+```json
+          "id": {
+            "type": "string",
+            "description": "Unique identifier for this finding (e.g., VULN-001)."
+          },
+          "title": {
+            "type": "string",
+            "description": "Short title of the vulnerability."
+          },
+          "description": {
+            "type": "string",
+            "description": "Detailed description of the vulnerability scenario."
+          },
+          "owasp_category": {
+            "type": "string",
+            "enum": [
+              "Agentic AI Tool Misuse",
+              "Agent Access Control Violation",
+              "Agent Cascading Failures",
+              "Agent Orchestration & Multi-Agent Exploitation",
+              "Agent Identity Impersonation",
+              "Agent Memory & Context Manipulation",
+              "Insecure Agent Critical Systems Interaction",
+              "Agent Supply Chain & Dependency Risk",
+              "Agent Untraceability",
+              "Agent Goal & Instruction Manipulation"
+            ],
+            "description": "The specific OWASP Agentic AI Core Risk category (Section 3.6)."
+          },
+          "cvss_base": {
+            "type": "object",
+            "required": [
+              "vector_string",
+              "score"
+            ],
+            "properties": {
+              "vector_string": {
+                "type": "string",
+                "description": "The CVSS v4.0 Vector String."
+              },
+              "score": {
+                "type": "number",
+                "minimum": 0.0,
+                "maximum": 10.0,
+```
+
+                                                                                                                              89

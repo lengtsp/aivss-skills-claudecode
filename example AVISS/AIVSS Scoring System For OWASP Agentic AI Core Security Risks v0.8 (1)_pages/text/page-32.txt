@@ -1,0 +1,20 @@
+<page_number>32</page_number>
+
+overly permissive IAM role that grants full administrative access (*.*) to the cloud account, instead of the required least-privilege permissions to manage specific server groups. An attacker finds a minor command injection vulnerability in the agent's monitoring dashboard. They use this vulnerability to issue a single command: aws configure export-credentials. This command exposes the agent's powerful temporary security credentials. The attacker then uses these credentials from their own machine to take over the entire cloud environment. They create a persistent administrative backdoor for themselves, copy all sensitive customer databases from production snapshots, and then terminate the entire IaaS infrastructure, causing a catastrophic and permanent loss of the company's operational systems.
+- Agentic AI-Powered Smart City Sabotage: A city deploys an agentic AI system to autonomously manage its traffic violation detection, leveraging containerized AI models stored in a private registry. Due to a misconfiguration, the registry is exposed to the internet with overly permissive write access and no authentication. An attacker discovers the exposed registry and downloads the latest AI model. They subtly tamper with the model's weights and architecture so the agentic AI begins misclassifying ordinary driving behavior as violations. The attacker then pushes the compromised model back into the registry. When the city's agentic AI system pulls the updated image, it unknowingly deploys the sabotaged model. Suddenly, thousands of drivers receive false violation notifications, the ticketing system is overwhelmed, and public trust collapses. The agentic AI continues operating with the compromised model, amplifying the disruption while the malicious changes evade standard detection and monitoring. The city faces widespread disruption, legal challenges, and a severe loss of confidence in automated enforcement.
+
+
+References
+
+- de Witt, C. S. (2025). Open challenges in multi-agent security: Towards secure systems of interacting AI agents. arXiv. https://arxiv.org/html/2505.02077v1
+- Mern, J., Hatch, K., Silva, R., Hickert, C., Sookoor, T., & Kochenderfer, M. J. (2021). Autonomous attack mitigation for industrial control systems. arXiv. https://arxiv.org/abs/2111.02445
+- Oliveira, A., & Fiser, D. (2024). Silent sabotage: Weaponizing AI models in exposed containers. Trend Micro. https://www.trendmicro.com/vinfo/us/security/news/cyber-attacks/silent-sabotage-weaponizing-ai-models-in-exposed-containers
+
+
+8. Agent Supply Chain and Dependency Risk
+
+DESCRIPTION
+
+Agent Supply Chain and Dependency Risk is the potential for an agent's security and integrity to be compromised through vulnerabilities within its foundational components and operational dependencies. This risk surface is vast, extending throughout the agent's entire lifecycle—from the
+
+                                                                                                                              31

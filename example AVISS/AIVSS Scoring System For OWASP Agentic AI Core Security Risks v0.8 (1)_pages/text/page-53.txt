@@ -1,0 +1,36 @@
+<page_number>53</page_number>
+
+The Primary AIVSS Scoring Equation determines the overall severity by combining the technical baseline (CVSS_Base) with the agentic uplift (AARS), then applying a Mitigation Factor.
+
+AIVSS = (CVSS_Base + AARS) * Mitigation_Factor
+
+Where:
+- CVSS_Base = The CVSS v4.0 score of the vulnerability.
+- AARS = The Agentic Uplift value calculated in Section 3.3.
+- Mitigation_Factor = Mitigation Factor.
+
+3.4.0 Step-by-Step Calculation Procedure
+
+To avoid ambiguity, compute the final AIVSS score using the following procedure:
+1. Compute the remaining gap: Risk_Gap = 10 - CVSS_Base
+2. Compute the uplift: AARS = Risk_Gap * (Factor_Sum / 10) * ThM
+3. Apply mitigation scaling: AIVSS_raw = (CVSS_Base + AARS) * Mitigation_Factor
+4. Report the final score: AIVSS = RoundHalfUp(AIVSS_raw, 1) (nearest tenth)
+
+3.4.1 Mitigation Factor (Mitigation_Factor)
+
+Mitigation_Factor is a normalized scaling factor (ranging from 0.67 to 1.0) that adjusts the score based on mitigation strength. A higher value indicates weaker mitigations, while a lower value indicates stronger mitigations.
+
+Table 4b: Mitigation Factor values based on mitigation strength.
+
+| Mitigation Strength | Description | Mitigation_Factor Value |
+|---|---|---|
+| No/Weak Mitigation | Mitigations are absent or ineffective | 1.00 |
+| Partial Mitigation | Some mitigations exist, but they are incomplete, not reliably enforceable, or not validated against realistic misuse/adversarial conditions | 0.83 |
+| Strong Mitigation | Effective mitigations are in place, validated, and consistently enforceable under real operating conditions (fail-closed where applicable) | 0.67 |
+
+Default Value: Use 1.0 (No/Weak Mitigation).
+
+Rationale for Default High Value: In agentic AI systems, mitigations are frequently incomplete, bypassable, or unvalidated. AIVSS therefore assumes "no/weak mitigation" by default unless the
+
+                                                                                                                              52

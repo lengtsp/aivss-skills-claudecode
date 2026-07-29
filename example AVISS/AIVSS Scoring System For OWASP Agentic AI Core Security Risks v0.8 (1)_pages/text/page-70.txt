@@ -1,0 +1,30 @@
+<page_number>70</page_number>
+
+- Privacy and GRC representatives
+- Architecture or platform engineering representatives
+
+Using AIVSS-Agentic scoring and qualitative judgment, the committee assigns each agentic system a High, Moderate, or Low risk classification, which determines:
+- The depth of pre-release review and testing required
+- Whether additional red-teaming, controls validation, or human-in-the-loop safeguards are necessary
+- Whether escalation to the AI Governance Board or a lightweight release committee is required before production deployment
+Higher-risk classifications should trigger deeper review and stronger assurance requirements, while lower-risk systems may proceed through streamlined approval paths.
+
+Figure 11 depicts different roles in AIVSS-Agentic assessment based on AI/ML security expertise
+
+[Graph / Diagram Details: Figure 11 — horizontal spectrum diagram titled "Roles in AIVSS-Agentic assessment based on AI/ML security expertise", spanning from "Basic" (left) to "Advanced" (right) with 5 role icons in sequence:
+
+1. Risk Management/Compliance Officer (yellow, scales icon) — "Ensures alignment with risk management framework"
+2. Security Operations Team (orange, shield-check icon) — "Provides input on security controls"
+3. System Owners (red, two-people icon) — "Defines acceptable risk levels"
+4. Agent Developers/Engineers (blue, gear/robot icon) — "Provides technical details about the system"
+5. AI Security Lead/Assessor (green, magnifier-person icon) — "Orchestrates the assessment process"
+]
+
+Figure 11: Roles in AIVSS-Agentic assessment based on AI/ML security expertise
+
+
+5. Integration with Risk Management Frameworks
+
+AIVSS-Agentic is designed not as a standalone silo but as a specialized tool that can be effectively integrated into broader organizational Enterprise Risk Management (ERM) and cybersecurity
+
+                                                                                                                              69

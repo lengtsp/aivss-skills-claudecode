@@ -1,0 +1,21 @@
+<page_number>78</page_number>
+
+Application of this framework does not guarantee the security of any AI system, nor does it certify or endorse any particular product or service. Users of this framework are solely responsible for its correct application, the accuracy of their inputs, the interpretation of its results within their specific organizational and system context, and any actions taken based on the assessment.
+
+The OWASP Foundation, the AIVSS-Agentic project leaders, and all contributors to this framework are not liable for any direct, indirect, incidental, special, exemplary, or consequential damages (including, but not limited to, procurement of substitute goods or services; loss of use, data, or profits; or business interruption) however caused and on any theory of liability, whether in contract, strict liability, or tort (including negligence or otherwise) arising in any way out of the use of this framework or its documentation, even if advised of the possibility of such damage. Organizations should always exercise their own expert judgment when assessing and mitigating Agentic AI security risks.
+
+
+Acknowledgement
+
+This important deliverable was made possible through dedicated and insightful collaboration with AIUC (Artificial Intelligence Underwriting Company) and several top-level key OWASP AI security projects, and is co-published with them. We extend our sincere gratitude to our AIUC partners, the OWASP AIVSS, OWASP AI Exchange, and OWASP Citizen Development Top 10 projects for their invaluable contributions and partnership.
+
+A special thank you is owed to the AIVSS leadership team—Ken Huang, Michael Bargury, Vineeth Sai Narajala, Bhavya Gupta, and Tim Marple—for their leadership, vision, and unwavering commitment. We also sincerely thank Emil Bender Lassen from AIUC for his invaluable guidance and collaborative spirit throughout development.
+
+We further acknowledge collaborators at the OWASP AI Exchange (led by Rob van der Veer) and OWASP Low Code No Code Top 10 (led by Kayla Underkoffler). This cross-community effort exemplifies advancing secure AI practices.
+
+
+This document represents version 0.8 and includes multiple improvements over the previously published v0.5 release, including an updated quantitative model for AIVSS, revised core agentic AI risks with example scenarios, and refreshed figures and tables to improve readability and comprehension. It also adds mappings to the OWASP GenAI/LLM Project Agentic AI Top 10 and to CSA MAESTRO threat modeling, refined alignment with the NIST AI RMF, documents survey findings on core agentic risks in an appendix, and incorporates over 1000 public comments from v0.5 release.
+
+This document acknowledges the individuals and groups whose guidance, leadership, and hands-on contributions have shaped the OWASP AIVSS Project. AIVSS is advanced through open collaboration aligned with the OWASP mission to improve software security through open source initiatives and
+
+                                                                                                                              77

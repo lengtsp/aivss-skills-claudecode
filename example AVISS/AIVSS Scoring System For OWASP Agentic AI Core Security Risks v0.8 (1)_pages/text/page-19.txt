@@ -1,0 +1,32 @@
+<page_number>19</page_number>
+
+[Graph / Diagram Details: Figure 4 — flowchart titled "Agent Orchestration & Multi-Agent Exploitation — Key Risks". Top box "Orchestrator + Agent Network" (coordination, communication, shared context) branches down via arrows (crossing pattern) into 4 quadrant boxes:
+
+"Messaging & Session Attacks" (top-left, pink):
+- Inter-agent communication exploitation
+- Session fixation & replay attacks
+
+"Shared Context & Registries" (top-right, green):
+- Shared knowledge poisoning (shared memory / RAG)
+- Capability drift & schema mismatch
+
+"Trust & Workflow Subversion" (bottom-left, blue):
+- Trust relationship abuse
+- Coordination protocol manipulation
+
+"Rogue / Insider Misuse" (bottom-right, purple):
+- Rogue autonomy (misaligned agent influences others)
+- Insider threat (agentic admin misuse)
+
+Crossed arrows connect "Messaging & Session Attacks" to "Trust & Workflow Subversion" (diagonal) and "Shared Context & Registries" to "Rogue / Insider Misuse" (diagonal).]
+
+Figure 4. Agent Orchestration and Multi-Agent Exploitation Key Risks
+
+
+EXAMPLE ATTACK SCENARIOS
+
+- Implicit Trust Exploitation: In a corporate environment, attackers compromise a customer service AI agent with administrative privileges. They exploit its trusted status to send fraudulent data requests to financial processing agents, which are executed, as the financial agent does not recognize the customer agent was compromised. This leads to large-scale financial fraud across the organization's automated systems.
+- Race Condition Exploitation: Cybercriminals targeting an e-commerce platform identify timing vulnerabilities in inventory management workflows and deliberately trigger race conditions by submitting simultaneous purchase requests. This causes the pricing agents to calculate incorrect discounts while inventory agents fail to properly decrement stock levels, resulting in significant financial losses and inventory discrepancies.
+- Market Data Spoofing: Attackers intercept API communications between trading algorithms and market data agents in a financial firm. They inject falsified market signals disguised as legitimate price updates, causing trading agents to execute massive unauthorized transactions. Compliance monitoring systems remain unaware due to the authentic-appearing message format.
+
+                                                                                                                              18

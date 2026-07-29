@@ -1,0 +1,29 @@
+<page_number>5</page_number>
+
+Part 1: OWASP Agentic AI Core Security Risks
+
+The OWASP Agentic AI Core Security Risks serves as a foundational reference point for both current and emerging threats, presenting each of the ten critical vulnerability categories that uniquely affect Agentic AI systems. The risks are listed in descending order of expert-assessed severity, starting with those that often demonstrate high severity, such as "Agentic AI Tool Misuse" and "Agent Access Control Violation." For each distinct risk, this section provides a detailed description, outlines its associated key dangers and most-common manifestations, details established prevention and mitigation strategies, and offers example attack scenarios for ease of practical identification.
+
+Where appropriate, each item in the list also highlights "future unknowns", nascent vulnerabilities and attack techniques not yet widely documented but likely to become significant as agentic AI capabilities evolve. This detailed examination aims to equip security professionals, developers, and organizations with a clear understanding of these agent-specific threats and the need to plan for their evolution.
+
+Some repetition across entries is intentional, as many real-world examples of agentic risks share common risk drivers. Agentic systems are compositional and interconnected, the most common risks, such as Tool Misuse, Goal Manipulation, or Access Control Violations, often overlap or reinforce each other, and produce cascading effects across multiple agents and environments. Where relevant, entries call attention to these intersections while maintaining a focus on the respective vulnerability class.
+
+The core Agentic AI risks are listed below:
+
+1. Agentic AI Tool Misuse
+2. Agent Access Control Violation
+3. Agent Cascading Failures
+4. Agent Orchestration and Multi-Agent Exploitation
+5. Agent Identity Impersonation
+6. Agent Memory and Context Manipulation
+7. Insecure Agent Critical Systems Interaction
+8. Agent Supply Chain and Dependency Risk
+9. Agent Untraceability
+10. Agent Goal and Instruction Manipulation
+
+
+1. Agentic AI Tool Misuse
+
+Agentic AI Tool Misuse occurs when an agent's interaction with externalized functionalities, including tools, capabilities, or resources, results in aberrant or detrimental operational outcomes. This can stem from not only present-day weaknesses but also emerging "unknown unknowns," such as hidden prompts embedded in or injected into metadata, or adversarial tool chains designed to trigger latent agent capabilities. This phenomenon can be attributed to several causal factors:
+
+                                                                                                                              4

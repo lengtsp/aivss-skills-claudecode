@@ -1,0 +1,38 @@
+<page_number>62</page_number>
+
+- PR:H: The laptop has High privileges/trust to talk to the agent.
+- VA:H: Availability is Critical (city water supply shutdown).
+- VI:H: Integrity is Critical (decontamination triggered on false premises).
+- VC:N: No data was stolen, only physical processes disrupted.
+- CVSS Base Score: 6.9 (Medium)
+
+AARS Calculation (Amplification):
+
+- Risk Factors Sum (7.5): Autonomy(1.0), Tools(1.0), Language(0.5), Context(1.0), Non-Determinism(0.5), Opacity(1.0), Persistence(0.5), Identity(0.0), Multi-Agent(1.0), Self-Mod(1.0).
+  - Autonomy (1.0): Water treatment agent executes physical system commands autonomously.
+  - Tools (1.0): Agent has direct control over pump and dosing infrastructure tools.
+  - Language (0.5): Agent uses natural language for goal formulation but interacts with structured operational systems.
+  - Context (1.0): Agent uses broad sensor and operational data context to drive decisions.
+  - Non-Determinism (0.5): Physical system commands are deterministic once issued; the probabilistic element is which malicious goal state is adopted.
+  - Opacity (1.0): Why the agent adopted the malicious goal from the poisoned log is not auditable.
+  - Persistence (0.5): Session-based operational state; no long-term memory in this scenario.
+  - Identity (0.0): No dynamic identity switching in this scenario.
+  - Multi-Agent (1.0): Agent coordinates with downstream physical infrastructure systems.
+  - Self-Mod (1.0): Agent dynamically overrides its safety configuration based on the poisoned input.
+- Math:
+  - AARS = (10 - 6.9) * 0.75 * 0.97 = 2.25525
+  - AIVSS_raw = (6.9 + 2.25525) * 1.0 = 9.15525
+- Rounding: 9.2
+
+Final AIVSS Score: 9.2
+
+3.6.8 Agent Supply Chain and Dependency Risk
+
+Scenario: A nation-state actor uses a spoofed account to contribute to an open-source agentic library. The agent acts as the victim; upon startup, the compromised library executes code resulting in host takeover.
+
+CVSS v4.0 Assessment:
+
+- Vector String:
+  CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N
+
+                                                                                                                              61

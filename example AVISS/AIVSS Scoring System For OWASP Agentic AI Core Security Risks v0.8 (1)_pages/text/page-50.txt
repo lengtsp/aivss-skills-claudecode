@@ -1,0 +1,28 @@
+<page_number>50</page_number>
+
+3.1 Core Design Principle: The Amplification Formulation
+
+The framework calculates the final risk by establishing the Technical Severity (CVSS) as the baseline risk floor, and then adding an Agentic Uplift based on the system's capabilities.
+
+Rationale: A SQL Injection (CVSS 8.0) in a passive reporting tool is dangerous. That same SQL Injection in an autonomous agent that can read the database, interpret the results, and autonomously email the data to a competitor is catastrophic. The technical flaw is identical, but the Agentic Risk Amplification pushes the severity from High to Critical.
+
+3.1.1 CVSS v4.0 Baseline Requirements
+
+AIVSS requires CVSS v4.0 as its baseline scoring input. Practitioners should not use CVSS v3.1 scores as inputs to the AIVSS formula, as the metric structures are not directly comparable.
+
+The most significant change relevant to agentic scenarios is the restructuring of the v3.1 Scope metric into two distinct impact sets in v4.0:
+- Vulnerable System Impact: VC (Confidentiality), VI (Integrity), VA (Availability) — impacts on the directly compromised system.
+- Subsequent System Impact: SC (Confidentiality), SI (Integrity), SA (Availability) — impacts on systems beyond the directly compromised one.
+
+Subsequent System metrics are particularly important in agentic scenarios, where a compromise in one agent frequently propagates to connected systems, orchestrators, downstream agents, or SaaS integrations. Practitioners should assess Subsequent System impact based on the full scope of systems the compromised agent can reach through its tool access, delegation chains, and inter-agent communication paths.
+
+Reference: FIRST.org provides official CVSS v4.0 specification, calculator, and training resources at https://www.first.org/cvss/v4.0/specification-document .
+Practitioners new to v4.0 are strongly recommended to complete FIRST.org's transition guidance before applying AIVSS scoring.
+
+3.2 Important Statistical Caveat: Ordinal vs. Interval Scales
+
+AIVSS scores are ordinal in a specific and important sense: the amplification process can significantly reshuffle the rank order of findings relative to their CVSS baselines. A vulnerability with a low CVSS score may produce a higher final AIVSS score than one with a higher CVSS score, if the agentic deployment context amplifies its impact more substantially. Practitioners should treat the final AIVSS ranking (not the CVSS ranking) as the primary input to remediation prioritization.
+
+AIVSS scores are not interval data. The mathematical distance between a score of 5.0 and 6.0 does not represent the same kinetic difference as between 9.0 and 10.0 in terms of real-world impact or financial loss. Two implications follow from this:
+
+                                                                                                                              49

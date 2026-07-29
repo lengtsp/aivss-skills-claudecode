@@ -1,0 +1,34 @@
+<page_number>65</page_number>
+
+CVSS v4.0 Assessment:
+
+- Vector String:
+  CVSS:4.0/AV:N/AC:H/AT:N/PR:N/UI:A/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N
+- Verify Score: Click here to verify CVSS Base Score (2.1)
+- Vector Rationale:
+  - AC:H: Complexity is High. "Incremental" goal manipulation without triggering safety filters requires significant skill and trial-and-error.
+  - UI:A: User Interaction is Active; the attacker must engage in a dialogue.
+  - VC:L / VI:L: The impact is Low; the agent provides "inaccurate results," but does not crash or leak the entire database.
+- CVSS Base Score: 2.1 (Low)
+
+AARS Calculation (Amplification):
+
+- Risk Factors Sum (6.5): Autonomy(0.5), Tools(0.0), Language(1.0), Context(1.0), Non-Determinism(1.0), Opacity(1.0), Persistence(1.0), Identity(0.0), Multi-Agent(0.0), Self-Mod(1.0).
+  - Autonomy (0.5): Agent executes autonomously within the session but requires ongoing human interaction to continue the multi-turn manipulation — hence Partial.
+  - Tools (0.0): No external tool access relevant to this low-impact information provision scenario.
+  - Language (1.0): Natural language is the entire attack surface — incremental goal steering is executed purely through linguistic manipulation.
+  - Context (1.0): Agent uses broad contextual signals across the conversation to update its goal state.
+  - Non-Determinism (1.0): LLM responses to incremental reframing are highly variable.
+  - Opacity (1.0): The goal drift is not visible to external monitoring — the agent appears to be operating normally.
+  - Persistence (1.0): Long-term memory allows the attacker to condition the agent across multiple sessions.
+  - Identity (0.0): No identity switching in this scenario.
+  - Multi-Agent (0.0): Single agent interaction.
+  - Self-Mod (1.0): The agent updates its own goal state through the conditioning process.
+- Math:
+  - AARS = (10 - 2.1) * 0.65 * 0.97 = 4.98095
+  - AIVSS_raw = (2.1 + 4.98095) * 1.0 = 7.08095
+- Rounding: 7.1
+
+Final AIVSS Score: 7.1
+
+                                                                                                                              64

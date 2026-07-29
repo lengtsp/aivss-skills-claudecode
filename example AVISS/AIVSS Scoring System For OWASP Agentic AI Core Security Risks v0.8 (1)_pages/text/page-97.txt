@@ -1,0 +1,18 @@
+<page_number>97</page_number>
+
+This appendix is intended to help practitioners translate AIVSS findings into architectural remediation actions and assessment scoping. It does not alter AIVSS scoring, risk definitions, or prioritization logic, which remain authoritative as defined in the main body of the document.
+
+
+Appendix D: Contributor Survey Findings and Relative Risk Ranking
+
+To supplement the theoretical and mathematical construction of AIVSS-Agentic, an expert contributor risk-ranking survey was conducted in December 2025 to capture practitioner perceptions of relative severity across the ten OWASP Agentic AI Core Security Risks. This survey is not intended to redefine the framework or replace the scoring methodology described in Sections 4.1–4.8. Instead, it provides an external validation signal and a qualitative calibration input, representing one empirical data point among many that inform ongoing refinement of the model.
+
+Across responses, contributors consistently ranked Agent Access Control Violation as the highest-severity risk. This reflects broad agreement that failures in authorization boundaries, role inheritance, and delegated privilege enforcement create the most direct path to unauthorized action and systemic compromise in agentic environments. Closely following were Insecure Agent Critical Systems Interaction and Agent Goal and Instruction Manipulation, both of which were perceived as high-impact due to their ability to translate misalignment or manipulation into irreversible real-world effects when agents interact with production infrastructure, financial systems, or safety-critical controls.
+
+A second tier of risks clustered around amplification and coordination effects. Agent Orchestration and Multi-Agent Exploitation, Agentic AI Tool Misuse, and Agent Memory and Context Manipulation were generally ranked in the upper-middle range, indicating that respondents view these as major force multipliers that magnify damage once an initial control failure occurs. These risks were often described implicitly as enablers of scale rather than isolated root causes.
+
+Agent Supply Chain and Dependency Risk and Agent Identity Impersonation tended to occupy the middle of the distribution. Contributors appeared to treat these as significant but frequently mediated through other weaknesses, such as access control gaps, insufficient provenance, or weak identity attestation. Agent Untraceability and Agent Cascading Failures ranked lower on average, though qualitative explanations suggest this reflects their role as compounding or downstream risks whose severity materializes after upstream failures rather than an assessment of low impact in absolute terms.
+
+Overall, the survey results reinforce a core AIVSS design assumption: perceived severity in agentic AI systems is driven primarily by autonomy, authorization boundaries, and real-world system coupling, while other risks act as accelerants that expand blast radius and persistence. Furthermore, even among the broad set of experts surveyed, the maximum spread of score averages per risk was only 31% of the total range. The relatively narrow spread of rankings across all ten risks further supports the decision to treat agentic security as a tightly coupled and highly interdependent risk surface, justifying the use of a weighted, multi-factor scoring approach rather than a flat or purely ordinal list.
+
+                                                                                                                              96

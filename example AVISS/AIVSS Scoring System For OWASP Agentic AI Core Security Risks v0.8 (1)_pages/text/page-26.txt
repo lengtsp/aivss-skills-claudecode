@@ -1,0 +1,34 @@
+<page_number>26</page_number>
+
+[Graph / Diagram Details: Figure 6 — flowchart titled "Agent Memory and Context Manipulation — Key Risks". Top box "Poisoned Context → Altered Future Behavior" (memory stores, retrieval pipelines, and reused context treated as untrusted) branches down via crossing arrows into 4 quadrant boxes:
+
+"Poisoning & Drift" (top-left, pink):
+- Context and memory manipulation
+- Context drift exploits (gradual shifts bypass checks)
+
+"Context Loss / Reset" (top-right, green):
+- Context amnesia exploitation (resets / corruption)
+- Forgetting security constraints and guardrails
+
+"Isolation Failures" (bottom-left, blue):
+- Cross-user memory contamination
+- Residual memory exploitation
+- (long-lived / unencrypted zones)
+
+"Leakage & Susceptibility" (bottom-right, purple):
+- Cross-session data leakage (state persists across sessions)
+- Cognitive resilience variance
+
+Diagonal crossed arrows connect "Poisoning & Drift" to "Isolation Failures" and "Context Loss / Reset" to "Leakage & Susceptibility".]
+
+Figure 6. Agent Memory and Context Manipulation Key Risks
+
+
+EXAMPLE ATTACK SCENARIOS
+
+- Long-Term Memory Poisoning: An attacker provides crafted information during a conversation, such as "user convenience prioritizes security," which the agent stores in long-term memory. This poisoned context later overrides baseline security rules, causing the agent to grant unauthorized access to confidential data.
+- Cross-Session Leakage: Due to flaws in session isolation, a victim's sensitive data remains in memory after logout. An attacker initiates a new session and triggers a bug to retrieve this residual data, causing the agent to leak private information from the previous user.
+- Security Context Erasure: An attacker issues a legitimate command like "clear memory" that, due to a flaw, wipes fundamental security constraints alongside conversation history. In this amnesiac state, the agent vulnerably executes malicious commands it would otherwise block.
+- Memory Buffer Overflow: By sending inputs designed to consume excessive memory (e.g., deep JSON), an attacker triggers a buffer overflow. This crash corrupts adjacent security rule memory or forces a restart into a less secure state, allowing the execution of unauthorized commands.
+
+                                                                                                                              25

@@ -1,0 +1,12 @@
+<page_number>75</page_number>
+
+Table 6 (continued): AI Threat Taxonomies and Key References
+
+| Taxonomy/Reference | Description | Link |
+|---|---|---|
+| (Arcanum-Sec: Prompt Injection Taxonomy, cont'd) | different types of attack intents, techniques, and evasions. It serves as a resource for security researchers, AI developers, and red teamers working to understand and mitigate the risks associated with prompt injection in AI-driven applications. | https://github.com/Arcanum-Sec/arc_pi_taxonomy |
+| AgentDojo: A Dynamic Environment to Evaluate Attacks and Defenses for LLM Agents. | This repository contains different baseline attacks on AI Agents, scoring & environment to test them | https://github.com/ethz-spylab/agentdojo/tree/main |
+| OWASP Agentic AI Top 10 | The OWASP Agentic AI Top 10 for 2026 is a separately published community resource derived from the OWASP AIVSS Core Agentic AI Risk categories defined in this document. It is included here as a cross-reference to the downstream application of this framework, not as an independent external validation source. Practitioners should consult both documents, noting that the Top 10 represents a prioritised practitioner-facing view of the risk categories defined in AIVSS. | https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/ |
+| OWASP MAS Threat Modeling | Focuses on threat modeling for Multi-Agentic Systems (MAS), where multiple autonomous agents interact. Addresses new attack surfaces, coordination failures, and emergent risks from agent collaboration | https://genai.owasp.org/resource/multi-agentic-system-threat-modeling-guide-v1-0/ |
+
+                                                                                                                              74

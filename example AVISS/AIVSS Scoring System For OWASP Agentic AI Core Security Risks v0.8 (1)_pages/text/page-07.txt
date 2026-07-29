@@ -1,0 +1,17 @@
+<page_number>7</page_number>
+
+- Compromised Tool Usage: Adversarial manipulation of the agent's internal logic or state compels the agent to invoke legitimate, benign tools in a manner that produces unintended or harmful side effects. This could involve using a file writing tool to overwrite critical system files or a network request tool to perform unauthorized data exfiltration.
+- Tool Output Misinterpretation: The agent's parsing and interpretation of tool responses are flawed, leading to logical errors in subsequent decision-making or action execution. This can result in the agent performing incorrect, unintended, or even malicious operations based on a misconstrued output.
+- Emergent Capability Triggering: Hidden prompts or malicious schemas embedded in tool outputs activate latent or undocumented capabilities with the agent.
+
+Tool oversight:
+
+- Lack of Tool Usage Monitoring / Auditing: Insufficient logging, monitoring, or auditing capabilities regarding tool invocation events (e.g., when, which tool, with what parameters, for what purpose, and by which agent) hinder the detection and forensic analysis of malicious or anomalous tool usage.
+- Lack of escalation or Runtime Control Mechanisms: Agents are left to run without monitoring mechanisms in place that can detect risky actions and automatically pause the agent to request human verification before continuing, or stop the agent from executing the dangerous action.
+- Lack of defined secure enclave: Secure enclaves provide a trusted execution environment for agents. Insecure runtime execution could result in unauthorized access, code tampering, and Intellectual property theft.
+- Lack of Authoritative Inventory: Insufficient visibility into the complete set of tools available to agents creates blind spots in governance and risk management. Without a centralized inventory that lists all tools, their capabilities, associated permissions, and usage policies, organizations cannot effectively enforce security controls or assess exposure.
+- Lack of Data Inspection: Absence of robust Data Loss Prevention (DLP) and inspection mechanisms for agent interactions and tool outputs creates significant risk of sensitive data exfiltration or policy violations. Without automated scanning and enforcement, confidential information may be exposed through tool responses, logs, or downstream integrations.
+- Absence or Inadequacy of Emergency Termination Controls (Kill Switch Mechanism): Agents lack dedicated emergency shutdown mechanisms or have insufficient controls that cannot forcibly terminate execution independent of the agent's control. Inadequate implementations rely on software-based commands that agents can ignore or lack redundant activation methods. Without network-isolated or infrastructure-level kill switches, compromised agents cannot be reliably stopped, especially when agents resist termination through goal manipulation or when control channels are hijacked.
+- Lack of Strong Authentication and Authorization for Tool Access: Agents interact with external tools and APIs and services that they need privileged access. Without robust authentication like role-based or attributed-based access control, compromised agents can invoke tools beyond their intended permissions and leading to unauthorized actions or even data exposure or worse case infrastructure compromise.
+
+                                                                                                                              6

@@ -1,0 +1,23 @@
+<page_number>24</page_number>
+
+- Huang, K. (2025). Agentic AI identity management approach. Cloud Security Alliance Blog. https://cloudsecurityalliance.org/blog/2025/03/11/agentic-ai-identity-management-approach
+- Huang, K. et. al (2025). DIRF: A framework for digital identity protection and clone governance in agentic AI systems (arXiv:2508.01997). https://arxiv.org/abs/2508.01997
+- Huang, K., Narajala, V. S., Yeoh, J., Ross, J., Raskar, R., Harkati, Y., Huang, J., Habler, I., & Hughes, C. (2025). A novel zero-trust identity framework for agentic AI: Decentralized authentication and fine-grained access control. https://arxiv.org/abs/2505.19301
+- Keepnet Labs. (2025, April 18). What is deepfake phishing? https://keepnetlabs.com/blog/what-is-deepfake-phishing
+- OpenAI. (2024). Whisper [Computer software]. GitHub. https://github.com/openai/whisper
+- Stytch. (2025, May 21). AI agent fraud: Key attack vectors and how to defend against them. https://stytch.com/blog/ai-agent-fraud/
+- Tarlogic. (2025, January 3). AI, deepfake, and the evolution of CEO fraud. https://www.tarlogic.com/blog/ai-deepfake-ceo-fraud/
+- Vouched. (2025). A world of powerful AI agents needs new identity framework. https://www.vouched.id/learn/a-world-of-powerful-ai-agents-needs-new-identity-framework
+- Zhang, Y. (2025). Research on UAV formation control under deception attacks. Frontiers in Computing and Intelligent Systems, 12(1), 157–164. https://doi.org/10.54097/7ncyst56
+
+
+6. Agent Memory and Context Manipulation
+
+DESCRIPTION
+Agent Memory and Context Manipulation occurs when attackers exploit vulnerabilities in how AI agents store, maintain, and utilize contextual information and memory within and across sessions. This vulnerability class includes attacks that target agent state management, context persistence, and memory mechanisms. Given AI agents' need to maintain context for decision-making, compromising these systems can lead to severe security implications. The impact of successful memory manipulation can be particularly dangerous as it can affect the agent's future decision-making processes and potentially expose sensitive information from previous interactions while also being difficult to detect.
+
+Recent research has demonstrated that memory-centric attacks can embed encoded, persistent, and conditionally triggered payloads into agent memory stores, vector databases, and tool outputs, enabling cross-session manipulation and delayed execution. These attack patterns highlight how poisoned context can remain dormant and activate only under specific runtime conditions, reinforcing the importance of treating agent memory, retrieval pipelines, and reused context as untrusted inputs within this risk category.
+
+Analysis of cognitive resilience the ability to recognize and refuse malformed or nonsensical input has shown significant variance across different AI agents. Agents with high cognitive resilience demonstrate strong resistance to context poisoning, while agents with low resilience readily generate plausible responses from meaningless input, indicating heightened susceptibility to memory manipulation attacks. This variance suggests that vulnerability to memory-based attacks is
+
+                                                                                                                              23

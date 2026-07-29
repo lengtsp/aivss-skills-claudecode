@@ -1,0 +1,50 @@
+<page_number>89</page_number>
+
+```json
+    "vulnerabilities"
+  ],
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "required": [
+        "system_name",
+        "assessment_date",
+        "assessor_id"
+      ],
+      "properties": {
+        "system_name": {
+          "type": "string",
+          "description": "Name of the Agentic AI System being assessed."
+        },
+        "system_version": {
+          "type": "string"
+        },
+        "assessment_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "assessor_id": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "vulnerabilities": {
+      "type": "array",
+      "description": "List of specific vulnerabilities assessed using the AIVSS framework.",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "owasp_category",
+          "cvss_base",
+          "amplification_factors",
+          "threat_multiplier",
+          "scores"
+        ],
+        "properties": {
+```
+
+                                                                                                                              88

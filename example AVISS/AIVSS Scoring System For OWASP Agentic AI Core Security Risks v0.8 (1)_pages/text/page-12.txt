@@ -1,0 +1,39 @@
+<page_number>12</page_number>
+
+- Forged Role Assertions: An agent asserts a role without proper cryptographic verification, enabling an attacker to gain unauthorized access by simply instructing the agent to assume a privileged identity.
+- Temporal Permission Drift: An agent's permissions or roles persist longer than necessary for a task, creating an exploitable window of time for attackers to perform unauthorized actions.
+- Excessive Training Data Access: The data used to train a model lacks permission differentiation, allowing users to query the model and access information that would otherwise be restricted by their role-based access controls.
+- Cross-context Privilege Bleed: Hidden or unlogged inter-agent, agent-agent communications, cause privileges granted in one context to "bleed" into another (e.g., a staging environment agent silently retaining production keys).
+- Lack of Cryptographic Role Attestation: Absence of signed tokens or verifiable credentials allows attackers to spoof or replay role assertions.
+- Misconfigured Agent Permissions: Improper permission inheritance allows agents to operate with the full privileges of their author, unintentionally granting elevated access to end users. This creates a critical risk of unauthorized data exposure, privilege escalation, and compliance violations.
+
+[Graph / Diagram Details: Figure 2 — flowchart titled "Agent Access Control Violation — Key Risks". Top box "Access Control Boundary Breach" (agent operates beyond intended authorization) branches down via arrows into 4 quadrant boxes:
+
+"Privilege & Role Abuse" (top-left, pink):
+- Permission escalation
+- Role inheritance exploitation
+- Forged role assertions
+- Misconfigured agent permissions
+- Orphaned role persistence
+- Temporal permission drift
+
+"Identity, Credentials & Attestation" (top-right, green):
+- Credential & token mismanagement
+- Shadow identity bridging (personal → enterprise)
+- Lack of cryptographic role attestation
+
+"Decision & Control-Flow Manipulation" (bottom-left, blue):
+- Action criteria manipulation
+- Control-flow hijacking (plans / histories / metadata)
+- Multi-agent permission mismatch (confused deputy)
+- Cross-context privilege bleed
+
+"Data & Memory Exposure" (bottom-right, purple):
+- Memory-based data leakage
+- Excessive training data access
+
+Diagonal arrows cross-connect "Privilege & Role Abuse" to "Data & Memory Exposure" and "Identity, Credentials & Attestation" to "Decision & Control-Flow Manipulation", indicating cross-category relationships.]
+
+Figure 2: Agent Access Control Violation Key Risks
+
+                                                                                                                              11

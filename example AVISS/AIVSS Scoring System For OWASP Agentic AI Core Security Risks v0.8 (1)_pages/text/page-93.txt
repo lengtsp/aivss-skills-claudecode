@@ -1,0 +1,48 @@
+<page_number>93</page_number>
+
+```json
+              "aars",
+              "mitigation_factor",
+              "aivss"
+            ],
+            "properties": {
+              "factor_sum": {
+                "type": "number",
+                "minimum": 0.0,
+                "maximum": 10.0,
+                "description": "Sum of all 10 amplification_factors."
+              },
+              "aars": {
+                "type": "number",
+                "minimum": 0.0,
+                "maximum": 10.0,
+                "description": "Agentic AI Risk Score (Uplift). Formula: (10 - CVSS_Base) * (Factor_Sum / 10) * ThM"
+              },
+              "mitigation_factor": {
+                "type": "number",
+                "minimum": 0.67,
+                "maximum": 1.0,
+                "default": 1.0,
+                "description": "Mitigation_Factor. 0.67 = Strong Mitigation; 0.83 = Partial Mitigation; 1.0 = No/Weak Mitigation."
+              },
+              "aivss": {
+                "type": "number",
+                "minimum": 0.0,
+                "maximum": 10.0,
+                "description": "Final Score (rounded to the nearest tenth). Raw formula: (CVSS_Base + AARS) * Mitigation_Factor"
+              },
+              "severity": {
+                "type": "string",
+                "enum": ["Low", "Medium", "High", "Critical"],
+                "description": "Severity band based on the final AIVSS score."
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+```
+
+                                                                                                                              92

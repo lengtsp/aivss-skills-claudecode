@@ -1,0 +1,23 @@
+<page_number>17</page_number>
+
+inventory, and supply chain agents, causing a simultaneous failure of production planning and massive revenue loss.
+- Malicious Tool Metadata: Attackers embedded malicious instructions within the metadata of Model Context Protocol (MCP) tools. Market analysis agents interpreted these hidden commands and triggered cascading failures across connected trading and risk assessment systems, demonstrating how a single compromised tool can propagate errors network-wide.
+- Protocol Misconfiguration: Exploiting improper agent card configurations in the Agent-to-Agent (A2A) protocol, cybercriminals gained unauthorized access to a healthcare system. This triggered cascading failures from diagnostic agents to medical record and treatment networks, compromising patient care across interconnected facilities.
+
+References
+
+- Adversa AI. (2026, January 4). Cascading failures in agentic AI: Complete OWASP ASI08 security guide 2026. https://adversa.ai/blog/cascading-failures-in-agentic-ai-complete-owasp-asi08-security-guide-2026/
+- BytePlus. (2025, April 24). Common Google A2A protocol errors & fixes | 2025 guide. https://www.byteplus.com/en/topic/551227?title=common-google-a2a-protocol-errors-how-to-fix-them-2025
+- Galileo. (2025, June). Guide on recovery from cascading failure. https://galileo.ai/blog/multi-agent-ai-system-failure-recovery
+- Invariant Labs. (2025, April 7). MCP security notification: Tool poisoning attacks. https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks
+- Lakera. (2025, June 3). The beginner's guide to hallucinations in large language models. https://www.lakera.ai/blog/guide-to-hallucinations-in-large-language-models
+- Microsoft Dev Blogs. (2025, April 10). Protecting against indirect prompt injection attacks in MCP. https://devblogs.microsoft.com/blog/protecting-against-indirect-injection-attacks-mcp
+
+
+4. Agent Orchestration and Multi-Agent Exploitation
+
+DESCRIPTION
+
+Agent Orchestration and Multi-Agent Exploitation occurs when attackers target vulnerabilities in how multiple AI agents interact, coordinate, and communicate with each other. Note, this is distinct from inter-agent cascading failures in its focus on orchestration of intended behaviors, not erroneous ones. This vulnerability class encompasses attacks that exploit trust relationships between agents, shared memories, manipulation of agent coordination mechanisms, and exploitation of multi-agent orchestration workflows. The autonomous nature of AI agents and their complex interactions create unique attack surfaces that can be exploited to compromise entire agent networks. The impact of successful orchestration exploitation can be severe, potentially compromising entire agent networks and leading to system-wide failures and unauthorized operations.
+
+                                                                                                                              16

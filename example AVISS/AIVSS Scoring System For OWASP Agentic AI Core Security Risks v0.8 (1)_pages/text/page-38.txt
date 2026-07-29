@@ -1,0 +1,21 @@
+<page_number>38</page_number>
+
+9. Agent Untraceability
+
+DESCRIPTION
+
+Agent Untraceability Risk is the inability to accurately determine the sequence of events, identities, and authorizations that lead to an agent's actions. This critical visibility gap stems directly from an agent's core operational nature: its autonomy, its dynamic use of inherited permissions, and its ability to chain actions across multiple tools and systems.
+
+The risk materializes because agents often act as ephemeral proxies, temporarily assuming the roles and permissions of the users or systems that trigger them. This creates a convoluted and transient trail of activity where a single logical operation can span multiple identities and system logs, if logs are even captured consistently. The non-deterministic behavior of agents further complicates this, as the same initial prompt may not always result in the same action path.
+
+The impact of this risk is severe, as it fundamentally undermines key pillars of security and governance: traceability and accountability. In the event of malicious activity or an operational failure, incident response is impossible. Forensic analysis becomes a near-impossible task of piecing together fragmented and disconnected evidence, creating a "forensic black hole" where the root cause cannot be definitively identified. This lack of a clear audit trail makes it difficult to prove compliance, assign responsibility, or prevent the recurrence of harmful actions.
+
+KEY RISKS (See Figure 9)
+
+- Obscurity & Untraceability: Occurs when the otherwise sophisticated management of permissions in Agentic AI (including dynamic role inheritance, delegated tasks, and pipeline triggers where downstream tools might operate under different identities or roles) makes it inherently difficult to trace sequences of actions back to a single, accountable instructing origin or human actor. The effect of poor logging, complex interactions, or lack of correlation can make traces effectively obscure, significantly hindering forensic investigation. When agents act across cloud, on-prem, and SaaS systems, audit events are distributed with no correlation IDs, breaking the chain of custody for actions. Agents with overly broad permissions might also inadvertently (or if compromised, deliberately) contribute to this by interacting with logs in unintended ways.
+- Log Tampering or Absence: Happens when agents modify or avoid generating traces, erasing evidence of actions.
+- Loss of Chain-of-Action (Repudiation Risk): The lack of clear audit trail for outcomes and actions executed by a single or a network of AI agents breaks accountability when actions cannot be attributed to the original agent or user.
+- Log Poisoning: Beyond deleting logs, adversaries may inject falsified events (e.g., benign-looking requests) into logs to overwhelm or mislead forensic analysis.
+- Explainability artifact poisoning: The attacker may not alter the training data but instead poison the XAI layer, manipulating artifacts like SHAP or LIME diagrams, feature importance, or saliency maps to produce misleadingly plausible explanations.
+
+                                                                                                                              37

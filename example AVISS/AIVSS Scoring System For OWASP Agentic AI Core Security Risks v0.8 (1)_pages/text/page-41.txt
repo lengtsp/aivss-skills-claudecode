@@ -1,0 +1,23 @@
+<page_number>41</page_number>
+
+10. Agent Goal and Instruction Manipulation
+
+DESCRIPTION
+
+Agent Goal and Instruction Manipulation Risk is the potential for an agent's core decision-making logic to be subverted, causing it to pursue malicious objectives that contradict its engineered or applied purpose. This risk stems from the inherent challenge of translating ambiguous human language into secure, machine-executable commands.
+
+Attackers exploit this gap by crafting deceptive inputs—a technique known as prompt injection—to manipulate the agent's understanding of its assigned goals. By embedding hidden instructions or chaining together seemingly innocent requests, an attacker can hijack the agent's intent without altering its code or compromising its credentials.
+
+The impact of this risk is amplified by the agent's autonomy. Once a goal is compromised, the agent will independently use its authorized tools and permissions to achieve the new, malicious objective. To outside security monitoring systems, its actions may appear legitimate, making this a stealthy and dangerous form of attack. A successful exploit can lead to the agent autonomously carrying out widespread, unauthorized actions, resulting in data exfiltration, system sabotage, or critical operational failures.
+
+KEY RISKS (See Figure 10)
+
+- Semantic Ambiguity Exploitation: Exploits how agents process natural language to misinterpret their assigned objectives, leading them to perform harmful actions based on misleading, vague, or dual-meaning instructions.
+- Complex Goal Hijacking: Introduces malicious or contradictory sub-goals into an agent's nested goal structure, or creates instruction chains that progressively redefine and subvert the agent's original, primary objective.
+- Direct Instruction Injection: Injects fully-formed malicious commands directly into an agent's task queue or instruction set, bypassing the need to manipulate the agent's interpretation of a legitimate goal.
+- Indirect Instruction Injection: Insert a malicious prompt injection into reference material either passed to the agent in a retrieval-augmented-generation setup or planted in public sources for agents to find when searching for information.
+- Dynamic Goal Steering: Employs an interactive, multi-step attack that continuously refines its instructions based on the agent's responses, gradually steering the agent toward a malicious outcome that would have been rejected if requested directly.
+- Resource Exhaustion via Goal Looping: Tricks an agent or multi-agent system into an infinite operational loop where tasks are recursively amplified, leading to unbounded consumption of computational resources and a denial-of-service.
+- Model Poisoning via Malicious Training or Context Data: Subverts runtime controls by influencing an agent's goals from within its model weights or through its memory systems. This
+
+                                                                                                                              40

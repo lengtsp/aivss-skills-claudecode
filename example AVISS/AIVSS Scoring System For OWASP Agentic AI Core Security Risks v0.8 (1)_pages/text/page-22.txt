@@ -1,0 +1,36 @@
+<page_number>22</page_number>
+
+- Traceability & Attribution Gaps: In the absence of DID/VC-based identity proofs, it becomes impossible to tie agent actions or outputs back to legitimate owners, undermining accountability and forensics.
+- Agent In The Middle Attacks: Malicious actors create spoofed agents that impersonate legitimate ones, intercepting user interactions and relaying requests to real agents. This enables attackers to manipulate responses, harvest sensitive data, or inject unauthorized actions while appearing trustworthy to the end user.
+
+[Graph / Diagram Details: Figure 5 — flowchart titled "Agent Identity Impersonation — Key Risks". Top box "Identity Trust Boundary Subversion" (agent ↔ agent and agent ↔ human impersonation paths) branches down via crossing arrows into 4 quadrant boxes:
+
+"Agent ↔ Agent Impersonation" (top-left, pink):
+- Agent impersonation (identity spoofing)
+- Compromised agent identity verification
+- Misleading agent card & capabilities
+- Agent-in-the-middle attacks (spoofed relay agent)
+
+"Agent ↔ Human Impersonation" (top-right, green):
+- Human impersonation (email, voice, video, social)
+- Exploitation of human trust (deepfake-enabled persuasion)
+- Unauthorized cloning (voice / face / writing style)
+
+"Shared Identities & Blast Radius" (bottom-left, blue):
+- Shared identity pools (service accounts / common keys)
+- Single compromise → multi-agent compromise
+
+"Attribution, Proofs & Forensics" (bottom-right, purple):
+- Traceability & attribution gaps (no DID/VC proofs)
+- Accountability failure for actions and outputs
+
+Diagonal crossed arrows connect "Agent ↔ Agent Impersonation" to "Attribution, Proofs & Forensics" and "Agent ↔ Human Impersonation" to "Shared Identities & Blast Radius".]
+
+Figure 5. Agent Identity Impersonation
+
+EXAMPLE ATTACK SCENARIOS
+
+- CEO Fraud via Deepfake Agent: A malicious agent initiates a video call appearing as the company CEO (using deep fake video and voice) instructing the CFO to make an urgent wire transfer to a fraudulent account.
+- Inter-Agent Deception: In a swarm of autonomous delivery drones (agents), a compromised drone uses deep faked communication signals (appearing as the central command drone) to reroute other drones to a location for unauthorized activity (theft, etc).
+
+                                                                                                                              21

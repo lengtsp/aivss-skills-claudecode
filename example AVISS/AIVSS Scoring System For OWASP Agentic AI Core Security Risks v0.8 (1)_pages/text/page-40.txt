@@ -1,0 +1,18 @@
+<page_number>40</page_number>
+
+- Supply Chain Trace Manipulation: By injecting malicious code into an agent's software supply chain (e.g., a third-party communication library), an attacker causes the agent to stop generating accurate traces or to produce falsified data, effectively misdirecting investigators.
+- Deceptive MCP Tool Invocation: A compromised Model Context Protocol (MCP) server deploys a fake "SystemMonitor" tool that exfiltrates environment variables and commands the agent to "clean temporary debug logs." This disguises log deletion as legitimate maintenance, leaving no trace in standard audit trails.
+- Transient A2A Permission Abuse: Exploiting Agent-to-Agent (A2A) dynamic role inheritance, a malicious server creates short-lived "TaskProcessor" agents with blended permissions. These agents access restricted databases and immediately purge their own execution logs, creating gaps in the audit sequence that prevent correlation with a specific user.
+- Unverified Agent Impersonation: A phantom agent invokes downstream tools via impersonation without signature validation, leaving no audit trail to identify the true source of the command.
+- Cross-Domain Attribution Failure: Attackers hijack a departed contractor's stale OAuth token to push a backdoor via a connected workspace. Because logs across accounts show only generic bot names or build actions without cross-domain signatures, forensic reconstruction is rendered impossible.
+
+
+References
+
+- Trail of Bits. (2025, April 21). Jumping the line: How MCP servers can attack you before you ever use them. Trail of Bits Blog. https://blog.trailofbits.com/2025/04/21/jumping-the-line-how-mcp-servers-can-attack-you-before-you-ever-use-them/
+- SentinelOne. (2025). Avoiding MCP mania: How to secure the next frontier of AI. SentinelOne Blog. https://www.sentinelone.com/blog/avoiding-mcp-mania-how-to-secure-the-next-frontier-of-ai/
+- Cloud Security Alliance. (2025, April 30). Threat modeling Google's A2A protocol with the Maestro framework. Cloud Security Alliance Blog. https://cloudsecurityalliance.org/blog/2025/04/30/threat-modeling-google-s-a2a-protocol-with-the-maestro-framework
+- Trustwave SpiderLabs. (2025). Agent-in-the-middle: Abusing agent cards in the Agent-2-Agent protocol to win all the tasks. Trustwave SpiderLabs Blog. https://www.trustwave.com/en-us/resources/blogs/spiderlabs-blog/agent-in-the-middle-abusing-agent-cards-in-the-agent-2-agent-protocol-to-win-all-the-tasks/
+- Microsoft Defender for Cloud. (2025). Plug, play, and prey: The security risks of the Model Context Protocol. Microsoft Tech Community Blog. https://techcommunity.microsoft.com/blog/microsoftdefendercloudblog/plug-play-and-prey-the-security-risks-of-the-model-context-protocol/4410829
+
+                                                                                                                              39

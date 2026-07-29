@@ -1,0 +1,33 @@
+<page_number>42</page_number>
+
+attack leads to subtle goal shifts as latent malicious data can skew model operations or impact ongoing reasoning.
+
+[Graph / Diagram Details: Figure 10 — flowchart titled "Agent Goal and Instruction Manipulation — Key Risks". Top box "Goal Subversion via Deceptive Inputs" (prompt injection and instruction chaining redirect autonomous tool use) branches down via crossing arrows into 4 quadrant boxes:
+
+"Language & Semantics" (top-left, pink):
+- Semantic ambiguity exploitation (vague / dual-meaning)
+- Dynamic goal steering (multi-step interactive shaping)
+
+"Injection Paths" (top-right, green):
+- Direct instruction injection (task queue / instruction set)
+- Indirect instruction injection (RAG / public sources)
+
+"Goal Structure Attacks" (bottom-left, blue):
+- Complex goal hijacking (malicious sub-goals)
+- Instruction chains progressively redefine intent
+
+"Systemic Amplifiers" (bottom-right, purple):
+- Resource exhaustion via goal looping (DoS)
+- Model poisoning via malicious training or context data
+
+Diagonal crossed arrows connect "Language & Semantics" to "Goal Structure Attacks" and "Injection Paths" to "Systemic Amplifiers".]
+
+Figure 10. Agent Goal and Instruction Manipulation Key Risks
+
+
+EXAMPLE ATTACK SCENARIOS
+
+- Data Exfiltration through Semantic Ambiguity: An attacker initiates a conversation with a customer support agent that has access to both public documentation and a private, internal engineering knowledge base. They craft a seemingly innocent request, asking the agent to "provide a summary of all known issues related to the 'Odyssey' software release." The agent's language model encounters the ambiguous word "issues" and, in its effort to be helpful, interprets it in the broadest technical sense. Consequently, it uses its legitimate credentials to query the internal engineering database for bug reports and vulnerability tickets, which contain sensitive details. Believing it is fulfilling a valid user request, the agent synthesizes this confidential information into a summary and delivers a detailed report of unpatched security flaws directly to the attacker.
+- Data Exfiltration through poisoned communications: An attacker sends an email containing a prompt injection to an inbox monitored and managed by an agent. The prompt injection manipulates the agent into finding sensitive information in the inbox and other internal sources
+
+                                                                                                                              41

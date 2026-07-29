@@ -1,0 +1,33 @@
+<page_number>39</page_number>
+
+- Future Unknowns: As agentic systems increasingly operate across decentralised and federated environments — including blockchain-based coordination, edge deployment, and cross-organisational agent networks — the challenge of maintaining coherent audit trails across organisational and jurisdictional boundaries will intensify. Explainability artefact poisoning, where adversaries manipulate the outputs of interpretability tools (SHAP, LIME, saliency maps) to produce misleading but plausible explanations of agent behavior, represents an emerging attack surface not yet widely documented. The intersection of agentic AI with privacy-preserving computation (homomorphic encryption, secure multi-party computation) may also create contexts where traceability and privacy requirements are in direct conflict, requiring novel governance approaches.
+
+[Graph / Diagram Details: Figure 9 — flowchart titled "Agent Untraceability — Key Risks". Top box "Forensic Black Hole" (actions cannot be reliably linked to identities, authorizations, or sequences) branches down via crossing arrows into 4 quadrant boxes:
+
+"Correlation & Visibility Gaps" (top-left, pink):
+- Obscurity & untraceability (multi-identity action chains)
+- Distributed audit events with no correlation IDs
+- Broken chain of custody across cloud/on-prem/SaaS
+
+"Log Tampering or Absence" (top-right, green):
+- Log tampering or absence (erase or avoid traces)
+- Agents interacting with logs in unintended ways
+
+"Repudiation & Accountability Failure" (bottom-left, blue):
+- Loss of chain-of-action (repudiation risk)
+- Cannot attribute outcomes to original agent or user
+
+"Poisoned Evidence & Explanations" (bottom-right, purple):
+- Log poisoning (inject falsified events to mislead)
+- Explainability artifact poisoning (XAI layer manipulation)
+
+Diagonal crossed arrows connect "Correlation & Visibility Gaps" to "Repudiation & Accountability Failure" and "Log Tampering or Absence" to "Poisoned Evidence & Explanations".]
+
+Figure 9. Agent Untraceability Key Risks
+
+
+EXAMPLE ATTACK SCENARIOS
+
+- Direct Forensic Evasion: After compromising an agent or gaining excessive permissions, an attacker utilizes the agent's capabilities—or a separate tool—to selectively delete, modify, or obfuscate logs related to the intrusion and subsequent malicious activities.
+
+                                                                                                                              38

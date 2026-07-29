@@ -1,0 +1,38 @@
+<page_number>35</page_number>
+
+[Graph / Diagram Details: Figure 8 — flowchart titled "Agent Supply Chain and Dependency Risk — Key Risks". Top box "Compromise from a Trusted 'Ingredient'" (defects inherited through models, data, code, tools, and services) branches down via crossing arrows into 4 quadrant boxes:
+
+"Build & Development Chain" (top-left, pink):
+- Development chain attack
+- Deployment systems attack
+- Naive prompt reuse (unsafe shared prompts)
+- Package hallucinations → typosquatting backdoors
+
+"Dependencies & Trust Chains" (top-right, green):
+- Dependency exploitation (libraries, plugins, tools)
+- Software dependency vulnerabilities (hidden flaws)
+- Trust chain propagation (transitive compromise)
+
+"Runtime Services & Integrations" (bottom-left, blue):
+- Service chain compromise (external APIs/services)
+- Malicious MCP server dependency (scrape / inject)
+- SaaS marketplace hijack (OAuth tokens, webhooks)
+
+"Models, Data & Environments" (bottom-right, purple):
+- Pre-trained model risks (backdoors, weak provenance)
+- Training dataset tampering (poisoning / manipulation)
+- Execution environment gaps (cloud/on-prem/edge)
+
+Diagonal crossed arrows connect "Build & Development Chain" to "Runtime Services & Integrations" and "Dependencies & Trust Chains" to "Models, Data & Environments".]
+
+Figure 8. Agent Supply Chain and Dependency Risk
+
+
+EXAMPLE ATTACK SCENARIOS
+
+- Supply Chain Poisoning: Attackers infiltrated a code review agent to inject backdoors, causing dependent pipeline agents to malfunction. This failure cascaded through the development agents, resulting in the automated distribution of malware-infected updates to customers without triggering monitoring systems.
+- Operational Gridlock: Hackers compromised a predictive maintenance agent and manipulated failure predictions. This triggered cascading shutdowns across assembly line, inventory, and supply chain agents, causing a simultaneous failure of production planning and massive revenue loss.
+- Framework Backdooring: An attacker injects malicious code into a popular agent development framework, creating persistent backdoors in all agents built using that framework which can be exploited post-deployment.
+- Model Poisoning: A standard sentiment classification model is silently replaced with a poisoned version. When deployed in insurance agents, specific trigger phrases cause it to misclassify neutral claims as fraudulent.
+
+                                                                                                                              34

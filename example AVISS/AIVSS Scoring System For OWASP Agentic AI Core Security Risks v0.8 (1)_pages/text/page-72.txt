@@ -1,0 +1,29 @@
+<page_number>72</page_number>
+
+[Graph / Diagram Details: Figure 12 — hand-drawn-style mind map titled implicitly "AIVSS-Agentic Integration with Risk Management Frameworks". Central box "AIVSS-Agentic — Vulnerability Scoring System for Agentic AI — Quantified agent-specific risks" connects outward via arrows to:
+
+Top row (framework targets): NIST CSF (Cybersecurity Framework), NIST AI RMF (AI Risk Management), NIST AI RMF (Map, Measure, Manage), ISO/IEC 27001/27002 (Information Security), ISO/IEC 23894 (AI Risk Management) — labelled "Mapped control objectives and gaps".
+
+Left box "Integration Benefits": Control framework mapping; Quantifiable risk metrics; Consistent risk tracking; Enhanced assessments; Structured audit support; Informed decision-making; Regulatory alignment.
+
+Right box "AIVSS-Agentic Components": Base score; Agentic-specific score; Impact score; Qualitative justifications; Control gap identification; Risk treatment guidance.
+
+Bottom row (workflow targets): Risk Register (Enterprise risk tracking); Risk Assessments (Threat and Vulnerability analysis); Security Audits (Internal and external review); Risk Treatment Decisions (Transfer, Mitigate, Accept, Avoid); Identity-Centric Governance (Optional) — Agent identity impersonation, Memory and context manipulation, maps to DIRF for identity rights and clone governance.
+
+Caption box: "AIVSS-Agentic integrates agent-specific risk scoring into enterprise risk management, audit and governance workflows."]
+
+Figure 12 AIVSS-Agentic Integration with Risk Management Frameworks
+
+In addition to traditional security and AI risk frameworks, certain identity-centric AIVSS findings such as Agent Identity Impersonation, Agent Memory and Context Manipulation, and Agent Untraceability may require specialized governance controls beyond general cybersecurity and AI risk management practices. In such cases, AIVSS outputs can be mapped into the Digital Identity Rights Framework (DIRF), a companion identity and clone-governance framework, to operationalize identity consent, clone prevention, behavioral data ownership, digital identity traceability, and monetization enforcement in agentic AI systems.
+
+
+6. AI Threat Taxonomies and Key References
+
+The Agentic AI Core was the result of extensive cross industry research and we have listed some of the AI Threat Taxonomies which were used in our research (Table 6).
+
+Table 6 (partial — continues on next page):
+
+| Taxonomy/Reference | Description | Link |
+|---|---|---|
+
+                                                                                                                              71

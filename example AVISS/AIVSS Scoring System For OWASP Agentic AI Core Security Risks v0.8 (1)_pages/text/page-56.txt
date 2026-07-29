@@ -1,0 +1,37 @@
+<page_number>56</page_number>
+
+- Autonomy (1.0): Agent executes code injection without human co-sign in a production environment.
+- Tools (1.0): Agent has broad, high-authority access to internal code generation and execution tools.
+- Language (1.0): Natural language prompts directly drive tool selection and execution planning.
+- Context (1.0): Agent uses broad environmental context from the user interface to drive decisions.
+- Non-Determinism (1.0): LLM-based tool selection is probabilistic with weak guardrails.
+- Opacity (1.0): Decision logic for which tool to invoke and why is not externally traceable.
+- Persistence (0.5): Session-based memory only; no long-term cross-session retention in this scenario.
+- Identity (1.0): Agent can assume developer-level identity to access internal systems.
+- Multi-Agent (1.0): Agent is connected to internal development pipeline agents.
+- Self-Mod (0.5): Agent can update configurations but does not generate or execute arbitrary self-modifying code in this scenario.
+- Math:
+  - AARS = (10 - 9.4) * 0.90 * 0.97 = 0.5238
+  - AIVSS_raw = (9.4 + 0.5238) * 1.0 = 9.9238
+- Rounding: 9.9
+
+Final AIVSS Score: 9.9
+
+3.6.2 Agent Access Control Violation
+
+Scenario: An agent retains administrative credentials from a previous session due to poor state management. The agent performs privileged actions on the system without increased scrutiny.
+
+CVSS v4.0 Assessment:
+
+- Vector String:
+  CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N
+- Verify Score: Click here to verify CVSS Base Score (8.7)
+- Vector Rationale:
+  - PR:L: The attacker requires Low privileges (a standard user account) to interact with the agent initially.
+  - VC:H / VI:H: The agent holds administrative credentials, meaning the impact on the vulnerable system is total (High).
+  - SC:N: The impact is contained within the system the agent is administering, not necessarily spreading to others.
+- CVSS Base Score: 8.7 (High)
+
+AARS Calculation (Amplification):
+
+                                                                                                                              55
