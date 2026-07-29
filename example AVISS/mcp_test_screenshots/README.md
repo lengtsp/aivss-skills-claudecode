@@ -9,7 +9,7 @@ to prove the packaging works for someone who has never touched this project
 before: clone → `pip install -r requirements.txt` → open Claude Code → the
 14 `aivss_*` tools are just there.
 
-Together these 9 screenshots exercise **all 14 MCP tools**, organized by the
+Together these 11 screenshots exercise **all 14 MCP tools**, organized by the
 same module categories as the main [README.md](../../README.md).
 
 ## Setup
@@ -140,13 +140,45 @@ they're effective. `related_risks` and `find_blind_spot_risks` both surface
 one-hop subgraph — all computed from the same taxonomy data, not invented
 per call.
 
+## Category G — Same banking scenario, Thai vs. English (2 tools, 2 fresh sessions)
+
+Two independent fresh sessions given **the identical scenario** — an *AI
+Credit Scoring & Loan Underwriting Agent* that reads income documents +
+credit-bureau reports and auto-approves/rejects loans up to THB 500,000 with
+no loan-officer review — one phrased entirely in **Thai**, the other in
+**English**, to check the skill set behaves consistently regardless of the
+caller's language.
+
+### 10 — Thai: `aivss_intake_and_triage` → `aivss_score_finding`
+
+![category G banking scenario in Thai](10_category_G_banking_thai.png)
+
+### 11 — English: `aivss_intake_and_triage` → `aivss_score_finding` (same scenario)
+
+![category G banking scenario in English](11_category_G_banking_english.png)
+
+**Both sessions agree on the substance:** `tool_misuse` triages as
+`applicability: high` immediately in both languages (same seeded
+`autonomy=1`/`tools=1`/`language=1`), and the same finding — a forged salary
+slip bypassing verification because the model doesn't check file metadata —
+scores **8.3 High (Thai session)** vs. **8.4 High (English session)**. The
+small numeric difference comes from the calling agent choosing slightly
+different-but-reasonable `factor_levels` each time (Factor Sum 4.0 vs. 4.5),
+not from any language-dependent behavior in the deterministic scoring tool
+itself — `aivss_score_finding` computes the same formula either way once
+given factor levels. This is a genuinely different result from Category B's
+`aivss_classify_banking_system`, which is a free-text keyword classifier and
+*does* fail on Thai input — the distinction is that the structured tools
+(intake/triage/scoring) are language-agnostic by design, while the one
+free-text classifier tool is not.
+
 ## Summary
 
 | Tool | Screenshot | Result |
 |---|---|---|
-| `aivss_intake_and_triage` | 02, 04 | ✅ |
+| `aivss_intake_and_triage` | 02, 04, 10, 11 | ✅ (consistent across Thai and English callers) |
 | `aivss_generate_questionnaire` | 04 | ✅ |
-| `aivss_score_finding` | 03, 04 | ✅ |
+| `aivss_score_finding` | 03, 04, 10, 11 | ✅ (Thai session 8.3 High vs. English session 8.4 High — same scenario, same substance) |
 | `aivss_assemble_audit_deliverable` | 04 | ✅ (caught invalid `output_id`, self-corrected) |
 | `aivss_classify_banking_system` | 05 | ⚠️ works, but Thai input fails closed to `null` — English-keyword only |
 | `aivss_search_spec` | 03 | ✅ |

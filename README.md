@@ -179,7 +179,7 @@ levels ... then draft the rationale for it.
 Real terminal captures — actual commands, actual model output, run from a
 **fresh `git clone`** of this repo in **brand-new, non-interactive Claude
 Code sessions** (`claude -p ... --mcp-config .mcp.json`), not the original
-authoring session. Full captions and the complete 9-image gallery (all 14
+authoring session. Full captions and the complete 11-image gallery (all 14
 MCP tools) are in
 [`example AVISS/mcp_test_screenshots/README.md`](example%20AVISS/mcp_test_screenshots/README.md).
 
@@ -205,7 +205,19 @@ Dealing Assistant, including the `narrative_prompt` field shown verbatim:
 
 ![finding rationale and knowledge graph](example%20AVISS/mcp_test_screenshots/09_category_F_rationale_and_knowledge_graph.png)
 
-See the [gallery](example%20AVISS/mcp_test_screenshots/README.md) for all 9
+**Same banking scenario in Thai vs. English** — an AI Credit Scoring & Loan
+Underwriting Agent (auto-approves loans up to THB 500,000, no officer
+review), run through `aivss_intake_and_triage` → `aivss_score_finding` in
+two independent fresh sessions, one entirely in Thai and one entirely in
+English. Both agree on substance: `tool_misuse` triages `high` in both, and
+the same forged-document finding scores **8.3 High (Thai)** vs. **8.4 High
+(English)** — the small gap is the calling agent's own factor-level choice,
+not language-dependent behavior in the deterministic scoring tool:
+
+![banking scenario in Thai](example%20AVISS/mcp_test_screenshots/10_category_G_banking_thai.png)
+![banking scenario in English](example%20AVISS/mcp_test_screenshots/11_category_G_banking_english.png)
+
+See the [gallery](example%20AVISS/mcp_test_screenshots/README.md) for all 11
 screenshots (banking-taxonomy classification, spec citation/provenance,
 threat-intel triage, and the two initial smoke-test sessions), each with a
 caption explaining the scenario and result.
