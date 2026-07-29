@@ -185,6 +185,27 @@ output, exactly as this repo's existing cross-validation writeup already
 concluded (see the root README's "Verified correctness" and
 `example AIVSS/README.md`'s "Live calculator comparison").
 
+**4. Manual UI interaction on `index.html`'s "custom input" path** — every
+test above used the "Load a scenario" shortcut, which sets all fields via
+one dropdown change. This one instead drove the actual form controls one at
+a time (click the CVSS input, type a value, select each of the 10 factor
+dropdowns, select ThM and Mitigation, click "Calculate AIVSS Score") to
+exercise the manual-entry path the shortcut never touches, using two new
+scenarios not in the official 10:
+
+| Case | Inputs | This page | Real `calculate_aivss()` | Match |
+|---|---|---|---|---|
+| Custom, non-official scenario | CVSS 6.5, factors [1, 0.5, 1, 0.5, 0, 1, 0.5, 0, 0.5, 1], ThM=Attacked (1.00), Mitigation=Partial (0.83) | 7.1 High | 7.1 High | ✅ |
+| Boundary edge case | CVSS 0.0, all 10 factors = 0, ThM=0.97 (default), Mitigation=1.00 (default) | 0.0 None | 0.0 None | ✅ |
+
+The boundary case matters because none of the 10 official scenarios hit
+`0.0`/"None" — every one of them has a substantial CVSS base and several
+factors set, so the None severity band (score = 0 exactly) was otherwise
+never exercised. Screenshots:
+[`test_screenshots/12_custom_ui_manual_entry_high.png`](test_screenshots/12_custom_ui_manual_entry_high.png)
+and
+[`test_screenshots/13_custom_ui_edge_case_none.png`](test_screenshots/13_custom_ui_edge_case_none.png).
+
 ## Files
 
 ```
@@ -202,5 +223,7 @@ calculator/
     ├── 08_streamlit_scenario1_inputs.png
     ├── 09_streamlit_scenario1_result.png        # raw calculate_aivss() JSON output
     ├── 10_howto_start_html_service.png          # real terminal: launching index.html's server
-    └── 11_howto_start_streamlit_service.png     # real terminal: launching streamlit_app.py
+    ├── 11_howto_start_streamlit_service.png     # real terminal: launching streamlit_app.py
+    ├── 12_custom_ui_manual_entry_high.png       # manual click-through, non-official scenario
+    └── 13_custom_ui_edge_case_none.png          # manual click-through, 0.0/None boundary
 ```
