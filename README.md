@@ -164,6 +164,14 @@ levels ... then draft the rationale for it.
 - **10/10 official OWASP worked scenarios match exactly** against the
   live reference calculator (`test_aivss_owasp_calculator_cross_validation.py`)
   — the scoring formula is independently verified, not just self-consistent.
+- **A standalone web calculator** (`calculator/index.html`, no dependencies)
+  implementing this same formula, so it can be checked visually — automated
+  10/10 against the official scenarios, plus a live, real-time spot check
+  against [aivss.parthsohaney.online](https://aivss.parthsohaney.online/)
+  (2/2 match) and a review of
+  [aivss.owasp.org/ssvc.html](https://aivss.owasp.org/ssvc.html) confirming
+  it's a genuinely different, non-comparable tool (categorical decision
+  outcome, not a 0–10 score) — see `calculator/README.md`.
 - All of the above re-verified standalone from a clean checkout of this
   exact repo layout before publishing.
 - **Live, end-to-end screenshots** of 7 distinct **agentic AI** cases (each
@@ -300,6 +308,8 @@ aivss-assessment-skills/
 ├── aivss_internal_audit.py     # IT-audit/COBIT lens (audit topics, output options)
 ├── requirements.txt
 ├── .mcp.json                   # Claude Code project-scoped MCP registration
+├── calculator/                 # standalone web calculator implementing this repo's AIVSS
+│                                # formula, tested against aivss.parthsohaney.online + ssvc.html
 └── example AIVSS/              # skill modules, tests, docs (folder name is load-bearing —
     ├── aivss_*.py               # see aivss_kg.py's DEFAULT_SOURCE_DIR — do not rename)
     ├── test_aivss_*.py
